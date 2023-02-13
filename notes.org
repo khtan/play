@@ -1,0 +1,15 @@
+* meta
+** startups
+//		#+STARTUP: hidestars	                                                     169-280AD
+#+SEQ_TODO: TODO(t!) START(s!) STUCK(k!) WAIT(w!) | DONE(d!) CANCEL(c!) D                 !)
+#+PROPERTY: imp_ALL high medium low                                                       
+#+PROPERTY: urg_ALL immediate shortterm longterm
+#+PROPERTY: loc_ALL home office
+#+COLUMNS: %imp %urg %loc
+* main
+** motivation
+The idea is to have one repo for all places to try things etc
+** registry
+| air | c:\cprojects\github\play |
+|     |                          |
+|     |                          |
