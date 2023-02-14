@@ -24,5 +24,11 @@ Second minor change to confirm password is remembered on kwee1 win10
 -> kwee1 win10 remembers
 A minor change to test push from kwee1 ubuntu
 Second minor change on kwee1 ubuntu to see if remembered
+-> kwee1 ubuntu does not remember
+Maybe some setup not yet done
+Does not bring up the github dialog
+
+* aside : to be transferred
+** classic menu has shutdown if u choose the Win7 style
 
 
