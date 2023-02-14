@@ -18,9 +18,11 @@ The idea is to have one repo for all places to try things etc
 |              |       |                          |
 ** github password ( do not put here )
 A minor change to test push again from air
+->air remembers
 A minor change to test push from kwee1 win10
 Second minor change to confirm password is remembered on kwee1 win10
+-> kwee1 win10 remembers
 A minor change to test push from kwee1 ubuntu
-
+Second minor change on kwee1 ubuntu to see if remembered
 
 
