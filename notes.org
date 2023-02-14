@@ -17,4 +17,5 @@ The idea is to have one repo for all places to try things etc
 | kwee1-win10  | win10 | d:/cprojects/github/play |
 |              |       |                          |
 ** github password ( do not put here )
+A minor change to test push again from air
 
