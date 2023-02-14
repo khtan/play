@@ -28,7 +28,7 @@ Second minor change on kwee1 ubuntu to see if remembered
 Maybe some setup not yet done
 Does not bring up the github dialog
 
+Installed git-credential-manager
+4th change added
 * aside : to be transferred
 ** classic menu has shutdown if u choose the Win7 style
-
-
