@@ -10,6 +10,7 @@
 ** motivation
 The idea is to have one repo for all places to try things etc
 ** registry
-| air | c:\cprojects\github\play |
-|     |                          |
-|     |                          |
+| air   | win10 | c:\cprojects\github\play |
+| kwee1 | wsl2  | ~/cprojects/github/play  |
+| kwee1 | win10 | d:/cprojects/github/play |
+|       |       |                          |
