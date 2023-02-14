@@ -18,4 +18,5 @@ The idea is to have one repo for all places to try things etc
 |              |       |                          |
 ** github password ( do not put here )
 A minor change to test push again from air
+A minor change to test push from kwee1 win10
 
