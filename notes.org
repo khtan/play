@@ -51,5 +51,6 @@ branch.main.remote=origin
 branch.main.merge=refs/heads/main
 
 6th change
+7th change
 * aside : to be transferred
 ** classic menu has shutdown if u choose the Win7 style
