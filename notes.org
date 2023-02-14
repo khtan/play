@@ -16,5 +16,5 @@ The idea is to have one repo for all places to try things etc
 | kwee1-ubuntu | wsl2  | ~/cprojects/github/play  |
 | kwee1-win10  | win10 | d:/cprojects/github/play |
 |              |       |                          |
-** github password
-| khtan | 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 |
+** github password ( do not put here )
+
