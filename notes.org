@@ -20,5 +20,7 @@ The idea is to have one repo for all places to try things etc
 A minor change to test push again from air
 A minor change to test push from kwee1 win10
 Second minor change to confirm password is remembered on kwee1 win10
+A minor change to test push from kwee1 ubuntu
+
 
 
