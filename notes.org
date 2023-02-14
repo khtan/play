@@ -32,5 +32,24 @@ Installed git-credential-manager
 4th change added
 kwee1 ubuntu did not remember
 5th change added
+kwee1 ubuntu did not remember
+
+So the git-credential-manger is not completely working
+> git config --list
+user.name=KHT@kwee1-ubuntu
+user.email=tan.k.h@juno.com
+credential.helper=
+credential.helper=/usr/local/bin/git-credential-manager
+credential.https://dev.azure.com.usehttppath=true
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+remote.origin.url=https://github.com/khtan/play.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.main.remote=origin
+branch.main.merge=refs/heads/main
+
+6th change
 * aside : to be transferred
 ** classic menu has shutdown if u choose the Win7 style
