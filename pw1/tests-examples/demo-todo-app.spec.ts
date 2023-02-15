@@ -1,15 +1,38 @@
 import { test, expect, type Page } from '@playwright/test';
 
-test.beforeEach(async ({ page }) => {
-  await page.goto('https://demo.playwright.dev/todomvc');
-});
-
 const TODO_ITEMS = [
   'buy some cheese',
   'feed the cat',
   'book a doctors appointment'
 ];
+// helper functions
+async function createDefaultTodos(page: Page) {
+  // create a new todo locator
+  const newTodo = page.getByPlaceholder('What needs to be done?');
 
+  // eslint-disable-next-line no-restricted-syntax
+  for (const item of TODO_ITEMS) {
+    await newTodo.fill(item);
+    await newTodo.press('Enter');
+  }
+}
+
+async function checkNumberOfTodosInLocalStorage(page: Page, expected: number) {
+  return page.waitForFunction((e) => JSON.parse(localStorage['react-todos']).length === e, expected);
+}
+
+async function checkNumberOfCompletedTodosInLocalStorage(page: Page, expected: number) {
+  return page.waitForFunction((e) => JSON.parse(localStorage['react-todos']).filter((todo: any) => todo.completed).length === e, expected);
+}
+
+async function checkTodosInLocalStorage(page: Page, title: string) {
+  return page.waitForFunction((t) => JSON.parse(localStorage['react-todos']).map((todo: any) => todo.title).includes(t), title);
+}
+
+// tests
+test.beforeEach(async ({ page }) => {
+  await page.goto('https://demo.playwright.dev/todomvc');
+});
 test.describe('New Todo', () => {
   test('should allow me to add todo items', async ({ page }) => {
     // create a new todo locator
@@ -55,8 +78,8 @@ test.describe('New Todo', () => {
     await createDefaultTodos(page);
 
     // create a todo count locator
-    const todoCount = page.getByTestId('todo-count')
-  
+    const todoCount = page.getByTestId('todo-count');
+
     // Check test using different methods.
     await expect(page.getByText('3 items left')).toBeVisible();
     await expect(todoCount).toHaveText('3 items left');
@@ -120,12 +143,12 @@ test.describe('Mark all as completed', () => {
 });
 
 test.describe('Item', () => {
-
   test('should allow me to mark items as complete', async ({ page }) => {
     // create a new todo locator
     const newTodo = page.getByPlaceholder('What needs to be done?');
 
     // Create two items.
+    // eslint-disable-next-line no-restricted-syntax
     for (const item of TODO_ITEMS.slice(0, 2)) {
       await newTodo.fill(item);
       await newTodo.press('Enter');
@@ -151,6 +174,7 @@ test.describe('Item', () => {
     const newTodo = page.getByPlaceholder('What needs to be done?');
 
     // Create two items.
+    // eslint-disable-next-line no-restricted-syntax
     for (const item of TODO_ITEMS.slice(0, 2)) {
       await newTodo.fill(item);
       await newTodo.press('Enter');
@@ -202,7 +226,7 @@ test.describe('Editing', () => {
     await todoItem.dblclick();
     await expect(todoItem.getByRole('checkbox')).not.toBeVisible();
     await expect(todoItem.locator('label', {
-      hasText: TODO_ITEMS[1],
+      hasText: TODO_ITEMS[1]
     })).not.toBeVisible();
     await checkNumberOfTodosInLocalStorage(page, 3);
   });
@@ -216,7 +240,7 @@ test.describe('Editing', () => {
     await expect(todoItems).toHaveText([
       TODO_ITEMS[0],
       'buy some sausages',
-      TODO_ITEMS[2],
+      TODO_ITEMS[2]
     ]);
     await checkTodosInLocalStorage(page, 'buy some sausages');
   });
@@ -230,7 +254,7 @@ test.describe('Editing', () => {
     await expect(todoItems).toHaveText([
       TODO_ITEMS[0],
       'buy some sausages',
-      TODO_ITEMS[2],
+      TODO_ITEMS[2]
     ]);
     await checkTodosInLocalStorage(page, 'buy some sausages');
   });
@@ -243,7 +267,7 @@ test.describe('Editing', () => {
 
     await expect(todoItems).toHaveText([
       TODO_ITEMS[0],
-      TODO_ITEMS[2],
+      TODO_ITEMS[2]
     ]);
   });
 
@@ -260,9 +284,9 @@ test.describe('Counter', () => {
   test('should display the current number of todo items', async ({ page }) => {
     // create a new todo locator
     const newTodo = page.getByPlaceholder('What needs to be done?');
-    
+
     // create a todo count locator
-    const todoCount = page.getByTestId('todo-count')
+    const todoCount = page.getByTestId('todo-count');
 
     await newTodo.fill(TODO_ITEMS[0]);
     await newTodo.press('Enter');
@@ -307,6 +331,7 @@ test.describe('Persistence', () => {
     // create a new todo locator
     const newTodo = page.getByPlaceholder('What needs to be done?');
 
+    // eslint-disable-next-line no-restricted-syntax
     for (const item of TODO_ITEMS.slice(0, 2)) {
       await newTodo.fill(item);
       await newTodo.press('Enter');
@@ -350,7 +375,7 @@ test.describe('Routing', () => {
   });
 
   test('should respect the back button', async ({ page }) => {
-    const todoItem = page.getByTestId('todo-item'); 
+    const todoItem = page.getByTestId('todo-item');
     await page.getByTestId('todo-item').nth(1).getByRole('checkbox').check();
 
     await checkNumberOfCompletedTodosInLocalStorage(page, 1);
@@ -393,8 +418,8 @@ test.describe('Routing', () => {
 
   test('should highlight the currently applied filter', async ({ page }) => {
     await expect(page.getByRole('link', { name: 'All' })).toHaveClass('selected');
-    
-    //create locators for active and completed links
+
+    // create locators for active and completed links
     const activeLink = page.getByRole('link', { name: 'Active' });
     const completedLink = page.getByRole('link', { name: 'Completed' });
     await activeLink.click();
@@ -407,31 +432,3 @@ test.describe('Routing', () => {
     await expect(completedLink).toHaveClass('selected');
   });
 });
-
-async function createDefaultTodos(page: Page) {
-  // create a new todo locator
-  const newTodo = page.getByPlaceholder('What needs to be done?');
-
-  for (const item of TODO_ITEMS) {
-    await newTodo.fill(item);
-    await newTodo.press('Enter');
-  }
-}
-
-async function checkNumberOfTodosInLocalStorage(page: Page, expected: number) {
-  return await page.waitForFunction(e => {
-    return JSON.parse(localStorage['react-todos']).length === e;
-  }, expected);
-}
-
-async function checkNumberOfCompletedTodosInLocalStorage(page: Page, expected: number) {
-  return await page.waitForFunction(e => {
-    return JSON.parse(localStorage['react-todos']).filter((todo: any) => todo.completed).length === e;
-  }, expected);
-}
-
-async function checkTodosInLocalStorage(page: Page, title: string) {
-  return await page.waitForFunction(t => {
-    return JSON.parse(localStorage['react-todos']).map((todo: any) => todo.title).includes(t);
-  }, title);
-}
