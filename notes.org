@@ -18,8 +18,44 @@ The idea is to have one repo for all places to try things etc
 |              |       |                          |
 ** github password ( do not put here )
 A minor change to test push again from air
+->air remembers
+A minor change to test push from kwee1 win10
+Second minor change to confirm password is remembered on kwee1 win10
+-> kwee1 win10 remembers
+A minor change to test push from kwee1 ubuntu
+Second minor change on kwee1 ubuntu to see if remembered
+-> kwee1 ubuntu does not remember
+Maybe some setup not yet done
+Does not bring up the github dialog
 
+Installed git-credential-manager
+4th change added
+kwee1 ubuntu did not remember
+5th change added
+kwee1 ubuntu did not remember
+
+So the git-credential-manger is not completely working
+> git config --list
+user.name=KHT@kwee1-ubuntu
+user.email=tan.k.h@juno.com
+credential.helper=
+credential.helper=/usr/local/bin/git-credential-manager
+credential.https://dev.azure.com.usehttppath=true
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+remote.origin.url=https://github.com/khtan/play.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.main.remote=origin
+branch.main.merge=refs/heads/main
+
+6th change
+7th change
+** aside : to be transferred
+*** classic menu has shutdown if u choose the Win7 style
 * projects
 ** elisp
 ** [[c:\cprojects\github\play][pw1 ( playwright )]]
 create demo and then add the pieces for eslint etc
+
