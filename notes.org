@@ -60,5 +60,10 @@ branch.main.merge=refs/heads/main
 create demo and then add the pieces for eslint etc
 make corrections per eslint and sonarlint
 ** dw1 ( playwright/driveway )
+*** a/c - be open and clear for this situation
+tan.k.h.usa@gmail.com JalanMasuk4!
+division of tests folder
+   unit
+   qe
 
 
