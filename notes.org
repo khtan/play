@@ -19,3 +19,7 @@ The idea is to have one repo for all places to try things etc
 ** github password ( do not put here )
 A minor change to test push again from air
 
+* projects
+** elisp
+** [[c:\cprojects\github\play][pw1 ( playwright )]]
+create demo and then add the pieces for eslint etc
