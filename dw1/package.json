@@ -1,0 +1,26 @@
+{
+  "name": "pw1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "log4js": "^6.3.0",
+    "pratica": "^2.0.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.30.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^8.6.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^16.1.4",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-playwright": "^0.7.1",
+    "ts-node": "^8.8.2",
+    "typescript": "^4.5.4"
+  }
+}
