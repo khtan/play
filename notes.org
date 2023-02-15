@@ -56,6 +56,9 @@ branch.main.merge=refs/heads/main
 *** classic menu has shutdown if u choose the Win7 style
 * projects
 ** elisp
-** [[c:\cprojects\github\play][pw1 ( playwright )]]
+** [[c:\cprojects\github\play][pw-template ( playwright )]]
 create demo and then add the pieces for eslint etc
+make corrections per eslint and sonarlint
+** dw1 ( playwright/driveway )
+
 
