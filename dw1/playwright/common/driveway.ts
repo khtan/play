@@ -24,7 +24,10 @@ export class Driveway {
     await page.getByTestId('password-field').fill(password);
     await page.getByTestId('login-submit-btn').click();
     // postcheck
-    await expect(page.getByRole('button', { name: `Hi, ${username}` })).toBeVisible();
+    // default timeout is 5000, fail run around 2 or 4
+    // timeout at 10000, fail run around 14
+
+    await expect(page.getByRole('button', { name: `Hi, ${username}` })).toBeVisible({ timeout: 10000 });
     const endTime = new Date().getTime();
     log.info(`${workerIndex} login ${username} ${email} - elapsed: ${endTime - startTime}`);
   }

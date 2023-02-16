@@ -66,6 +66,25 @@ division of tests folder
    unit
    qe
 *** npx playwright codegen www.driveway.com --output x.js
-*** TODO use extensions .spec.ts and e2e-spec.ts to distinguish between non gui and gui tests
+*** DONE use extensions .spec.ts and e2e-spec.ts to distinguish between non gui and gui tests
+    CLOSED: [2023-02-16 Thu 15:28]
 
+    - State "DONE"       from "TODO"       [2023-02-16 Thu 15:28]
     - State "TODO"       from              [2023-02-15 Wed 17:14]
+*** playwright/test-results.16feb23/loop.org
+| Timeout value | Failure run |
+|          5000 |           2 |
+|        100000 |          14 |
+|        200000 | ?           |
+Failure after 14 runs
+Failure is due to 
+net::ERR_ABORTED HEAD https://www.driveway.com/_next/data/auksaRstBdYcp9cFKE2Se/index.json?code=fTpes1uugALz8_B9xUdBJom15IXVgTbM6z2cHB5VNTKxl&state=_NiRDcqbv6ug80zgdc_q74tMhDI3%7EaMb
+
+*** options
+1. increase timeout value
+2. write a loop that increases the timeout and retests
+
+0. Each function ( login, logout ) needs a verifying line
+
+
+
