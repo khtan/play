@@ -65,5 +65,7 @@ tan.k.h.usa@gmail.com JalanMasuk4!
 division of tests folder
    unit
    qe
+*** npx playwright codegen www.driveway.com --output x.js
+*** TODO use extensions .spec.ts and e2e-spec.ts to distinguish between non gui and gui tests
 
-
+    - State "TODO"       from              [2023-02-15 Wed 17:14]
