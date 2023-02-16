@@ -1,5 +1,5 @@
-*.nocommit.*
-*.nocommit/
+*nocommit*
+*nocommit/
 node_modules/
 /test-results/
 /playwright-report/
