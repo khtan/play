@@ -10,7 +10,7 @@ import { defineConfig } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: './tests',
+  testDir: '../tests',
   testMatch: /.*(e2e-spec|spec).ts/,
   /* Maximum time one test can run for. */
   timeout: 30 * 1000,
