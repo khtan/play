@@ -14,7 +14,7 @@ delayInSeconds = 1 * 60 * 60
 
 # customize to suit
 testcmds = [
-    'npx playwright test -c playwright/config/playwright.config.ts tests/unit/unit.e2e-spec.ts -g t0 --headed',
+    'npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed',
 ]
 
 def getindex(max):

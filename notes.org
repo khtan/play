@@ -81,10 +81,51 @@ Failure is due to
 net::ERR_ABORTED HEAD https://www.driveway.com/_next/data/auksaRstBdYcp9cFKE2Se/index.json?code=fTpes1uugALz8_B9xUdBJom15IXVgTbM6z2cHB5VNTKxl&state=_NiRDcqbv6ug80zgdc_q74tMhDI3%7EaMb
 
 *** options
-1. increase timeout value
-2. write a loop that increases the timeout and retests
+1. Each function ( login, logout ) needs a verifying line
+2. increase timeout value
+3. write a loop that increases the timeout and retests
+*** execution context was destroyed
+[31m  1) unit\unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout [90m====================================[31m[39m
 
-0. Each function ( login, logout ) needs a verifying line
+    locator.isVisible: Execution context was destroyed, most likely because of a navigation
+    =========================== logs ===========================
+      checking visibility of getByRole('button', { name: 'Hi, Kwee' })
+    ============================================================
+
+    [90m   at [39m..\common\driveway.ts:37
+
+      35 |       log.info(`${workerIndex} login hiButton not visible. Try # ${retryCount}`);
+      36 |       await Utils.delay(1000);
+    > 37 |       isVisible = await page.getByRole('button', { name: `Hi, ${username}` }).isVisible();
+         |                                                                               ^
+      38 |       retryCount += 1;
+      39 |     }
+      40 |     await expect(page.getByRole('button', { name: `Hi, ${username}` })).toBeVisible();
+
+    [2m    at Function.login (c:\cprojects\github\play\dw1\playwright\common\driveway.ts:37:79)[22m
+    [2m    at c:\cprojects\github\play\dw1\playwright\tests\unit\unit.e2e-spec.ts:6:5[22m
+
+[36m    attachment #1: trace (application/zip) [90m---------------------------------------------------------[36m[39m
+[36m    playwright\test-results\unit-unit.e2e-spec.ts-unittests-t0-unitloginlogout\trace.zip[39m
+
+This looks like somehow the password was not entered correctly.
+The password led remained red
+
+1) After filling the password field, get the value and compare
+   By design, password field should not give up its password. Otherwise this is a security problem.
+   
+2) After filling the password field, check that the LED is green.
+   This LED green is not foolproof, so better no rely on it
+
+After reimplementing the navigation:
+1. added a waitForLoadState
+2. checked for error-icon
+
+The weak spot on button losing context went away. Was able to run until #12 (hrs) without problem.
+*** set up on kwee1-ubuntu and run uninterrupted for whole day ( 24 hrs ) to see
+*** air: can test parallel login/logout tests
+
+
 
 
 
