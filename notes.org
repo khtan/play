@@ -128,4 +128,7 @@ The weak spot on button losing context went away. Was able to run until #12 (hrs
 
 
 
+Something still missing - git-credential-store?
 
+* aside : to be transferred
+** classic menu has shutdown if u choose the Win7 style
