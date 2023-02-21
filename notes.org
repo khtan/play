@@ -123,6 +123,101 @@ After reimplementing the navigation:
 
 The weak spot on button losing context went away. Was able to run until #12 (hrs) without problem.
 *** set up on kwee1-ubuntu and run uninterrupted for whole day ( 24 hrs ) to see
+**** kwee1-ubuntu needs node and npm 
+sudo apt update
+sudo apt install nodejs npm 
+***** problem: wsl2 path contains /mnt/c stuff that npm accidentally calls
+https://stackoverflow.com/questions/67802387/wsl-path-contains-windows-directories-how-to-elegantly-fix-it-to-exclude-only
+
+Fixed:
+/home/khtan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/WindowsApps/MicrosoftCorporationII.WindowsSubsystemForLinux_1.0.3.0_x64__8wekyb3d8bbwe:/mnt/c/ProgramData/Oracle/Java/javapath:/mnt/c/Program Files/Intel/iCLS Client:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0:/snap/bin:/usr/lib/emacs/27.1/x86_64-linux-gnu
+/home/khtan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib
+
+Had to install google-chrome as well
+https://linuxgenie.net/how-to-install-google-chrome-on-ubuntu-22-04/
+
+**** ubuntu npx playwright install not sufficient
+sudo apt-get install libdbus-glib-1-2
+sudo apt-get install libevent-2.1.7 gstreamer1.0-libav
+sudo npx playwright install-deps
+**** [[https://askubuntu.com/questions/1444962/cant-install-firefox-in-wsl-since-it-sais-i-need-to-use-snap-but-snap-doesnt][wsl can't install firefox]]
+***** steps work
+sudo snap remove firefox
+sudo apt remove firefox
+sudo add-apt-repository ppa:mozillateam/ppa
+
+# Create a new file, it should be empty as it opens:
+sudo gedit /etc/apt/preferences.d/mozillateamppa
+
+# Insert these lines, then save and exit
+Package: firefox*
+Pin: release o=LP-PPA-mozillateam
+Pin-Priority: 501
+
+# after saving, do
+sudo apt update
+sudo apt install firefox
+
+**** wsl install epiphany to get webkit browser on ubuntu
+https://www.linuxhelp.com/how-to-install-epiphany-browser-in-ubuntu
+https://zoomadmin.com/HowToInstall/UbuntuPackage/epiphany-browser
+to install:
+   sudo apt update
+   sudo apt install epiphany-browser
+to invoke:
+   epiphany-browser&
+
+**** [[https://linuxhint.com/install-visual-studio-code-ubuntu22-04/][install vs code on ubuntu]]
+***** steps
+sudo apt update && sudo apt upgrade -y
+sudo apt install software-properties-common apt-transport-https wget -y
+wget -O- https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor | sudo tee /usr/share/keyrings/vscode.gpg
+echo deb [arch=amd64 signed-by=/usr/share/keyrings/vscode.gpg] https://packages.microsoft.com/repos/vscode stable main | sudo tee /etc/apt/sources.list.d/vscode.list
+sudo apt update 
+sudo apt install code
+***** invoke
+khtan@kwee1:~/cprojects/github/play/dw1$ code .
+To use Visual Studio Code with the Windows Subsystem for Linux, please install Visual Studio Code in Windows and uninstall the Linux version in WSL. You can then use the `code` command in a WSL terminal just as you would in a normal command prompt.
+Do you want to continue anyway? [y/N] n
+***** ? sudo apt remove code 
+
+*** dw1 run on ubuntu
+khtan@kwee1:~/cprojects/github/play/dw1$ npm run test:debug -- --browser=all
+
+> pw1@1.0.0 test:debug /home/khtan/cprojects/github/play/dw1
+> npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 "--browser=all"
+
+
+Running 3 tests using 2 workers
+
+     1 [chromium] › unit/unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout
+     2 [firefox] › unit/unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout
+[2023-02-20T17:31:55.147] [TRACE] driveway - 0 title0: Buying New & Used Cars | Driveway url0:https://www.driveway.com/
+[2023-02-20T17:32:00.996] [TRACE] driveway - 0 title1: Buying New & Used Cars | Driveway url1:https://www.driveway.com/
+[2023-02-20T17:32:11.714] [TRACE] driveway - 0 title2: Buy or Sell Your Car Your Way | Driveway url2:https://www.driveway.com/post-login
+[2023-02-20T17:32:12.322] [INFO] driveway - 0 login Kwee tan.k.h.usa@gmail.com - elapsed: 28364
+[2023-02-20T17:32:15.841] [INFO] driveway - 0 logout - elapsed: 3517
+end of test
+  ✓  1 [chromium] › unit/unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout (34.4s)     3 [webkit] › unit/unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout
+
+[2023-02-20T17:32:01.181] [TRACE] driveway - 1 title0: Buying New & Used Cars | Driveway url0:https://www.driveway.com/
+[2023-02-20T17:32:20.838] [TRACE] driveway - 1 title1: Buy or Sell Your Car Your Way | Driveway url1:https://www.driveway.com/?code=VDv5K0435PyyCkyHZ7FIMtzE4SGv2WV3iJSYcHCXosyNF&state=f_ZOaHD~zMuC-YIhctU--YTxzrQX6nex
+[2023-02-20T17:32:30.846] [TRACE] driveway - 1 title2: My Driveway | Driveway url2:https://www.driveway.com/mydriveway
+[2023-02-20T17:32:31.233] [INFO] driveway - 1 login Kwee tan.k.h.usa@gmail.com - elapsed: 41921
+[2023-02-20T17:32:36.451] [INFO] driveway - 1 logout - elapsed: 5218
+end of test
+  ✓  2 [firefox] › unit/unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout (56.5s)
+
+[2023-02-20T17:32:31.919] [TRACE] driveway - 2 title0: Buying New & Used Cars | Driveway url0:https://www.driveway.com/
+[2023-02-20T17:32:45.061] [TRACE] driveway - 2 title1: Buying New & Used Cars | Driveway url1:https://www.driveway.com/
+[2023-02-20T17:32:55.982] [TRACE] driveway - 2 title2: Buying New & Used Cars | Driveway url2:https://www.driveway.com/?code=UhaoAVA1QCfRTFswswqEQAubrNx20nundWZyUMEjFI5IZ&state=UcEcYPmvg8QNjBEbtYRkP873iH_Tvhiu
+[2023-02-20T17:33:00.383] [INFO] driveway - 2 login Kwee tan.k.h.usa@gmail.com - elapsed: 39815
+[2023-02-20T17:33:04.825] [INFO] driveway - 2 logout - elapsed: 4431
+end of test
+  ✓  3 [webkit] › unit/unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout (48.9s)
+
+  3 passed (1.5m)
+
 *** air: can test parallel login/logout tests
 
 

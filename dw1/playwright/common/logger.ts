@@ -11,7 +11,7 @@ export default class Log {
   constructor(name: string) {
     configure({
       appenders: { console: { type: 'console' } },
-      categories: { default: { appenders: ['console'], level: 'debug' } }
+      categories: { default: { appenders: ['console'], level: 'trace' } }
     });
     // ToDo: This is a limitation by naming the singleton logger as 'E2E'
     // It means that all test output through logging will have module E2E,
