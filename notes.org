@@ -217,6 +217,41 @@ end of test
   ✓  3 [webkit] › unit/unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout (48.9s)
 
   3 passed (1.5m)
+*** dw1 run on air
+c:\cprojects\github\play\dw1>npm run test:debug -- --browser=all
+
+> pw1@1.0.0 test:debug
+> npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --browser=all
+
+
+Running 3 tests using 3 workers
+
+  ✓  1 [chromium] › unit\unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout (22.1s)
+  ✓  2 [firefox] › unit\unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout (29.1s)
+  ✓  3 [webkit] › unit\unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout (43.0s)
+[2023-02-20T21:14:38.832] [TRACE] driveway - 0 title0: Buying New & Used Cars | Driveway url0:https://www.driveway.com/
+[2023-02-20T21:14:43.063] [TRACE] driveway - 0 title1: Buying New & Used Cars | Driveway url1:https://www.driveway.com/
+[2023-02-20T21:14:53.078] [TRACE] driveway - 0 title2: My Driveway | Driveway url2:https://www.driveway.com/mydriveway
+[2023-02-20T21:14:53.261] [INFO] driveway - 0 login Kwee tan.k.h.usa@gmail.com - elapsed: 19292
+[2023-02-20T21:14:54.543] [INFO] driveway - 0 logout - elapsed: 1282
+end of test
+
+[2023-02-20T21:14:40.200] [TRACE] driveway - 1 title0: Buying New & Used Cars | Driveway url0:https://www.driveway.com/
+[2023-02-20T21:14:49.681] [TRACE] driveway - 1 title1: Buy or Sell Your Car Your Way | Driveway url1:https://www.driveway.com/?code=g9NyS0z1HGlEw2lK_6NREhJqCTVfZscYhFktOWfFxyVX5&state=0ZCoTv6nfeHoiICeZFHcdCKk9qZh.G45
+[2023-02-20T21:14:59.703] [TRACE] driveway - 1 title2: My Driveway | Driveway url2:https://www.driveway.com/mydriveway
+[2023-02-20T21:14:59.848] [INFO] driveway - 1 login Kwee tan.k.h.usa@gmail.com - elapsed: 24601
+[2023-02-20T21:15:01.606] [INFO] driveway - 1 logout - elapsed: 1758
+end of test
+
+[2023-02-20T21:14:47.547] [TRACE] driveway - 2 title0: Buying New & Used Cars | Driveway url0:https://www.driveway.com/
+[2023-02-20T21:15:02.214] [TRACE] driveway - 2 title1: Buying New & Used Cars | Driveway url1:https://www.driveway.com/
+[2023-02-20T21:15:12.242] [TRACE] driveway - 2 title2: Buy or Sell Your Car Your Way | Driveway url2:https://www.driveway.com/mydriveway
+[2023-02-20T21:15:12.420] [INFO] driveway - 2 login Kwee tan.k.h.usa@gmail.com - elapsed: 38404
+[2023-02-20T21:15:15.798] [INFO] driveway - 2 logout - elapsed: 3378
+end of test
+
+
+  3 passed (45.8s)
 
 *** air: can test parallel login/logout tests
 
