@@ -47,7 +47,7 @@ export class Driveway {
     email: string,
     username: string,
     password: string
-    ): Promise<void> {
+  ): Promise<void> {
     const startTime = new Date().getTime();
     // precheck
     await page.goto(url);
@@ -62,7 +62,7 @@ export class Driveway {
     await page.getByTestId('password-field').fill(password);
     // not foolproof bec error icon becomes green even if substring is not correct
     await expect(page.getByTestId('error-icon')).not.toBeVisible();
-    
+
     await page.getByTestId('login-submit-btn').click();
     await page.waitForLoadState('networkidle');
     log.trace(`${workerIndex} title1: ${await page.title()} url1:${await page.url()}`); // My Driveway | Driveway
@@ -71,7 +71,7 @@ export class Driveway {
     // await expect(page.url()).toBe(url1);
     // postcheck
     await Utils.delay(10000);
-    log.trace(`${workerIndex} title2: ${await page.title()} url2:${await page.url()}`); 
+    log.trace(`${workerIndex} title2: ${await page.title()} url2:${await page.url()}`);
 
     await expect(page.getByRole('button', { name: `Hi, ${username}` })).toBeVisible();
     const endTime = new Date().getTime();

@@ -3,7 +3,7 @@ import { Driveway as Dw } from '../../common/driveway';
 import { Announce } from '../../common/announce';
 
 test.describe('unittests', () => {
-  test.beforeAll(async ({browser}, testInfo) =>{
+  test.beforeAll(async ({ browser }, testInfo) => {
     Announce.announce(browser, testInfo.workerIndex);
   });
   test('t0-unitloginlogout', async ({ page }, testInfo) => {
