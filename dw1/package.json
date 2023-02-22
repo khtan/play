@@ -11,7 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "log4js": "^6.3.0",
-    "pratica": "^2.0.3"
+    "pratica": "^2.0.3",
+    "ts-retry": "^4.1.1"
   },
   "devDependencies": {
     "@playwright/test": "^1.30.0",

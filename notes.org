@@ -1,4 +1,4 @@
-* meta
+q* meta
 ** startups
 //		#+STARTUP: hidestars	                                                     169-280AD
 #+SEQ_TODO: TODO(t!) START(s!) STUCK(k!) WAIT(w!) | DONE(d!) CANCEL(c!) D                 !)
@@ -252,6 +252,115 @@ end of test
 
 
   3 passed (45.8s)
+
+*** ts-retry
+https://github.com/normartin/ts-retry-promise
+https://github.com/franckLdx/ts-retry
+
+*** air transcript
+**** c:\cprojects\github\play\dw1>npm run test:debug -- --browser=chromium
+ npm run test:debug -- --browser=chromium
+
+ > pw1@1.0.0 test:debug
+ > npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --browser=chromium
+
+
+ Running 1 test using 1 worker
+
+ [2023-02-21T15:56:32.809] [INFO] announce - 0 playwright:	1.30.0
+ [2023-02-21T15:56:32.813] [INFO] announce - 0 hostname:	AIR
+ [2023-02-21T15:56:32.814] [INFO] announce - 0 os type:	Windows_NT
+ [2023-02-21T15:56:32.814] [INFO] announce - 0 platform:	win32
+ [2023-02-21T15:56:32.814] [INFO] announce - 0 arch:	x64
+ [2023-02-21T15:56:32.814] [INFO] announce - 0 num cpus:	8
+ [2023-02-21T15:56:32.814] [INFO] announce - 0 freemem:	9542688768
+ [2023-02-21T15:56:32.814] [INFO] announce - 0 totalmem:	34246270976
+ [2023-02-21T15:56:32.815] [INFO] announce - 0 browser:	chromium 110.0.5481.38
+ [2023-02-21T15:56:32.815] [INFO] announce - 0 user:	khtan
+ [2023-02-21T15:56:35.226] [TRACE] driveway - 0 title0: Buying New & Used Cars | Driveway url0:https://www.driveway.com/
+ [2023-02-21T15:56:43.613] [TRACE] driveway - 0 1 urlA:https://www.driveway.com/mydriveway
+ [2023-02-21T15:56:43.645] [TRACE] driveway - 0 title2: My Driveway | Driveway url2:https://www.driveway.com/mydriveway
+ [2023-02-21T15:56:43.678] [INFO] driveway - 0 login Kwee tan.k.h.usa@gmail.com - elapsed: 10723
+ [2023-02-21T15:56:44.625] [INFO] driveway - 0 logout - elapsed: 947
+ end of test
+   ok 1 [chromium] › unit\unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout (12.5s)
+
+
+   1 passed (14.4s)
+**** c:\cprojects\github\play\dw1>npm run test:debug -- --browser=firefox
+ npm run test:debug -- --browser=firefox
+
+ > pw1@1.0.0 test:debug
+ > npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --browser=firefox
+
+
+ Running 1 test using 1 worker
+
+ [2023-02-21T15:57:01.981] [INFO] announce - 0 playwright:	1.30.0
+ [2023-02-21T15:57:01.988] [INFO] announce - 0 hostname:	AIR
+ [2023-02-21T15:57:01.989] [INFO] announce - 0 os type:	Windows_NT
+ [2023-02-21T15:57:01.989] [INFO] announce - 0 platform:	win32
+ [2023-02-21T15:57:01.989] [INFO] announce - 0 arch:	x64
+ [2023-02-21T15:57:01.990] [INFO] announce - 0 num cpus:	8
+ [2023-02-21T15:57:01.990] [INFO] announce - 0 freemem:	9474252800
+ [2023-02-21T15:57:01.990] [INFO] announce - 0 totalmem:	34246270976
+ [2023-02-21T15:57:01.990] [INFO] announce - 0 browser:	firefox 108.0.2
+ [2023-02-21T15:57:01.991] [INFO] announce - 0 user:	khtan
+ [2023-02-21T15:57:07.023] [TRACE] driveway - 0 title0: Buying New & Used Cars | Driveway url0:https://www.driveway.com/
+ [2023-02-21T15:57:20.612] [TRACE] driveway - 0 1 urlA:https://www.driveway.com/mydriveway
+ [2023-02-21T15:57:20.650] [TRACE] driveway - 0 title2: My Driveway | Driveway url2:https://www.driveway.com/mydriveway
+ [2023-02-21T15:57:20.736] [INFO] driveway - 0 login Kwee tan.k.h.usa@gmail.com - elapsed: 17767
+ [2023-02-21T15:57:22.760] [INFO] driveway - 0 logout - elapsed: 2024
+ end of test
+   ok 1 [firefox] › unit\unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout (21.8s)
+
+
+   1 passed (24.7s)
+**** c:\cprojects\github\play\dw1>npm run test:debug -- --browser=webkit
+ npm run test:debug -- --browser=webkit
+
+ > pw1@1.0.0 test:debug
+ > npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --browser=webkit
+
+
+ Running 1 test using 1 worker
+
+ [2023-02-21T15:57:36.628] [INFO] announce - 0 playwright:	1.30.0
+ [2023-02-21T15:57:36.632] [INFO] announce - 0 hostname:	AIR
+ [2023-02-21T15:57:36.632] [INFO] announce - 0 os type:	Windows_NT
+ [2023-02-21T15:57:36.633] [INFO] announce - 0 platform:	win32
+ [2023-02-21T15:57:36.633] [INFO] announce - 0 arch:	x64
+ [2023-02-21T15:57:36.634] [INFO] announce - 0 num cpus:	8
+ [2023-02-21T15:57:36.634] [INFO] announce - 0 freemem:	9677758464
+ [2023-02-21T15:57:36.634] [INFO] announce - 0 totalmem:	34246270976
+ [2023-02-21T15:57:36.635] [INFO] announce - 0 browser:	webkit 16.4
+ [2023-02-21T15:57:36.635] [INFO] announce - 0 user:	khtan
+ [2023-02-21T15:57:41.086] [TRACE] driveway - 0 title0: Buy or Sell Your Car Your Way | Driveway url0:https://www.driveway.com/
+ [2023-02-21T15:57:51.234] [TRACE] driveway - 0 1 urlA:https://www.driveway.com/
+ [2023-02-21T15:57:51.737] [TRACE] driveway - 0 2 urlA:https://www.driveway.com/
+ [2023-02-21T15:57:52.243] [TRACE] driveway - 0 3 urlA:https://www.driveway.com/
+ [2023-02-21T15:57:52.751] [TRACE] driveway - 0 4 urlA:https://www.driveway.com/
+ [2023-02-21T15:57:53.261] [TRACE] driveway - 0 5 urlA:https://www.driveway.com/
+ [2023-02-21T15:57:53.772] [TRACE] driveway - 0 6 urlA:https://www.driveway.com/
+ [2023-02-21T15:57:54.272] [TRACE] driveway - 0 7 urlA:https://www.driveway.com/?code=Cbwo1qjsea6aSkSi2P_GIP9dmUiAMWrlRUudnP-GzGVNx&state=vKzEyp9etMcqE5xjIExUfuI_Y~~pu8zG
+ [2023-02-21T15:57:54.774] [TRACE] driveway - 0 8 urlA:https://www.driveway.com/?code=Cbwo1qjsea6aSkSi2P_GIP9dmUiAMWrlRUudnP-GzGVNx&state=vKzEyp9etMcqE5xjIExUfuI_Y~~pu8zG
+ [2023-02-21T15:57:55.280] [TRACE] driveway - 0 9 urlA:https://www.driveway.com/?code=Cbwo1qjsea6aSkSi2P_GIP9dmUiAMWrlRUudnP-GzGVNx&state=vKzEyp9etMcqE5xjIExUfuI_Y~~pu8zG
+ [2023-02-21T15:57:55.792] [TRACE] driveway - 0 10 urlA:https://www.driveway.com/?code=Cbwo1qjsea6aSkSi2P_GIP9dmUiAMWrlRUudnP-GzGVNx&state=vKzEyp9etMcqE5xjIExUfuI_Y~~pu8zG
+ [2023-02-21T15:57:56.293] [TRACE] driveway - 0 11 urlA:https://www.driveway.com/?code=Cbwo1qjsea6aSkSi2P_GIP9dmUiAMWrlRUudnP-GzGVNx&state=vKzEyp9etMcqE5xjIExUfuI_Y~~pu8zG
+ p[2023-02-21T15:57:56.796] [TRACE] driveway - 0 12 urlA:https://www.driveway.com/post-login
+ [2023-02-21T15:57:57.302] [TRACE] driveway - 0 13 urlA:https://www.driveway.com/post-login
+ [2023-02-21T15:57:57.807] [TRACE] driveway - 0 14 urlA:https://www.driveway.com/post-login
+ [2023-02-21T15:57:58.312] [TRACE] driveway - 0 15 urlA:https://www.driveway.com/post-login
+ [2023-02-21T15:57:58.821] [TRACE] driveway - 0 16 urlA:https://www.driveway.com/post-login
+ [2023-02-21T15:57:59.334] [TRACE] driveway - 0 17 urlA:https://www.driveway.com/mydriveway
+ [2023-02-21T15:57:59.388] [TRACE] driveway - 0 title2: Buy or Sell Your Car Your Way | Driveway url2:https://www.driveway.com/mydriveway
+ [2023-02-21T15:57:59.584] [INFO] driveway - 0 login Kwee tan.k.h.usa@gmail.com - elapsed: 22746
+ [2023-02-21T15:58:02.406] [INFO] driveway - 0 logout - elapsed: 2821
+ end of test
+   ok 1 [webkit] › unit\unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout (26.4s)
+
+
+   1 passed (28.3s)
 
 *** air: can test parallel login/logout tests
 

@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { expect, Page } from '@playwright/test';
+import { isTooManyTries, retry } from 'ts-retry';
 import { Utils } from './utils';
 import Log from './logger';
 
@@ -40,7 +41,7 @@ export class Driveway {
     log.info(`${workerIndex} login ${username} ${email} - elapsed: ${endTime - startTime}`);
   }
 
-  static async login_qe(
+  static async login_qe0(
     page: Page,
     workerIndex: number,
     url: string,
@@ -73,6 +74,52 @@ export class Driveway {
     await Utils.delay(10000);
     log.trace(`${workerIndex} title2: ${await page.title()} url2:${await page.url()}`);
 
+    await expect(page.getByRole('button', { name: `Hi, ${username}` })).toBeVisible();
+    const endTime = new Date().getTime();
+    log.info(`${workerIndex} login ${username} ${email} - elapsed: ${endTime - startTime}`);
+  }
+
+  static async login_qe(
+    page: Page,
+    workerIndex: number,
+    url: string,
+    email: string,
+    username: string,
+    password: string
+  ): Promise<void> {
+    const startTime = new Date().getTime();
+    // precheck
+    await page.goto(url);
+    const url0 = 'https://www.driveway.com/';
+    log.trace(`${workerIndex} title0: ${await page.title()} url0:${await page.url()}`); // Buying New & Used Cars | Driveway
+    await expect(page.url()).toBe(url0);
+    // action
+    await page.getByTestId('login-btn').click();
+    await page.getByTestId('email-field').click();
+    await page.getByTestId('email-field').fill(email);
+    await page.getByTestId('password-field').click();
+    await page.getByTestId('password-field').fill(password);
+    // not foolproof bec error icon becomes green even if substring is not correct
+    await expect(page.getByTestId('error-icon')).not.toBeVisible();
+
+    await page.getByTestId('login-submit-btn').click();
+    await page.waitForLoadState('networkidle');
+    // ----
+    let urlA = page.url();
+    let countA = 1;
+    while (urlA !== 'https://www.driveway.com/mydriveway' && countA < 20) {
+      log.trace(`${workerIndex} ${countA} urlA:${urlA}`);
+      urlA = page.url();
+      await Utils.delay(500);
+      countA += 1;
+    }
+    log.trace(`${workerIndex} ${countA} urlA:${urlA}`);
+    // const url1 = 'https://www.driveway.com/mydriveway';
+    // const url1 = 'https://www.driveway.com/';
+    // await expect(page.url()).toBe(url1);
+    // postcheck
+    log.trace(`${workerIndex} title2: ${await page.title()} url2:${await page.url()}`);
+    // ----
     await expect(page.getByRole('button', { name: `Hi, ${username}` })).toBeVisible();
     const endTime = new Date().getTime();
     log.info(`${workerIndex} login ${username} ${email} - elapsed: ${endTime - startTime}`);
