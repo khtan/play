@@ -1,4 +1,4 @@
-q* meta
+* meta
 ** startups
 //		#+STARTUP: hidestars	                                                     169-280AD
 #+SEQ_TODO: TODO(t!) START(s!) STUCK(k!) WAIT(w!) | DONE(d!) CANCEL(c!) D                 !)
@@ -362,6 +362,356 @@ https://github.com/franckLdx/ts-retry
 
    1 passed (28.3s)
 
+*** kwee1 transcript
+**** > npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 "--browser=webkit"
+
+
+ Running 1 test using 1 worker
+
+      1 [webkit] › unit/unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout
+ [2023-02-21T18:31:09.304] [INFO] announce - 0 playwright:	1.31.0
+ [2023-02-21T18:31:09.307] [INFO] announce - 0 hostname:	kwee1
+ [2023-02-21T18:31:09.308] [INFO] announce - 0 os type:	Linux
+ [2023-02-21T18:31:09.308] [INFO] announce - 0 platform:	linux
+ [2023-02-21T18:31:09.308] [INFO] announce - 0 arch:	x64
+ [2023-02-21T18:31:09.309] [INFO] announce - 0 num cpus:	4
+ [2023-02-21T18:31:09.310] [INFO] announce - 0 freemem:	5429972992
+ [2023-02-21T18:31:09.310] [INFO] announce - 0 totalmem:	8263618560
+ [2023-02-21T18:31:09.311] [INFO] announce - 0 browser:	webkit 16.4
+ [2023-02-21T18:31:09.311] [INFO] announce - 0 user:	khtan
+ [2023-02-21T18:31:25.503] [TRACE] driveway - 0 title0: Buying New & Used Cars | Driveway url0:https://www.driveway.com/
+ [2023-02-21T18:31:34.765] [TRACE] driveway - 0 1 urlA:https://www.driveway.com/
+ [2023-02-21T18:31:35.265] [TRACE] driveway - 0 2 urlA:https://www.driveway.com/
+ [2023-02-21T18:31:35.766] [TRACE] driveway - 0 3 urlA:https://www.driveway.com/
+ [2023-02-21T18:31:36.267] [TRACE] driveway - 0 4 urlA:https://www.driveway.com/
+ [2023-02-21T18:31:36.768] [TRACE] driveway - 0 5 urlA:https://www.driveway.com/
+ [2023-02-21T18:31:37.270] [TRACE] driveway - 0 6 urlA:https://www.driveway.com/
+ [2023-02-21T18:31:37.773] [TRACE] driveway - 0 7 urlA:https://www.driveway.com/
+ [2023-02-21T18:31:38.276] [TRACE] driveway - 0 8 urlA:https://www.driveway.com/?code=mnub0Ygk_ajI1IBYGBQ3kcog_zwIQg-383nWRphVe7Wiz&state=Xd9CDj8oALDNkOJiXpZ9mRjfEwfSxLLQ
+ [2023-02-21T18:31:38.776] [TRACE] driveway - 0 9 urlA:https://www.driveway.com/?code=mnub0Ygk_ajI1IBYGBQ3kcog_zwIQg-383nWRphVe7Wiz&state=Xd9CDj8oALDNkOJiXpZ9mRjfEwfSxLLQ
+ [2023-02-21T18:31:39.278] [TRACE] driveway - 0 10 urlA:https://www.driveway.com/?code=mnub0Ygk_ajI1IBYGBQ3kcog_zwIQg-383nWRphVe7Wiz&state=Xd9CDj8oALDNkOJiXpZ9mRjfEwfSxLLQ
+ [2023-02-21T18:31:39.779] [TRACE] driveway - 0 11 urlA:https://www.driveway.com/?code=mnub0Ygk_ajI1IBYGBQ3kcog_zwIQg-383nWRphVe7Wiz&state=Xd9CDj8oALDNkOJiXpZ9mRjfEwfSxLLQ
+ [2023-02-21T18:31:40.281] [TRACE] driveway - 0 12 urlA:https://www.driveway.com/?code=mnub0Ygk_ajI1IBYGBQ3kcog_zwIQg-383nWRphVe7Wiz&state=Xd9CDj8oALDNkOJiXpZ9mRjfEwfSxLLQ
+ [2023-02-21T18:31:40.783] [TRACE] driveway - 0 13 urlA:https://www.driveway.com/?code=mnub0Ygk_ajI1IBYGBQ3kcog_zwIQg-383nWRphVe7Wiz&state=Xd9CDj8oALDNkOJiXpZ9mRjfEwfSxLLQ
+ [2023-02-21T18:31:41.284] [TRACE] driveway - 0 14 urlA:https://www.driveway.com/?code=mnub0Ygk_ajI1IBYGBQ3kcog_zwIQg-383nWRphVe7Wiz&state=Xd9CDj8oALDNkOJiXpZ9mRjfEwfSxLLQ
+ [2023-02-21T18:31:41.788] [TRACE] driveway - 0 15 urlA:https://www.driveway.com/?code=mnub0Ygk_ajI1IBYGBQ3kcog_zwIQg-383nWRphVe7Wiz&state=Xd9CDj8oALDNkOJiXpZ9mRjfEwfSxLLQ
+ [2023-02-21T18:31:42.289] [TRACE] driveway - 0 16 urlA:https://www.driveway.com/?code=mnub0Ygk_ajI1IBYGBQ3kcog_zwIQg-383nWRphVe7Wiz&state=Xd9CDj8oALDNkOJiXpZ9mRjfEwfSxLLQ
+ [2023-02-21T18:31:42.790] [TRACE] driveway - 0 17 urlA:https://www.driveway.com/?code=mnub0Ygk_ajI1IBYGBQ3kcog_zwIQg-383nWRphVe7Wiz&state=Xd9CDj8oALDNkOJiXpZ9mRjfEwfSxLLQ
+ [2023-02-21T18:31:43.301] [TRACE] driveway - 0 18 urlA:https://www.driveway.com/?code=mnub0Ygk_ajI1IBYGBQ3kcog_zwIQg-383nWRphVe7Wiz&state=Xd9CDj8oALDNkOJiXpZ9mRjfEwfSxLLQ
+ [2023-02-21T18:31:43.803] [TRACE] driveway - 0 19 urlA:https://www.driveway.com/?code=mnub0Ygk_ajI1IBYGBQ3kcog_zwIQg-383nWRphVe7Wiz&state=Xd9CDj8oALDNkOJiXpZ9mRjfEwfSxLLQ
+ [2023-02-21T18:31:44.304] [TRACE] driveway - 0 20 urlA:https://www.driveway.com/?code=mnub0Ygk_ajI1IBYGBQ3kcog_zwIQg-383nWRphVe7Wiz&state=Xd9CDj8oALDNkOJiXpZ9mRjfEwfSxLLQ
+ [2023-02-21T18:31:44.805] [TRACE] driveway - 0 21 urlA:https://www.driveway.com/?code=mnub0Ygk_ajI1IBYGBQ3kcog_zwIQg-383nWRphVe7Wiz&state=Xd9CDj8oALDNkOJiXpZ9mRjfEwfSxLLQ
+ [2023-02-21T18:31:45.306] [TRACE] driveway - 0 22 urlA:https://www.driveway.com/?code=mnub0Ygk_ajI1IBYGBQ3kcog_zwIQg-383nWRphVe7Wiz&state=Xd9CDj8oALDNkOJiXpZ9mRjfEwfSxLLQ
+ [2023-02-21T18:31:45.806] [TRACE] driveway - 0 23 urlA:https://www.driveway.com/?code=mnub0Ygk_ajI1IBYGBQ3kcog_zwIQg-383nWRphVe7Wiz&state=Xd9CDj8oALDNkOJiXpZ9mRjfEwfSxLLQ
+ [2023-02-21T18:31:46.308] [TRACE] driveway - 0 24 urlA:https://www.driveway.com/?code=mnub0Ygk_ajI1IBYGBQ3kcog_zwIQg-383nWRphVe7Wiz&state=Xd9CDj8oALDNkOJiXpZ9mRjfEwfSxLLQ
+ [2023-02-21T18:31:46.809] [TRACE] driveway - 0 25 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:31:47.316] [TRACE] driveway - 0 26 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:31:47.829] [TRACE] driveway - 0 27 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:31:48.331] [TRACE] driveway - 0 28 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:31:48.832] [TRACE] driveway - 0 29 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:31:49.333] [TRACE] driveway - 0 30 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:31:49.834] [TRACE] driveway - 0 31 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:31:50.334] [TRACE] driveway - 0 32 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:31:50.834] [TRACE] driveway - 0 33 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:31:51.334] [TRACE] driveway - 0 34 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:31:51.834] [TRACE] driveway - 0 35 urlA:https://www.driveway.com/mydriveway
+ [2023-02-21T18:31:51.895] [TRACE] driveway - 0 title2: Buy or Sell Your Car Your Way | Driveway url2:https://www.driveway.com/mydriveway
+ [2023-02-21T18:31:52.537] [INFO] driveway - 0 login Kwee tan.k.h.usa@gmail.com - elapsed: 42599
+ [2023-02-21T18:31:58.276] [INFO] driveway - 0 logout - elapsed: 5739
+ end of test
+   ✓  1 [webkit] › unit/unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout (51.7s)
+   1 passed (55.0s)
+****  khtan@kwee1:~/cprojects/github/play/dw1$ npm run test:debug -- --browser=firefox
+
+ > pw1@1.0.0 test:debug /home/khtan/cprojects/github/play/dw1
+ > npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 "--browser=firefox"
+
+
+ Running 1 test using 1 worker
+
+      1 [firefox] › unit/unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout
+ [2023-02-21T18:33:41.203] [INFO] announce - 0 playwright:	1.31.0
+ [2023-02-21T18:33:41.211] [INFO] announce - 0 hostname:	kwee1
+ [2023-02-21T18:33:41.211] [INFO] announce - 0 os type:	Linux
+ [2023-02-21T18:33:41.212] [INFO] announce - 0 platform:	linux
+ [2023-02-21T18:33:41.213] [INFO] announce - 0 arch:	x64
+ [2023-02-21T18:33:41.221] [INFO] announce - 0 num cpus:	4
+ [2023-02-21T18:33:41.222] [INFO] announce - 0 freemem:	5369942016
+ [2023-02-21T18:33:41.222] [INFO] announce - 0 totalmem:	8263618560
+ [2023-02-21T18:33:41.223] [INFO] announce - 0 browser:	firefox 109.0
+ [2023-02-21T18:33:41.224] [INFO] announce - 0 user:	khtan
+ [2023-02-21T18:34:03.766] [TRACE] driveway - 0 title0: Buying New & Used Cars | Driveway url0:https://www.driveway.com/
+ [2023-02-21T18:34:13.142] [TRACE] driveway - 0 1 urlA:https://www.driveway.com/
+ [2023-02-21T18:34:13.656] [TRACE] driveway - 0 2 urlA:https://www.driveway.com/
+ [2023-02-21T18:34:14.156] [TRACE] driveway - 0 3 urlA:https://www.driveway.com/
+ [2023-02-21T18:34:14.657] [TRACE] driveway - 0 4 urlA:https://www.driveway.com/
+ [2023-02-21T18:34:15.158] [TRACE] driveway - 0 5 urlA:https://www.driveway.com/
+ [2023-02-21T18:34:15.661] [TRACE] driveway - 0 6 urlA:https://www.driveway.com/
+ [2023-02-21T18:34:16.178] [TRACE] driveway - 0 7 urlA:https://www.driveway.com/
+ [2023-02-21T18:34:16.684] [TRACE] driveway - 0 8 urlA:https://www.driveway.com/
+ [2023-02-21T18:34:17.186] [TRACE] driveway - 0 9 urlA:https://www.driveway.com/
+ [2023-02-21T18:34:17.686] [TRACE] driveway - 0 10 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:18.188] [TRACE] driveway - 0 11 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:18.692] [TRACE] driveway - 0 12 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:19.201] [TRACE] driveway - 0 13 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:19.703] [TRACE] driveway - 0 14 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:20.205] [TRACE] driveway - 0 15 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:20.705] [TRACE] driveway - 0 16 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:21.206] [TRACE] driveway - 0 17 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:21.707] [TRACE] driveway - 0 18 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:22.210] [TRACE] driveway - 0 19 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:22.710] [TRACE] driveway - 0 20 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:23.211] [TRACE] driveway - 0 21 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:23.712] [TRACE] driveway - 0 22 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:24.213] [TRACE] driveway - 0 23 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:24.714] [TRACE] driveway - 0 24 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:25.215] [TRACE] driveway - 0 25 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:25.716] [TRACE] driveway - 0 26 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:26.217] [TRACE] driveway - 0 27 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:26.719] [TRACE] driveway - 0 28 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:27.220] [TRACE] driveway - 0 29 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:34:27.721] [TRACE] driveway - 0 30 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:34:28.221] [TRACE] driveway - 0 31 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:34:28.722] [TRACE] driveway - 0 32 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:34:29.224] [TRACE] driveway - 0 33 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:34:29.724] [TRACE] driveway - 0 34 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:34:30.225] [TRACE] driveway - 0 35 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:34:30.726] [TRACE] driveway - 0 36 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:34:31.227] [TRACE] driveway - 0 37 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:34:31.730] [TRACE] driveway - 0 38 urlA:https://www.driveway.com/mydriveway
+ [2023-02-21T18:34:32.035] [TRACE] driveway - 0 title2: Buy or Sell Your Car Your Way | Driveway url2:https://www.driveway.com/mydriveway
+ [2023-02-21T18:34:33.457] [INFO] driveway - 0 login Kwee tan.k.h.usa@gmail.com - elapsed: 48723
+ [2023-02-21T18:34:37.452] [INFO] driveway - 0 logout - elapsed: 3993
+ end of test
+   ✓  1 [firefox] › unit/unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout (1.0m)
+   1 passed (1.1m)
+****  khtan@kwee1:~/cprojects/github/play/dw1$ npm run test:debug -- --browser=chromium
+
+ > pw1@1.0.0 test:debug /home/khtan/cprojects/github/play/dw1
+ > npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 "--browser=chromium"
+
+
+ Running 1 test using 1 worker
+
+      1 [chromium] › unit/unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout
+ [2023-02-21T18:36:27.362] [INFO] announce - 0 playwright:	1.31.0
+ [2023-02-21T18:36:27.367] [INFO] announce - 0 hostname:	kwee1
+ [2023-02-21T18:36:27.367] [INFO] announce - 0 os type:	Linux
+ [2023-02-21T18:36:27.368] [INFO] announce - 0 platform:	linux
+ [2023-02-21T18:36:27.368] [INFO] announce - 0 arch:	x64
+ [2023-02-21T18:36:27.369] [INFO] announce - 0 num cpus:	4
+ [2023-02-21T18:36:27.370] [INFO] announce - 0 freemem:	5408083968
+ [2023-02-21T18:36:27.370] [INFO] announce - 0 totalmem:	8263618560
+ [2023-02-21T18:36:27.371] [INFO] announce - 0 browser:	chromium 111.0.5563.19
+ [2023-02-21T18:36:27.371] [INFO] announce - 0 user:	khtan
+ [2023-02-21T18:36:40.570] [TRACE] driveway - 0 title0: Buying New & Used Cars | Driveway url0:https://www.driveway.com/
+ [2023-02-21T18:36:45.412] [TRACE] driveway - 0 1 urlA:https://www.driveway.com/
+ [2023-02-21T18:36:45.913] [TRACE] driveway - 0 2 urlA:https://www.driveway.com/
+ [2023-02-21T18:36:46.415] [TRACE] driveway - 0 3 urlA:https://www.driveway.com/
+ [2023-02-21T18:36:46.916] [TRACE] driveway - 0 4 urlA:https://www.driveway.com/
+ [2023-02-21T18:36:47.417] [TRACE] driveway - 0 5 urlA:https://www.driveway.com/
+ [2023-02-21T18:36:47.917] [TRACE] driveway - 0 6 urlA:https://www.driveway.com/
+ [2023-02-21T18:36:48.450] [TRACE] driveway - 0 7 urlA:https://www.driveway.com/
+ [2023-02-21T18:36:48.950] [TRACE] driveway - 0 8 urlA:https://www.driveway.com/?code=sPw3CjMkQRdF9UpOjr5MxpCngTlodZgu2Gy48jLTrLBoc&state=ikm74m6uDrkHm0go4uwTa6JVLcXf3Y_a
+ [2023-02-21T18:36:49.471] [TRACE] driveway - 0 9 urlA:https://www.driveway.com/?code=sPw3CjMkQRdF9UpOjr5MxpCngTlodZgu2Gy48jLTrLBoc&state=ikm74m6uDrkHm0go4uwTa6JVLcXf3Y_a
+ [2023-02-21T18:36:49.974] [TRACE] driveway - 0 10 urlA:https://www.driveway.com/?code=sPw3CjMkQRdF9UpOjr5MxpCngTlodZgu2Gy48jLTrLBoc&state=ikm74m6uDrkHm0go4uwTa6JVLcXf3Y_a
+ [2023-02-21T18:36:50.475] [TRACE] driveway - 0 11 urlA:https://www.driveway.com/?code=sPw3CjMkQRdF9UpOjr5MxpCngTlodZgu2Gy48jLTrLBoc&state=ikm74m6uDrkHm0go4uwTa6JVLcXf3Y_a
+ [2023-02-21T18:36:50.975] [TRACE] driveway - 0 12 urlA:https://www.driveway.com/?code=sPw3CjMkQRdF9UpOjr5MxpCngTlodZgu2Gy48jLTrLBoc&state=ikm74m6uDrkHm0go4uwTa6JVLcXf3Y_a
+ [2023-02-21T18:36:51.476] [TRACE] driveway - 0 13 urlA:https://www.driveway.com/?code=sPw3CjMkQRdF9UpOjr5MxpCngTlodZgu2Gy48jLTrLBoc&state=ikm74m6uDrkHm0go4uwTa6JVLcXf3Y_a
+ [2023-02-21T18:36:51.978] [TRACE] driveway - 0 14 urlA:https://www.driveway.com/?code=sPw3CjMkQRdF9UpOjr5MxpCngTlodZgu2Gy48jLTrLBoc&state=ikm74m6uDrkHm0go4uwTa6JVLcXf3Y_a
+ [2023-02-21T18:36:52.485] [TRACE] driveway - 0 15 urlA:https://www.driveway.com/?code=sPw3CjMkQRdF9UpOjr5MxpCngTlodZgu2Gy48jLTrLBoc&state=ikm74m6uDrkHm0go4uwTa6JVLcXf3Y_a
+ [2023-02-21T18:36:52.991] [TRACE] driveway - 0 16 urlA:https://www.driveway.com/?code=sPw3CjMkQRdF9UpOjr5MxpCngTlodZgu2Gy48jLTrLBoc&state=ikm74m6uDrkHm0go4uwTa6JVLcXf3Y_a
+ [2023-02-21T18:36:53.492] [TRACE] driveway - 0 17 urlA:https://www.driveway.com/?code=sPw3CjMkQRdF9UpOjr5MxpCngTlodZgu2Gy48jLTrLBoc&state=ikm74m6uDrkHm0go4uwTa6JVLcXf3Y_a
+ [2023-02-21T18:36:53.993] [TRACE] driveway - 0 18 urlA:https://www.driveway.com/?code=sPw3CjMkQRdF9UpOjr5MxpCngTlodZgu2Gy48jLTrLBoc&state=ikm74m6uDrkHm0go4uwTa6JVLcXf3Y_a
+ [2023-02-21T18:36:54.495] [TRACE] driveway - 0 19 urlA:https://www.driveway.com/?code=sPw3CjMkQRdF9UpOjr5MxpCngTlodZgu2Gy48jLTrLBoc&state=ikm74m6uDrkHm0go4uwTa6JVLcXf3Y_a
+ [2023-02-21T18:36:54.996] [TRACE] driveway - 0 20 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:36:55.497] [TRACE] driveway - 0 21 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:36:56.002] [TRACE] driveway - 0 22 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:36:56.503] [TRACE] driveway - 0 23 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:36:57.004] [TRACE] driveway - 0 24 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:36:57.504] [TRACE] driveway - 0 25 urlA:https://www.driveway.com/mydriveway
+ [2023-02-21T18:36:57.522] [TRACE] driveway - 0 title2: Buy or Sell Your Car Your Way | Driveway url2:https://www.driveway.com/mydriveway
+ [2023-02-21T18:36:58.077] [INFO] driveway - 0 login Kwee tan.k.h.usa@gmail.com - elapsed: 30356
+ [2023-02-21T18:37:03.069] [INFO] driveway - 0 logout - elapsed: 4991
+ end of test
+   ✓  1 [chromium] › unit/unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout (37.8s)
+   1 passed (39.7s)> pw1@1.0.0 test:debug /home/khtan/cprojects/github/play/dw1
+****  khtan@kwee1:~/cprojects/github/play/dw1$ npm run test:debug -- --browser=webkit
+
+ > pw1@1.0.0 test:debug /home/khtan/cprojects/github/play/dw1
+ > npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 "--browser=webkit"
+
+
+ Running 1 test using 1 worker
+
+      1 [webkit] › unit/unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout
+ [2023-02-21T18:31:09.304] [INFO] announce - 0 playwright:	1.31.0
+ [2023-02-21T18:31:09.307] [INFO] announce - 0 hostname:	kwee1
+ [2023-02-21T18:31:09.308] [INFO] announce - 0 os type:	Linux
+ [2023-02-21T18:31:09.308] [INFO] announce - 0 platform:	linux
+ [2023-02-21T18:31:09.308] [INFO] announce - 0 arch:	x64
+ [2023-02-21T18:31:09.309] [INFO] announce - 0 num cpus:	4
+ [2023-02-21T18:31:09.310] [INFO] announce - 0 freemem:	5429972992
+ [2023-02-21T18:31:09.310] [INFO] announce - 0 totalmem:	8263618560
+ [2023-02-21T18:31:09.311] [INFO] announce - 0 browser:	webkit 16.4
+ [2023-02-21T18:31:09.311] [INFO] announce - 0 user:	khtan
+ [2023-02-21T18:31:25.503] [TRACE] driveway - 0 title0: Buying New & Used Cars | Driveway url0:https://www.driveway.com/
+ [2023-02-21T18:31:34.765] [TRACE] driveway - 0 1 urlA:https://www.driveway.com/
+ [2023-02-21T18:31:35.265] [TRACE] driveway - 0 2 urlA:https://www.driveway.com/
+ [2023-02-21T18:31:35.766] [TRACE] driveway - 0 3 urlA:https://www.driveway.com/
+ [2023-02-21T18:31:36.267] [TRACE] driveway - 0 4 urlA:https://www.driveway.com/
+ [2023-02-21T18:31:36.768] [TRACE] driveway - 0 5 urlA:https://www.driveway.com/
+ [2023-02-21T18:31:37.270] [TRACE] driveway - 0 6 urlA:https://www.driveway.com/
+ [2023-02-21T18:31:37.773] [TRACE] driveway - 0 7 urlA:https://www.driveway.com/
+ [2023-02-21T18:31:38.276] [TRACE] driveway - 0 8 urlA:https://www.driveway.com/?code=mnub0Ygk_ajI1IBYGBQ3kcog_zwIQg-383nWRphVe7Wiz&state=Xd9CDj8oALDNkOJiXpZ9mRjfEwfSxLLQ
+ [2023-02-21T18:31:38.776] [TRACE] driveway - 0 9 urlA:https://www.driveway.com/?code=mnub0Ygk_ajI1IBYGBQ3kcog_zwIQg-383nWRphVe7Wiz&state=Xd9CDj8oALDNkOJiXpZ9mRjfEwfSxLLQ
+ [2023-02-21T18:31:39.278] [TRACE] driveway - 0 10 urlA:https://www.driveway.com/?code=mnub0Ygk_ajI1IBYGBQ3kcog_zwIQg-383nWRphVe7Wiz&state=Xd9CDj8oALDNkOJiXpZ9mRjfEwfSxLLQ
+ [2023-02-21T18:31:39.779] [TRACE] driveway - 0 11 urlA:https://www.driveway.com/?code=mnub0Ygk_ajI1IBYGBQ3kcog_zwIQg-383nWRphVe7Wiz&state=Xd9CDj8oALDNkOJiXpZ9mRjfEwfSxLLQ
+ [2023-02-21T18:31:40.281] [TRACE] driveway - 0 12 urlA:https://www.driveway.com/?code=mnub0Ygk_ajI1IBYGBQ3kcog_zwIQg-383nWRphVe7Wiz&state=Xd9CDj8oALDNkOJiXpZ9mRjfEwfSxLLQ
+ [2023-02-21T18:31:40.783] [TRACE] driveway - 0 13 urlA:https://www.driveway.com/?code=mnub0Ygk_ajI1IBYGBQ3kcog_zwIQg-383nWRphVe7Wiz&state=Xd9CDj8oALDNkOJiXpZ9mRjfEwfSxLLQ
+ [2023-02-21T18:31:41.284] [TRACE] driveway - 0 14 urlA:https://www.driveway.com/?code=mnub0Ygk_ajI1IBYGBQ3kcog_zwIQg-383nWRphVe7Wiz&state=Xd9CDj8oALDNkOJiXpZ9mRjfEwfSxLLQ
+ [2023-02-21T18:31:41.788] [TRACE] driveway - 0 15 urlA:https://www.driveway.com/?code=mnub0Ygk_ajI1IBYGBQ3kcog_zwIQg-383nWRphVe7Wiz&state=Xd9CDj8oALDNkOJiXpZ9mRjfEwfSxLLQ
+ [2023-02-21T18:31:42.289] [TRACE] driveway - 0 16 urlA:https://www.driveway.com/?code=mnub0Ygk_ajI1IBYGBQ3kcog_zwIQg-383nWRphVe7Wiz&state=Xd9CDj8oALDNkOJiXpZ9mRjfEwfSxLLQ
+ [2023-02-21T18:31:42.790] [TRACE] driveway - 0 17 urlA:https://www.driveway.com/?code=mnub0Ygk_ajI1IBYGBQ3kcog_zwIQg-383nWRphVe7Wiz&state=Xd9CDj8oALDNkOJiXpZ9mRjfEwfSxLLQ
+ [2023-02-21T18:31:43.301] [TRACE] driveway - 0 18 urlA:https://www.driveway.com/?code=mnub0Ygk_ajI1IBYGBQ3kcog_zwIQg-383nWRphVe7Wiz&state=Xd9CDj8oALDNkOJiXpZ9mRjfEwfSxLLQ
+ [2023-02-21T18:31:43.803] [TRACE] driveway - 0 19 urlA:https://www.driveway.com/?code=mnub0Ygk_ajI1IBYGBQ3kcog_zwIQg-383nWRphVe7Wiz&state=Xd9CDj8oALDNkOJiXpZ9mRjfEwfSxLLQ
+ [2023-02-21T18:31:44.304] [TRACE] driveway - 0 20 urlA:https://www.driveway.com/?code=mnub0Ygk_ajI1IBYGBQ3kcog_zwIQg-383nWRphVe7Wiz&state=Xd9CDj8oALDNkOJiXpZ9mRjfEwfSxLLQ
+ [2023-02-21T18:31:44.805] [TRACE] driveway - 0 21 urlA:https://www.driveway.com/?code=mnub0Ygk_ajI1IBYGBQ3kcog_zwIQg-383nWRphVe7Wiz&state=Xd9CDj8oALDNkOJiXpZ9mRjfEwfSxLLQ
+ [2023-02-21T18:31:45.306] [TRACE] driveway - 0 22 urlA:https://www.driveway.com/?code=mnub0Ygk_ajI1IBYGBQ3kcog_zwIQg-383nWRphVe7Wiz&state=Xd9CDj8oALDNkOJiXpZ9mRjfEwfSxLLQ
+ [2023-02-21T18:31:45.806] [TRACE] driveway - 0 23 urlA:https://www.driveway.com/?code=mnub0Ygk_ajI1IBYGBQ3kcog_zwIQg-383nWRphVe7Wiz&state=Xd9CDj8oALDNkOJiXpZ9mRjfEwfSxLLQ
+ [2023-02-21T18:31:46.308] [TRACE] driveway - 0 24 urlA:https://www.driveway.com/?code=mnub0Ygk_ajI1IBYGBQ3kcog_zwIQg-383nWRphVe7Wiz&state=Xd9CDj8oALDNkOJiXpZ9mRjfEwfSxLLQ
+ [2023-02-21T18:31:46.809] [TRACE] driveway - 0 25 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:31:47.316] [TRACE] driveway - 0 26 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:31:47.829] [TRACE] driveway - 0 27 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:31:48.331] [TRACE] driveway - 0 28 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:31:48.832] [TRACE] driveway - 0 29 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:31:49.333] [TRACE] driveway - 0 30 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:31:49.834] [TRACE] driveway - 0 31 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:31:50.334] [TRACE] driveway - 0 32 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:31:50.834] [TRACE] driveway - 0 33 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:31:51.334] [TRACE] driveway - 0 34 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:31:51.834] [TRACE] driveway - 0 35 urlA:https://www.driveway.com/mydriveway
+ [2023-02-21T18:31:51.895] [TRACE] driveway - 0 title2: Buy or Sell Your Car Your Way | Driveway url2:https://www.driveway.com/mydriveway
+ [2023-02-21T18:31:52.537] [INFO] driveway - 0 login Kwee tan.k.h.usa@gmail.com - elapsed: 42599
+ [2023-02-21T18:31:58.276] [INFO] driveway - 0 logout - elapsed: 5739
+ end of test
+   ✓  1 [webkit] › unit/unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout (51.7s)
+   1 passed (55.0s)
+****  khtan@kwee1:~/cprojects/github/play/dw1$ npm run test:debug -- --browser=firefox
+
+ > pw1@1.0.0 test:debug /home/khtan/cprojects/github/play/dw1
+ > npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 "--browser=firefox"
+
+
+ Running 1 test using 1 worker
+
+      1 [firefox] › unit/unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout
+ [2023-02-21T18:33:41.203] [INFO] announce - 0 playwright:	1.31.0
+ [2023-02-21T18:33:41.211] [INFO] announce - 0 hostname:	kwee1
+ [2023-02-21T18:33:41.211] [INFO] announce - 0 os type:	Linux
+ [2023-02-21T18:33:41.212] [INFO] announce - 0 platform:	linux
+ [2023-02-21T18:33:41.213] [INFO] announce - 0 arch:	x64
+ [2023-02-21T18:33:41.221] [INFO] announce - 0 num cpus:	4
+ [2023-02-21T18:33:41.222] [INFO] announce - 0 freemem:	5369942016
+ [2023-02-21T18:33:41.222] [INFO] announce - 0 totalmem:	8263618560
+ [2023-02-21T18:33:41.223] [INFO] announce - 0 browser:	firefox 109.0
+ [2023-02-21T18:33:41.224] [INFO] announce - 0 user:	khtan
+ [2023-02-21T18:34:03.766] [TRACE] driveway - 0 title0: Buying New & Used Cars | Driveway url0:https://www.driveway.com/
+ [2023-02-21T18:34:13.142] [TRACE] driveway - 0 1 urlA:https://www.driveway.com/
+ [2023-02-21T18:34:13.656] [TRACE] driveway - 0 2 urlA:https://www.driveway.com/
+ [2023-02-21T18:34:14.156] [TRACE] driveway - 0 3 urlA:https://www.driveway.com/
+ [2023-02-21T18:34:14.657] [TRACE] driveway - 0 4 urlA:https://www.driveway.com/
+ [2023-02-21T18:34:15.158] [TRACE] driveway - 0 5 urlA:https://www.driveway.com/
+ [2023-02-21T18:34:15.661] [TRACE] driveway - 0 6 urlA:https://www.driveway.com/
+ [2023-02-21T18:34:16.178] [TRACE] driveway - 0 7 urlA:https://www.driveway.com/
+ [2023-02-21T18:34:16.684] [TRACE] driveway - 0 8 urlA:https://www.driveway.com/
+ [2023-02-21T18:34:17.186] [TRACE] driveway - 0 9 urlA:https://www.driveway.com/
+ [2023-02-21T18:34:17.686] [TRACE] driveway - 0 10 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:18.188] [TRACE] driveway - 0 11 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:18.692] [TRACE] driveway - 0 12 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:19.201] [TRACE] driveway - 0 13 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:19.703] [TRACE] driveway - 0 14 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:20.205] [TRACE] driveway - 0 15 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:20.705] [TRACE] driveway - 0 16 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:21.206] [TRACE] driveway - 0 17 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:21.707] [TRACE] driveway - 0 18 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:22.210] [TRACE] driveway - 0 19 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:22.710] [TRACE] driveway - 0 20 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:23.211] [TRACE] driveway - 0 21 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:23.712] [TRACE] driveway - 0 22 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:24.213] [TRACE] driveway - 0 23 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:24.714] [TRACE] driveway - 0 24 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:25.215] [TRACE] driveway - 0 25 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:25.716] [TRACE] driveway - 0 26 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:26.217] [TRACE] driveway - 0 27 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:26.719] [TRACE] driveway - 0 28 urlA:https://www.driveway.com/?code=NeKxVsHvh4N4qCUnxKcZSG2_JmjKrdxzWqzWbS3n_y2zA&state=5chclL_TL0IL~XCPee1PAuTo6wImLhTS
+ [2023-02-21T18:34:27.220] [TRACE] driveway - 0 29 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:34:27.721] [TRACE] driveway - 0 30 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:34:28.221] [TRACE] driveway - 0 31 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:34:28.722] [TRACE] driveway - 0 32 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:34:29.224] [TRACE] driveway - 0 33 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:34:29.724] [TRACE] driveway - 0 34 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:34:30.225] [TRACE] driveway - 0 35 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:34:30.726] [TRACE] driveway - 0 36 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:34:31.227] [TRACE] driveway - 0 37 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:34:31.730] [TRACE] driveway - 0 38 urlA:https://www.driveway.com/mydriveway
+ [2023-02-21T18:34:32.035] [TRACE] driveway - 0 title2: Buy or Sell Your Car Your Way | Driveway url2:https://www.driveway.com/mydriveway
+ [2023-02-21T18:34:33.457] [INFO] driveway - 0 login Kwee tan.k.h.usa@gmail.com - elapsed: 48723
+ [2023-02-21T18:34:37.452] [INFO] driveway - 0 logout - elapsed: 3993
+ end of test
+   ✓  1 [firefox] › unit/unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout (1.0m)
+   1 passed (1.1m)
+****  khtan@kwee1:~/cprojects/github/play/dw1$ npm run test:debug -- --browser=chromium
+
+ > pw1@1.0.0 test:debug /home/khtan/cprojects/github/play/dw1
+ > npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 "--browser=chromium"
+
+
+ Running 1 test using 1 worker
+
+      1 [chromium] › unit/unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout
+ [2023-02-21T18:36:27.362] [INFO] announce - 0 playwright:	1.31.0
+ [2023-02-21T18:36:27.367] [INFO] announce - 0 hostname:	kwee1
+ [2023-02-21T18:36:27.367] [INFO] announce - 0 os type:	Linux
+ [2023-02-21T18:36:27.368] [INFO] announce - 0 platform:	linux
+ [2023-02-21T18:36:27.368] [INFO] announce - 0 arch:	x64
+ [2023-02-21T18:36:27.369] [INFO] announce - 0 num cpus:	4
+ [2023-02-21T18:36:27.370] [INFO] announce - 0 freemem:	5408083968
+ [2023-02-21T18:36:27.370] [INFO] announce - 0 totalmem:	8263618560
+ [2023-02-21T18:36:27.371] [INFO] announce - 0 browser:	chromium 111.0.5563.19
+ [2023-02-21T18:36:27.371] [INFO] announce - 0 user:	khtan
+ [2023-02-21T18:36:40.570] [TRACE] driveway - 0 title0: Buying New & Used Cars | Driveway url0:https://www.driveway.com/
+ [2023-02-21T18:36:45.412] [TRACE] driveway - 0 1 urlA:https://www.driveway.com/
+ [2023-02-21T18:36:45.913] [TRACE] driveway - 0 2 urlA:https://www.driveway.com/
+ [2023-02-21T18:36:46.415] [TRACE] driveway - 0 3 urlA:https://www.driveway.com/
+ [2023-02-21T18:36:46.916] [TRACE] driveway - 0 4 urlA:https://www.driveway.com/
+ [2023-02-21T18:36:47.417] [TRACE] driveway - 0 5 urlA:https://www.driveway.com/
+ [2023-02-21T18:36:47.917] [TRACE] driveway - 0 6 urlA:https://www.driveway.com/
+ [2023-02-21T18:36:48.450] [TRACE] driveway - 0 7 urlA:https://www.driveway.com/
+ [2023-02-21T18:36:48.950] [TRACE] driveway - 0 8 urlA:https://www.driveway.com/?code=sPw3CjMkQRdF9UpOjr5MxpCngTlodZgu2Gy48jLTrLBoc&state=ikm74m6uDrkHm0go4uwTa6JVLcXf3Y_a
+ [2023-02-21T18:36:49.471] [TRACE] driveway - 0 9 urlA:https://www.driveway.com/?code=sPw3CjMkQRdF9UpOjr5MxpCngTlodZgu2Gy48jLTrLBoc&state=ikm74m6uDrkHm0go4uwTa6JVLcXf3Y_a
+ [2023-02-21T18:36:49.974] [TRACE] driveway - 0 10 urlA:https://www.driveway.com/?code=sPw3CjMkQRdF9UpOjr5MxpCngTlodZgu2Gy48jLTrLBoc&state=ikm74m6uDrkHm0go4uwTa6JVLcXf3Y_a
+ [2023-02-21T18:36:50.475] [TRACE] driveway - 0 11 urlA:https://www.driveway.com/?code=sPw3CjMkQRdF9UpOjr5MxpCngTlodZgu2Gy48jLTrLBoc&state=ikm74m6uDrkHm0go4uwTa6JVLcXf3Y_a
+ [2023-02-21T18:36:50.975] [TRACE] driveway - 0 12 urlA:https://www.driveway.com/?code=sPw3CjMkQRdF9UpOjr5MxpCngTlodZgu2Gy48jLTrLBoc&state=ikm74m6uDrkHm0go4uwTa6JVLcXf3Y_a
+ [2023-02-21T18:36:51.476] [TRACE] driveway - 0 13 urlA:https://www.driveway.com/?code=sPw3CjMkQRdF9UpOjr5MxpCngTlodZgu2Gy48jLTrLBoc&state=ikm74m6uDrkHm0go4uwTa6JVLcXf3Y_a
+ [2023-02-21T18:36:51.978] [TRACE] driveway - 0 14 urlA:https://www.driveway.com/?code=sPw3CjMkQRdF9UpOjr5MxpCngTlodZgu2Gy48jLTrLBoc&state=ikm74m6uDrkHm0go4uwTa6JVLcXf3Y_a
+ [2023-02-21T18:36:52.485] [TRACE] driveway - 0 15 urlA:https://www.driveway.com/?code=sPw3CjMkQRdF9UpOjr5MxpCngTlodZgu2Gy48jLTrLBoc&state=ikm74m6uDrkHm0go4uwTa6JVLcXf3Y_a
+ [2023-02-21T18:36:52.991] [TRACE] driveway - 0 16 urlA:https://www.driveway.com/?code=sPw3CjMkQRdF9UpOjr5MxpCngTlodZgu2Gy48jLTrLBoc&state=ikm74m6uDrkHm0go4uwTa6JVLcXf3Y_a
+ [2023-02-21T18:36:53.492] [TRACE] driveway - 0 17 urlA:https://www.driveway.com/?code=sPw3CjMkQRdF9UpOjr5MxpCngTlodZgu2Gy48jLTrLBoc&state=ikm74m6uDrkHm0go4uwTa6JVLcXf3Y_a
+ [2023-02-21T18:36:53.993] [TRACE] driveway - 0 18 urlA:https://www.driveway.com/?code=sPw3CjMkQRdF9UpOjr5MxpCngTlodZgu2Gy48jLTrLBoc&state=ikm74m6uDrkHm0go4uwTa6JVLcXf3Y_a
+ [2023-02-21T18:36:54.495] [TRACE] driveway - 0 19 urlA:https://www.driveway.com/?code=sPw3CjMkQRdF9UpOjr5MxpCngTlodZgu2Gy48jLTrLBoc&state=ikm74m6uDrkHm0go4uwTa6JVLcXf3Y_a
+ [2023-02-21T18:36:54.996] [TRACE] driveway - 0 20 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:36:55.497] [TRACE] driveway - 0 21 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:36:56.002] [TRACE] driveway - 0 22 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:36:56.503] [TRACE] driveway - 0 23 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:36:57.004] [TRACE] driveway - 0 24 urlA:https://www.driveway.com/post-login
+ [2023-02-21T18:36:57.504] [TRACE] driveway - 0 25 urlA:https://www.driveway.com/mydriveway
+ [2023-02-21T18:36:57.522] [TRACE] driveway - 0 title2: Buy or Sell Your Car Your Way | Driveway url2:https://www.driveway.com/mydriveway
+ [2023-02-21T18:36:58.077] [INFO] driveway - 0 login Kwee tan.k.h.usa@gmail.com - elapsed: 30356
+ [2023-02-21T18:37:03.069] [INFO] driveway - 0 logout - elapsed: 4991
+ end of test
+   ✓  1 [chromium] › unit/unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout (37.8s)
+   1 passed (39.7s)
 *** air: can test parallel login/logout tests
 
 

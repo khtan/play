@@ -103,11 +103,11 @@ export class Driveway {
     await expect(page.getByTestId('error-icon')).not.toBeVisible();
 
     await page.getByTestId('login-submit-btn').click();
-    await page.waitForLoadState('networkidle');
+    // await page.waitForLoadState('networkidle');
     // ----
     let urlA = page.url();
     let countA = 1;
-    while (urlA !== 'https://www.driveway.com/mydriveway' && countA < 20) {
+    while (urlA !== 'https://www.driveway.com/mydriveway' && countA < 50) {
       log.trace(`${workerIndex} ${countA} urlA:${urlA}`);
       urlA = page.url();
       await Utils.delay(500);
