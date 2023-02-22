@@ -79,7 +79,7 @@ export class Driveway {
     log.info(`${workerIndex} login ${username} ${email} - elapsed: ${endTime - startTime}`);
   }
 
-  static async login_qe(
+  static async login_qe1(
     page: Page,
     workerIndex: number,
     url: string,
@@ -119,6 +119,54 @@ export class Driveway {
     // await expect(page.url()).toBe(url1);
     // postcheck
     log.trace(`${workerIndex} title2: ${await page.title()} url2:${await page.url()}`);
+    // ----
+    await expect(page.getByRole('button', { name: `Hi, ${username}` })).toBeVisible();
+    const endTime = new Date().getTime();
+    log.info(`${workerIndex} login ${username} ${email} - elapsed: ${endTime - startTime}`);
+  }
+
+  // Temporary redirection so as to see the retries
+  // Possible that ts-retry has a verbose mode but can't find it yet
+  static GetPageUrl(pg: Page): string {
+    const url = pg.url();
+    log.trace(`GetPageUrl: ${url}`);
+    return url;
+  }
+  static async login_qe(
+    page: Page,
+    workerIndex: number,
+    url: string,
+    email: string,
+    username: string,
+    password: string
+  ): Promise<void> {
+    const startTime = new Date().getTime();
+    // precheck
+    await page.goto(url);
+    const url0 = 'https://www.driveway.com/';
+    log.trace(`${workerIndex} title0: ${await page.title()} url0:${await page.url()}`); // Buying New & Used Cars | Driveway
+    await expect(page.url()).toBe(url0);
+    // action
+    await page.getByTestId('login-btn').click();
+    await page.getByTestId('email-field').click();
+    await page.getByTestId('email-field').fill(email);
+    await page.getByTestId('password-field').click();
+    await page.getByTestId('password-field').fill(password);
+    // not foolproof bec error icon becomes green even if substring is not correct
+    await expect(page.getByTestId('error-icon')).not.toBeVisible();
+
+    await page.getByTestId('login-submit-btn').click();
+
+    // loop: make sure page.url becomes url1
+    const url1 = 'https://www.driveway.com/mydriveway';
+    const result = await retry(
+      () => Driveway.GetPageUrl(page),
+      { delay: 500, maxTry: 50, until: (lastResult: string) => lastResult === url1}
+    );
+    log.trace(`result=${result}`);
+    await expect(page.url()).toBe(url1);
+    // postcheck
+    log.trace(`${workerIndex} title2: ${page.title()} url2:${page.url()}`);
     // ----
     await expect(page.getByRole('button', { name: `Hi, ${username}` })).toBeVisible();
     const endTime = new Date().getTime();
