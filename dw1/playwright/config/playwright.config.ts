@@ -1,4 +1,5 @@
 import { defineConfig } from '@playwright/test';
+import os from 'os';
 
 /**
  * Read environment variables from file.
@@ -9,7 +10,7 @@ import { defineConfig } from '@playwright/test';
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
-export default defineConfig({
+let defaultConfig =  defineConfig({
   testDir: '../tests',
   testMatch: /.*(e2e-spec|spec).ts/,
   /* Maximum time one test can run for. */
@@ -51,3 +52,13 @@ export default defineConfig({
   //   port: 3000,
   // },
 });
+/* Temporary place to keep track of timeouts that seem to differ
+   due to platform environment
+   Currently only //kwee1 is linux, //air is windows
+*/
+if ( os.platform() === 'linux') {
+  defaultConfig.timeout = 90 * 10000;
+  defaultConfig.expect!.timeout = 10000;
+}
+console.log(`playwright.config.ts: timeout=${defaultConfig.timeout} expect.timeout=${defaultConfig.expect!.timeout}`);
+export default defaultConfig;
