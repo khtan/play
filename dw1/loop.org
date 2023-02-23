@@ -1,174 +1,646 @@
---- Set: 0 Run: 0 2023-02-16 20:52:37.155215
+--- Set: 0 Run: 0 2023-02-21 21:56:26.104958
     cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
 
 Running 1 test using 1 worker
 
-[32m[2023-02-16T20:52:54.996] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 13269
-[32m[2023-02-16T20:52:56.219] [INFO] driveway - [39m0 logout - elapsed: 1221
+[32m[2023-02-21T21:56:30.359] [INFO] announce - [39m0 playwright:	1.30.0
+[32m[2023-02-21T21:56:30.366] [INFO] announce - [39m0 hostname:	AIR
+[32m[2023-02-21T21:56:30.366] [INFO] announce - [39m0 os type:	Windows_NT
+[32m[2023-02-21T21:56:30.367] [INFO] announce - [39m0 platform:	win32
+[32m[2023-02-21T21:56:30.367] [INFO] announce - [39m0 arch:	x64
+[32m[2023-02-21T21:56:30.368] [INFO] announce - [39m0 num cpus:	8
+[32m[2023-02-21T21:56:30.368] [INFO] announce - [39m0 freemem:	13411487744
+[32m[2023-02-21T21:56:30.369] [INFO] announce - [39m0 totalmem:	34246270976
+[32m[2023-02-21T21:56:30.369] [INFO] announce - [39m0 browser:	chromium 110.0.5481.38
+[32m[2023-02-21T21:56:30.370] [INFO] announce - [39m0 user:	khtan
+[34m[2023-02-21T21:56:35.492] [TRACE] driveway - [39m0 title0: Buying New & Used Cars | Driveway url0:https://www.driveway.com/
+[34m[2023-02-21T21:56:45.485] [TRACE] driveway - [39m0 1 urlA:https://www.driveway.com/mydriveway
+[34m[2023-02-21T21:56:45.531] [TRACE] driveway - [39m0 title2: My Driveway | Driveway url2:https://www.driveway.com/mydriveway
+[32m[2023-02-21T21:56:45.577] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 14686
+[32m[2023-02-21T21:56:47.421] [INFO] driveway - [39m0 logout - elapsed: 1843
 end of test
-  [32m✓[39m  [2m1 [22munit\unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout[2m (15.9s)[22m
+  [32mok[39m [2m1 [22munit\unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout[2m (18.4s)[22m
 
 
-[32m  1 passed[39m[2m (17.9s)[22m
+[32m  1 passed[39m[2m (24.9s)[22m
 aok
---- Set: 1 Run: 1 2023-02-16 21:52:57.372418
+--- Set: 1 Run: 1 2023-02-21 22:56:53.646396
     cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
 
 Running 1 test using 1 worker
 
-[32m[2023-02-16T21:53:16.181] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 13914
-[32m[2023-02-16T21:53:17.035] [INFO] driveway - [39m0 logout - elapsed: 852
+[32m[2023-02-21T22:56:58.298] [INFO] announce - [39m0 playwright:	1.30.0
+[32m[2023-02-21T22:56:58.305] [INFO] announce - [39m0 hostname:	AIR
+[32m[2023-02-21T22:56:58.305] [INFO] announce - [39m0 os type:	Windows_NT
+[32m[2023-02-21T22:56:58.305] [INFO] announce - [39m0 platform:	win32
+[32m[2023-02-21T22:56:58.305] [INFO] announce - [39m0 arch:	x64
+[32m[2023-02-21T22:56:58.306] [INFO] announce - [39m0 num cpus:	8
+[32m[2023-02-21T22:56:58.307] [INFO] announce - [39m0 freemem:	12642910208
+[32m[2023-02-21T22:56:58.308] [INFO] announce - [39m0 totalmem:	34246270976
+[32m[2023-02-21T22:56:58.308] [INFO] announce - [39m0 browser:	chromium 110.0.5481.38
+[32m[2023-02-21T22:56:58.313] [INFO] announce - [39m0 user:	khtan
+[34m[2023-02-21T22:57:01.815] [TRACE] driveway - [39m0 title0: Buying New & Used Cars | Driveway url0:https://www.driveway.com/
+[34m[2023-02-21T22:57:13.674] [TRACE] driveway - [39m0 1 urlA:https://www.driveway.com/mydriveway
+[34m[2023-02-21T22:57:13.712] [TRACE] driveway - [39m0 title2: My Driveway | Driveway url2:https://www.driveway.com/mydriveway
+[32m[2023-02-21T22:57:13.754] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 14853
+[32m[2023-02-21T22:57:14.585] [INFO] driveway - [39m0 logout - elapsed: 831
 end of test
-  [32m✓[39m  [2m1 [22munit\unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout[2m (16.4s)[22m
+  [32mok[39m [2m1 [22munit\unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout[2m (17.6s)[22m
 
 
-[32m  1 passed[39m[2m (18.4s)[22m
+[32m  1 passed[39m[2m (24.3s)[22m
 aok
---- Set: 2 Run: 2 2023-02-16 22:53:18.133331
+--- Set: 2 Run: 2 2023-02-21 23:57:24.652535
     cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
 
 Running 1 test using 1 worker
 
-[32m[2023-02-16T22:53:35.864] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 13438
-[32m[2023-02-16T22:53:36.871] [INFO] driveway - [39m0 logout - elapsed: 1005
+[32m[2023-02-21T23:57:28.593] [INFO] announce - [39m0 playwright:	1.30.0
+[32m[2023-02-21T23:57:28.601] [INFO] announce - [39m0 hostname:	AIR
+[32m[2023-02-21T23:57:28.602] [INFO] announce - [39m0 os type:	Windows_NT
+[32m[2023-02-21T23:57:28.602] [INFO] announce - [39m0 platform:	win32
+[32m[2023-02-21T23:57:28.602] [INFO] announce - [39m0 arch:	x64
+[32m[2023-02-21T23:57:28.603] [INFO] announce - [39m0 num cpus:	8
+[32m[2023-02-21T23:57:28.604] [INFO] announce - [39m0 freemem:	12236677120
+[32m[2023-02-21T23:57:28.604] [INFO] announce - [39m0 totalmem:	34246270976
+[32m[2023-02-21T23:57:28.604] [INFO] announce - [39m0 browser:	chromium 110.0.5481.38
+[32m[2023-02-21T23:57:28.605] [INFO] announce - [39m0 user:	khtan
+[34m[2023-02-21T23:57:31.669] [TRACE] driveway - [39m0 title0: Buying New & Used Cars | Driveway url0:https://www.driveway.com/
+[34m[2023-02-21T23:57:41.304] [TRACE] driveway - [39m0 1 urlA:https://www.driveway.com/mydriveway
+[34m[2023-02-21T23:57:41.339] [TRACE] driveway - [39m0 title2: My Driveway | Driveway url2:https://www.driveway.com/mydriveway
+[32m[2023-02-21T23:57:41.430] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 12449
+[32m[2023-02-21T23:57:42.424] [INFO] driveway - [39m0 logout - elapsed: 994
 end of test
-  [32m✓[39m  [2m1 [22munit\unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout[2m (15.8s)[22m
+  [32mok[39m [2m1 [22munit\unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout[2m (14.6s)[22m
 
 
-[32m  1 passed[39m[2m (17.5s)[22m
+[32m  1 passed[39m[2m (16.4s)[22m
 aok
---- Set: 3 Run: 3 2023-02-16 23:53:38.041850
+--- Set: 3 Run: 3 2023-02-22 00:57:43.773095
     cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
 
 Running 1 test using 1 worker
 
-[32m[2023-02-16T23:53:54.487] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 12274
-[32m[2023-02-16T23:53:55.661] [INFO] driveway - [39m0 logout - elapsed: 1171
+[32m[2023-02-22T00:57:48.124] [INFO] announce - [39m0 playwright:	1.30.0
+[32m[2023-02-22T00:57:48.131] [INFO] announce - [39m0 hostname:	AIR
+[32m[2023-02-22T00:57:48.131] [INFO] announce - [39m0 os type:	Windows_NT
+[32m[2023-02-22T00:57:48.131] [INFO] announce - [39m0 platform:	win32
+[32m[2023-02-22T00:57:48.131] [INFO] announce - [39m0 arch:	x64
+[32m[2023-02-22T00:57:48.132] [INFO] announce - [39m0 num cpus:	8
+[32m[2023-02-22T00:57:48.133] [INFO] announce - [39m0 freemem:	11467526144
+[32m[2023-02-22T00:57:48.133] [INFO] announce - [39m0 totalmem:	34246270976
+[32m[2023-02-22T00:57:48.133] [INFO] announce - [39m0 browser:	chromium 110.0.5481.38
+[32m[2023-02-22T00:57:48.134] [INFO] announce - [39m0 user:	khtan
+[34m[2023-02-22T00:57:50.887] [TRACE] driveway - [39m0 title0: Buying New & Used Cars | Driveway url0:https://www.driveway.com/
+[34m[2023-02-22T00:58:00.835] [TRACE] driveway - [39m0 1 urlA:https://www.driveway.com/mydriveway
+[34m[2023-02-22T00:58:00.874] [TRACE] driveway - [39m0 title2: My Driveway | Driveway url2:https://www.driveway.com/mydriveway
+[32m[2023-02-22T00:58:00.909] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 12368
+[32m[2023-02-22T00:58:01.668] [INFO] driveway - [39m0 logout - elapsed: 759
 end of test
-  [32m✓[39m  [2m1 [22munit\unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout[2m (14.6s)[22m
+  [32mok[39m [2m1 [22munit\unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout[2m (14.1s)[22m
 
 
 [32m  1 passed[39m[2m (16.3s)[22m
 aok
---- Set: 4 Run: 4 2023-02-17 00:53:56.655638
+--- Set: 4 Run: 4 2023-02-22 01:58:02.861435
     cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
 
 Running 1 test using 1 worker
 
-[32m[2023-02-17T00:54:16.620] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 15524
-[32m[2023-02-17T00:54:17.558] [INFO] driveway - [39m0 logout - elapsed: 936
+[32m[2023-02-22T01:58:06.853] [INFO] announce - [39m0 playwright:	1.30.0
+[32m[2023-02-22T01:58:06.859] [INFO] announce - [39m0 hostname:	AIR
+[32m[2023-02-22T01:58:06.860] [INFO] announce - [39m0 os type:	Windows_NT
+[32m[2023-02-22T01:58:06.860] [INFO] announce - [39m0 platform:	win32
+[32m[2023-02-22T01:58:06.860] [INFO] announce - [39m0 arch:	x64
+[32m[2023-02-22T01:58:06.861] [INFO] announce - [39m0 num cpus:	8
+[32m[2023-02-22T01:58:06.861] [INFO] announce - [39m0 freemem:	11290718208
+[32m[2023-02-22T01:58:06.862] [INFO] announce - [39m0 totalmem:	34246270976
+[32m[2023-02-22T01:58:06.862] [INFO] announce - [39m0 browser:	chromium 110.0.5481.38
+[32m[2023-02-22T01:58:06.863] [INFO] announce - [39m0 user:	khtan
+[34m[2023-02-22T01:58:10.374] [TRACE] driveway - [39m0 title0: Buying New & Used Cars | Driveway url0:https://www.driveway.com/
+[34m[2023-02-22T01:58:19.582] [TRACE] driveway - [39m0 1 urlA:https://www.driveway.com/mydriveway
+[34m[2023-02-22T01:58:19.617] [TRACE] driveway - [39m0 title2: My Driveway | Driveway url2:https://www.driveway.com/mydriveway
+[32m[2023-02-22T01:58:19.654] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 12398
+[32m[2023-02-22T01:58:20.793] [INFO] driveway - [39m0 logout - elapsed: 1139
 end of test
-  [32m✓[39m  [2m1 [22munit\unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout[2m (17.9s)[22m
+  [32mok[39m [2m1 [22munit\unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout[2m (14.6s)[22m
 
 
-[32m  1 passed[39m[2m (24.7s)[22m
+[32m  1 passed[39m[2m (16.4s)[22m
 aok
---- Set: 5 Run: 5 2023-02-17 01:54:23.883714
+--- Set: 5 Run: 5 2023-02-22 02:58:21.823462
     cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
 
 Running 1 test using 1 worker
 
-[32m[2023-02-17T01:54:41.160] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 12634
-[32m[2023-02-17T01:54:42.070] [INFO] driveway - [39m0 logout - elapsed: 907
+[32m[2023-02-22T02:58:25.807] [INFO] announce - [39m0 playwright:	1.30.0
+[32m[2023-02-22T02:58:25.813] [INFO] announce - [39m0 hostname:	AIR
+[32m[2023-02-22T02:58:25.814] [INFO] announce - [39m0 os type:	Windows_NT
+[32m[2023-02-22T02:58:25.814] [INFO] announce - [39m0 platform:	win32
+[32m[2023-02-22T02:58:25.814] [INFO] announce - [39m0 arch:	x64
+[32m[2023-02-22T02:58:25.816] [INFO] announce - [39m0 num cpus:	8
+[32m[2023-02-22T02:58:25.816] [INFO] announce - [39m0 freemem:	11234185216
+[32m[2023-02-22T02:58:25.816] [INFO] announce - [39m0 totalmem:	34246270976
+[32m[2023-02-22T02:58:25.817] [INFO] announce - [39m0 browser:	chromium 110.0.5481.38
+[32m[2023-02-22T02:58:25.817] [INFO] announce - [39m0 user:	khtan
+[34m[2023-02-22T02:58:28.616] [TRACE] driveway - [39m0 title0: Buying New & Used Cars | Driveway url0:https://www.driveway.com/
+[34m[2023-02-22T02:58:38.622] [TRACE] driveway - [39m0 1 urlA:https://www.driveway.com/mydriveway
+[34m[2023-02-22T02:58:38.659] [TRACE] driveway - [39m0 title2: My Driveway | Driveway url2:https://www.driveway.com/mydriveway
+[32m[2023-02-22T02:58:38.695] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 12475
+[32m[2023-02-22T02:58:39.608] [INFO] driveway - [39m0 logout - elapsed: 912
 end of test
-  [32m✓[39m  [2m1 [22munit\unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout[2m (14.9s)[22m
+  [32mok[39m [2m1 [22munit\unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout[2m (14.7s)[22m
+
+
+[32m  1 passed[39m[2m (16.5s)[22m
+aok
+--- Set: 6 Run: 6 2023-02-22 03:58:40.780553
+    cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
+
+Running 1 test using 1 worker
+
+[32m[2023-02-22T03:58:44.970] [INFO] announce - [39m0 playwright:	1.30.0
+[32m[2023-02-22T03:58:44.984] [INFO] announce - [39m0 hostname:	AIR
+[32m[2023-02-22T03:58:44.985] [INFO] announce - [39m0 os type:	Windows_NT
+[32m[2023-02-22T03:58:44.986] [INFO] announce - [39m0 platform:	win32
+[32m[2023-02-22T03:58:44.986] [INFO] announce - [39m0 arch:	x64
+[32m[2023-02-22T03:58:44.992] [INFO] announce - [39m0 num cpus:	8
+[32m[2023-02-22T03:58:44.994] [INFO] announce - [39m0 freemem:	10748395520
+[32m[2023-02-22T03:58:44.995] [INFO] announce - [39m0 totalmem:	34246270976
+[32m[2023-02-22T03:58:44.996] [INFO] announce - [39m0 browser:	chromium 110.0.5481.38
+[32m[2023-02-22T03:58:44.997] [INFO] announce - [39m0 user:	khtan
+[34m[2023-02-22T03:58:48.034] [TRACE] driveway - [39m0 title0: Buying New & Used Cars | Driveway url0:https://www.driveway.com/
+[34m[2023-02-22T03:58:56.635] [TRACE] driveway - [39m0 1 urlA:https://www.driveway.com/mydriveway
+[34m[2023-02-22T03:58:56.672] [TRACE] driveway - [39m0 title2: My Driveway | Driveway url2:https://www.driveway.com/mydriveway
+[32m[2023-02-22T03:58:56.710] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 11223
+[32m[2023-02-22T03:58:57.596] [INFO] driveway - [39m0 logout - elapsed: 885
+end of test
+  [32mok[39m [2m1 [22munit\unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout[2m (13.7s)[22m
+
+
+[32m  1 passed[39m[2m (20.8s)[22m
+aok
+--- Set: 7 Run: 7 2023-02-22 04:59:04.184978
+    cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
+
+Running 1 test using 1 worker
+
+[32m[2023-02-22T04:59:08.450] [INFO] announce - [39m0 playwright:	1.30.0
+[32m[2023-02-22T04:59:08.458] [INFO] announce - [39m0 hostname:	AIR
+[32m[2023-02-22T04:59:08.458] [INFO] announce - [39m0 os type:	Windows_NT
+[32m[2023-02-22T04:59:08.458] [INFO] announce - [39m0 platform:	win32
+[32m[2023-02-22T04:59:08.459] [INFO] announce - [39m0 arch:	x64
+[32m[2023-02-22T04:59:08.459] [INFO] announce - [39m0 num cpus:	8
+[32m[2023-02-22T04:59:08.460] [INFO] announce - [39m0 freemem:	10701611008
+[32m[2023-02-22T04:59:08.460] [INFO] announce - [39m0 totalmem:	34246270976
+[32m[2023-02-22T04:59:08.460] [INFO] announce - [39m0 browser:	chromium 110.0.5481.38
+[32m[2023-02-22T04:59:08.461] [INFO] announce - [39m0 user:	khtan
+[34m[2023-02-22T04:59:13.765] [TRACE] driveway - [39m0 title0: Buy or Sell Your Car Your Way | Driveway url0:https://www.driveway.com/
+[34m[2023-02-22T04:59:17.902] [TRACE] driveway - [39m0 1 urlA:https://www.driveway.com/
+[34m[2023-02-22T04:59:18.413] [TRACE] driveway - [39m0 2 urlA:https://www.driveway.com/
+[34m[2023-02-22T04:59:18.924] [TRACE] driveway - [39m0 3 urlA:https://www.driveway.com/
+[34m[2023-02-22T04:59:19.425] [TRACE] driveway - [39m0 4 urlA:https://www.driveway.com/
+[34m[2023-02-22T04:59:19.940] [TRACE] driveway - [39m0 5 urlA:https://www.driveway.com/?code=oa3N4O-m3VmR89jH8MkSwJR69swVzhUMJSzs_fSwRnWk-&state=_xLoC7UsoEr59-k1z9Pr5wvhvA9yRr84
+[34m[2023-02-22T04:59:20.447] [TRACE] driveway - [39m0 6 urlA:https://www.driveway.com/?code=oa3N4O-m3VmR89jH8MkSwJR69swVzhUMJSzs_fSwRnWk-&state=_xLoC7UsoEr59-k1z9Pr5wvhvA9yRr84
+[34m[2023-02-22T04:59:20.959] [TRACE] driveway - [39m0 7 urlA:https://www.driveway.com/?code=oa3N4O-m3VmR89jH8MkSwJR69swVzhUMJSzs_fSwRnWk-&state=_xLoC7UsoEr59-k1z9Pr5wvhvA9yRr84
+[34m[2023-02-22T04:59:21.473] [TRACE] driveway - [39m0 8 urlA:https://www.driveway.com/?code=oa3N4O-m3VmR89jH8MkSwJR69swVzhUMJSzs_fSwRnWk-&state=_xLoC7UsoEr59-k1z9Pr5wvhvA9yRr84
+[34m[2023-02-22T04:59:21.985] [TRACE] driveway - [39m0 9 urlA:https://www.driveway.com/post-login
+[34m[2023-02-22T04:59:22.495] [TRACE] driveway - [39m0 10 urlA:https://www.driveway.com/post-login
+[34m[2023-02-22T04:59:22.996] [TRACE] driveway - [39m0 11 urlA:https://www.driveway.com/post-login
+[34m[2023-02-22T04:59:23.504] [TRACE] driveway - [39m0 12 urlA:https://www.driveway.com/mydriveway
+[34m[2023-02-22T04:59:23.508] [TRACE] driveway - [39m0 title2: Buy or Sell Your Car Your Way | Driveway url2:https://www.driveway.com/mydriveway
+[32m[2023-02-22T04:59:23.573] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 14723
+[32m[2023-02-22T04:59:24.933] [INFO] driveway - [39m0 logout - elapsed: 1360
+end of test
+  [32mok[39m [2m1 [22munit\unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout[2m (17.1s)[22m
+
+
+[32m  1 passed[39m[2m (19.2s)[22m
+aok
+--- Set: 8 Run: 8 2023-02-22 05:59:25.868060
+    cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
+
+Running 1 test using 1 worker
+
+[32m[2023-02-22T05:59:29.918] [INFO] announce - [39m0 playwright:	1.30.0
+[32m[2023-02-22T05:59:29.926] [INFO] announce - [39m0 hostname:	AIR
+[32m[2023-02-22T05:59:29.927] [INFO] announce - [39m0 os type:	Windows_NT
+[32m[2023-02-22T05:59:29.927] [INFO] announce - [39m0 platform:	win32
+[32m[2023-02-22T05:59:29.927] [INFO] announce - [39m0 arch:	x64
+[32m[2023-02-22T05:59:29.930] [INFO] announce - [39m0 num cpus:	8
+[32m[2023-02-22T05:59:29.930] [INFO] announce - [39m0 freemem:	10899357696
+[32m[2023-02-22T05:59:29.930] [INFO] announce - [39m0 totalmem:	34246270976
+[32m[2023-02-22T05:59:29.931] [INFO] announce - [39m0 browser:	chromium 110.0.5481.38
+[32m[2023-02-22T05:59:29.931] [INFO] announce - [39m0 user:	khtan
+[34m[2023-02-22T05:59:32.883] [TRACE] driveway - [39m0 title0: Buying New & Used Cars | Driveway url0:https://www.driveway.com/
+[34m[2023-02-22T05:59:42.895] [TRACE] driveway - [39m0 1 urlA:https://www.driveway.com/mydriveway
+[34m[2023-02-22T05:59:42.931] [TRACE] driveway - [39m0 title2: My Driveway | Driveway url2:https://www.driveway.com/mydriveway
+[32m[2023-02-22T05:59:42.976] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 12436
+[32m[2023-02-22T05:59:43.858] [INFO] driveway - [39m0 logout - elapsed: 881
+end of test
+  [32mok[39m [2m1 [22munit\unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout[2m (14.8s)[22m
+
+
+[32m  1 passed[39m[2m (16.7s)[22m
+aok
+--- Set: 9 Run: 9 2023-02-22 06:59:45.042915
+    cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
+
+Running 1 test using 1 worker
+
+[32m[2023-02-22T06:59:49.313] [INFO] announce - [39m0 playwright:	1.30.0
+[32m[2023-02-22T06:59:49.320] [INFO] announce - [39m0 hostname:	AIR
+[32m[2023-02-22T06:59:49.321] [INFO] announce - [39m0 os type:	Windows_NT
+[32m[2023-02-22T06:59:49.321] [INFO] announce - [39m0 platform:	win32
+[32m[2023-02-22T06:59:49.321] [INFO] announce - [39m0 arch:	x64
+[32m[2023-02-22T06:59:49.322] [INFO] announce - [39m0 num cpus:	8
+[32m[2023-02-22T06:59:49.323] [INFO] announce - [39m0 freemem:	10810290176
+[32m[2023-02-22T06:59:49.323] [INFO] announce - [39m0 totalmem:	34246270976
+[32m[2023-02-22T06:59:49.323] [INFO] announce - [39m0 browser:	chromium 110.0.5481.38
+[32m[2023-02-22T06:59:49.325] [INFO] announce - [39m0 user:	khtan
+[34m[2023-02-22T06:59:52.145] [TRACE] driveway - [39m0 title0: Buying New & Used Cars | Driveway url0:https://www.driveway.com/
+[34m[2023-02-22T07:00:09.302] [TRACE] driveway - [39m0 1 urlA:https://www.driveway.com/mydriveway
+[34m[2023-02-22T07:00:09.345] [TRACE] driveway - [39m0 title2: My Driveway | Driveway url2:https://www.driveway.com/mydriveway
+[32m[2023-02-22T07:00:09.387] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 19573
+[32m[2023-02-22T07:00:11.177] [INFO] driveway - [39m0 logout - elapsed: 1789
+end of test
+  [32mok[39m [2m1 [22munit\unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout[2m (22.7s)[22m
+
+
+[32m  1 passed[39m[2m (24.8s)[22m
+aok
+--- Set: 10 Run: 10 2023-02-22 08:00:12.264666
+    cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
+
+Running 1 test using 1 worker
+
+[32m[2023-02-22T08:00:16.313] [INFO] announce - [39m0 playwright:	1.30.0
+[32m[2023-02-22T08:00:16.319] [INFO] announce - [39m0 hostname:	AIR
+[32m[2023-02-22T08:00:16.319] [INFO] announce - [39m0 os type:	Windows_NT
+[32m[2023-02-22T08:00:16.320] [INFO] announce - [39m0 platform:	win32
+[32m[2023-02-22T08:00:16.320] [INFO] announce - [39m0 arch:	x64
+[32m[2023-02-22T08:00:16.320] [INFO] announce - [39m0 num cpus:	8
+[32m[2023-02-22T08:00:16.321] [INFO] announce - [39m0 freemem:	10669600768
+[32m[2023-02-22T08:00:16.321] [INFO] announce - [39m0 totalmem:	34246270976
+[32m[2023-02-22T08:00:16.321] [INFO] announce - [39m0 browser:	chromium 110.0.5481.38
+[32m[2023-02-22T08:00:16.321] [INFO] announce - [39m0 user:	khtan
+[34m[2023-02-22T08:00:20.121] [TRACE] driveway - [39m0 title0: Buying New & Used Cars | Driveway url0:https://www.driveway.com/
+[34m[2023-02-22T08:00:29.456] [TRACE] driveway - [39m0 1 urlA:https://www.driveway.com/mydriveway
+[34m[2023-02-22T08:00:29.493] [TRACE] driveway - [39m0 title2: My Driveway | Driveway url2:https://www.driveway.com/mydriveway
+[32m[2023-02-22T08:00:29.530] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 12623
+[32m[2023-02-22T08:00:30.760] [INFO] driveway - [39m0 logout - elapsed: 1230
+end of test
+  [32mok[39m [2m1 [22munit\unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout[2m (15.3s)[22m
+
+
+[32m  1 passed[39m[2m (17.1s)[22m
+aok
+--- Set: 11 Run: 11 2023-02-22 09:00:31.830673
+    cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
+
+Running 1 test using 1 worker
+
+[32m[2023-02-22T09:00:35.858] [INFO] announce - [39m0 playwright:	1.30.0
+[32m[2023-02-22T09:00:35.864] [INFO] announce - [39m0 hostname:	AIR
+[32m[2023-02-22T09:00:35.865] [INFO] announce - [39m0 os type:	Windows_NT
+[32m[2023-02-22T09:00:35.865] [INFO] announce - [39m0 platform:	win32
+[32m[2023-02-22T09:00:35.865] [INFO] announce - [39m0 arch:	x64
+[32m[2023-02-22T09:00:35.866] [INFO] announce - [39m0 num cpus:	8
+[32m[2023-02-22T09:00:35.866] [INFO] announce - [39m0 freemem:	10643337216
+[32m[2023-02-22T09:00:35.866] [INFO] announce - [39m0 totalmem:	34246270976
+[32m[2023-02-22T09:00:35.867] [INFO] announce - [39m0 browser:	chromium 110.0.5481.38
+[32m[2023-02-22T09:00:35.868] [INFO] announce - [39m0 user:	khtan
+[34m[2023-02-22T09:00:43.386] [TRACE] driveway - [39m0 title0: Buying New & Used Cars | Driveway url0:https://www.driveway.com/
+[34m[2023-02-22T09:00:55.239] [TRACE] driveway - [39m0 1 urlA:https://www.driveway.com/mydriveway
+[34m[2023-02-22T09:00:55.272] [TRACE] driveway - [39m0 title2: My Driveway | Driveway url2:https://www.driveway.com/mydriveway
+[32m[2023-02-22T09:00:55.311] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 19061
+[32m[2023-02-22T09:00:56.290] [INFO] driveway - [39m0 logout - elapsed: 979
+end of test
+  [32mok[39m [2m1 [22munit\unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout[2m (21.4s)[22m
+
+
+[32m  1 passed[39m[2m (23.2s)[22m
+aok
+--- Set: 12 Run: 12 2023-02-22 10:00:57.512439
+    cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
+
+Running 1 test using 1 worker
+
+[32m[2023-02-22T10:01:01.535] [INFO] announce - [39m0 playwright:	1.30.0
+[32m[2023-02-22T10:01:01.542] [INFO] announce - [39m0 hostname:	AIR
+[32m[2023-02-22T10:01:01.542] [INFO] announce - [39m0 os type:	Windows_NT
+[32m[2023-02-22T10:01:01.542] [INFO] announce - [39m0 platform:	win32
+[32m[2023-02-22T10:01:01.543] [INFO] announce - [39m0 arch:	x64
+[32m[2023-02-22T10:01:01.544] [INFO] announce - [39m0 num cpus:	8
+[32m[2023-02-22T10:01:01.545] [INFO] announce - [39m0 freemem:	10482847744
+[32m[2023-02-22T10:01:01.545] [INFO] announce - [39m0 totalmem:	34246270976
+[32m[2023-02-22T10:01:01.545] [INFO] announce - [39m0 browser:	chromium 110.0.5481.38
+[32m[2023-02-22T10:01:01.546] [INFO] announce - [39m0 user:	khtan
+[34m[2023-02-22T10:01:04.661] [TRACE] driveway - [39m0 title0: Buying New & Used Cars | Driveway url0:https://www.driveway.com/
+[34m[2023-02-22T10:01:14.143] [TRACE] driveway - [39m0 1 urlA:https://www.driveway.com/mydriveway
+[34m[2023-02-22T10:01:14.179] [TRACE] driveway - [39m0 title2: My Driveway | Driveway url2:https://www.driveway.com/mydriveway
+[32m[2023-02-22T10:01:14.265] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 12340
+[32m[2023-02-22T10:01:15.270] [INFO] driveway - [39m0 logout - elapsed: 1005
+end of test
+  [32mok[39m [2m1 [22munit\unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout[2m (14.5s)[22m
+
+
+[32m  1 passed[39m[2m (16.3s)[22m
+aok
+--- Set: 13 Run: 13 2023-02-22 11:01:16.299052
+    cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
+
+Running 1 test using 1 worker
+
+[32m[2023-02-22T11:01:20.967] [INFO] announce - [39m0 playwright:	1.30.0
+[32m[2023-02-22T11:01:20.976] [INFO] announce - [39m0 hostname:	AIR
+[32m[2023-02-22T11:01:20.976] [INFO] announce - [39m0 os type:	Windows_NT
+[32m[2023-02-22T11:01:20.977] [INFO] announce - [39m0 platform:	win32
+[32m[2023-02-22T11:01:20.977] [INFO] announce - [39m0 arch:	x64
+[32m[2023-02-22T11:01:20.978] [INFO] announce - [39m0 num cpus:	8
+[32m[2023-02-22T11:01:20.978] [INFO] announce - [39m0 freemem:	11672641536
+[32m[2023-02-22T11:01:20.978] [INFO] announce - [39m0 totalmem:	34246270976
+[32m[2023-02-22T11:01:20.979] [INFO] announce - [39m0 browser:	chromium 110.0.5481.38
+[32m[2023-02-22T11:01:20.979] [INFO] announce - [39m0 user:	khtan
+[34m[2023-02-22T11:01:26.115] [TRACE] driveway - [39m0 title0: Buying New & Used Cars | Driveway url0:https://www.driveway.com/
+[34m[2023-02-22T11:01:37.414] [TRACE] driveway - [39m0 1 urlA:https://www.driveway.com/mydriveway
+[34m[2023-02-22T11:01:37.453] [TRACE] driveway - [39m0 title2: My Driveway | Driveway url2:https://www.driveway.com/mydriveway
+[32m[2023-02-22T11:01:37.493] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 15947
+[32m[2023-02-22T11:01:38.601] [INFO] driveway - [39m0 logout - elapsed: 1108
+end of test
+  [32mok[39m [2m1 [22munit\unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout[2m (18.5s)[22m
+
+
+[32m  1 passed[39m[2m (21.0s)[22m
+aok
+--- Set: 14 Run: 14 2023-02-22 12:01:39.875004
+    cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
+
+Running 1 test using 1 worker
+
+[32m[2023-02-22T12:01:43.994] [INFO] announce - [39m0 playwright:	1.30.0
+[32m[2023-02-22T12:01:44.000] [INFO] announce - [39m0 hostname:	AIR
+[32m[2023-02-22T12:01:44.000] [INFO] announce - [39m0 os type:	Windows_NT
+[32m[2023-02-22T12:01:44.000] [INFO] announce - [39m0 platform:	win32
+[32m[2023-02-22T12:01:44.000] [INFO] announce - [39m0 arch:	x64
+[32m[2023-02-22T12:01:44.001] [INFO] announce - [39m0 num cpus:	8
+[32m[2023-02-22T12:01:44.002] [INFO] announce - [39m0 freemem:	12245925888
+[32m[2023-02-22T12:01:44.002] [INFO] announce - [39m0 totalmem:	34246270976
+[32m[2023-02-22T12:01:44.002] [INFO] announce - [39m0 browser:	chromium 110.0.5481.38
+[32m[2023-02-22T12:01:44.003] [INFO] announce - [39m0 user:	khtan
+[34m[2023-02-22T12:01:47.112] [TRACE] driveway - [39m0 title0: Buying New & Used Cars | Driveway url0:https://www.driveway.com/
+[34m[2023-02-22T12:01:57.242] [TRACE] driveway - [39m0 1 urlA:https://www.driveway.com/mydriveway
+[34m[2023-02-22T12:01:57.283] [TRACE] driveway - [39m0 title2: My Driveway | Driveway url2:https://www.driveway.com/mydriveway
+[32m[2023-02-22T12:01:57.317] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 12855
+[32m[2023-02-22T12:01:58.756] [INFO] driveway - [39m0 logout - elapsed: 1438
+end of test
+  [32mok[39m [2m1 [22munit\unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout[2m (15.6s)[22m
+
+
+[32m  1 passed[39m[2m (17.6s)[22m
+aok
+--- Set: 15 Run: 15 2023-02-22 13:01:59.907648
+    cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
+
+Running 1 test using 1 worker
+
+[32m[2023-02-22T13:02:04.109] [INFO] announce - [39m0 playwright:	1.30.0
+[32m[2023-02-22T13:02:04.116] [INFO] announce - [39m0 hostname:	AIR
+[32m[2023-02-22T13:02:04.116] [INFO] announce - [39m0 os type:	Windows_NT
+[32m[2023-02-22T13:02:04.117] [INFO] announce - [39m0 platform:	win32
+[32m[2023-02-22T13:02:04.117] [INFO] announce - [39m0 arch:	x64
+[32m[2023-02-22T13:02:04.118] [INFO] announce - [39m0 num cpus:	8
+[32m[2023-02-22T13:02:04.119] [INFO] announce - [39m0 freemem:	12644016128
+[32m[2023-02-22T13:02:04.119] [INFO] announce - [39m0 totalmem:	34246270976
+[32m[2023-02-22T13:02:04.119] [INFO] announce - [39m0 browser:	chromium 110.0.5481.38
+[32m[2023-02-22T13:02:04.120] [INFO] announce - [39m0 user:	khtan
+[34m[2023-02-22T13:02:07.125] [TRACE] driveway - [39m0 title0: Buying New & Used Cars | Driveway url0:https://www.driveway.com/
+[34m[2023-02-22T13:02:17.044] [TRACE] driveway - [39m0 1 urlA:https://www.driveway.com/mydriveway
+[34m[2023-02-22T13:02:17.080] [TRACE] driveway - [39m0 title2: My Driveway | Driveway url2:https://www.driveway.com/mydriveway
+[32m[2023-02-22T13:02:17.114] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 12341
+[32m[2023-02-22T13:02:17.905] [INFO] driveway - [39m0 logout - elapsed: 791
+end of test
+  [32mok[39m [2m1 [22munit\unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout[2m (14.9s)[22m
+
+
+[32m  1 passed[39m[2m (21.5s)[22m
+aok
+--- Set: 16 Run: 16 2023-02-22 14:02:23.956715
+    cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
+
+Running 1 test using 1 worker
+
+[32m[2023-02-22T14:02:27.908] [INFO] announce - [39m0 playwright:	1.30.0
+[32m[2023-02-22T14:02:27.916] [INFO] announce - [39m0 hostname:	AIR
+[32m[2023-02-22T14:02:27.916] [INFO] announce - [39m0 os type:	Windows_NT
+[32m[2023-02-22T14:02:27.917] [INFO] announce - [39m0 platform:	win32
+[32m[2023-02-22T14:02:27.917] [INFO] announce - [39m0 arch:	x64
+[32m[2023-02-22T14:02:27.917] [INFO] announce - [39m0 num cpus:	8
+[32m[2023-02-22T14:02:27.917] [INFO] announce - [39m0 freemem:	12411174912
+[32m[2023-02-22T14:02:27.918] [INFO] announce - [39m0 totalmem:	34246270976
+[32m[2023-02-22T14:02:27.918] [INFO] announce - [39m0 browser:	chromium 110.0.5481.38
+[32m[2023-02-22T14:02:27.919] [INFO] announce - [39m0 user:	khtan
+[34m[2023-02-22T14:02:31.606] [TRACE] driveway - [39m0 title0: Buying New & Used Cars | Driveway url0:https://www.driveway.com/
+[34m[2023-02-22T14:02:42.457] [TRACE] driveway - [39m0 1 urlA:https://www.driveway.com/mydriveway
+[34m[2023-02-22T14:02:42.500] [TRACE] driveway - [39m0 title2: My Driveway | Driveway url2:https://www.driveway.com/mydriveway
+[32m[2023-02-22T14:02:42.539] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 14148
+[32m[2023-02-22T14:02:43.849] [INFO] driveway - [39m0 logout - elapsed: 1310
+end of test
+  [32mok[39m [2m1 [22munit\unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout[2m (16.8s)[22m
+
+
+[32m  1 passed[39m[2m (18.6s)[22m
+aok
+--- Set: 17 Run: 17 2023-02-22 15:02:45.030781
+    cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
+playwright.config.ts: timeout=60000 expect.timeout=5000
+
+Running 1 test using 1 worker
+
+playwright.config.ts: timeout=60000 expect.timeout=5000
+[32m[2023-02-22T15:02:51.784] [INFO] announce - [39m0 playwright:	1.30.0
+[32m[2023-02-22T15:02:51.791] [INFO] announce - [39m0 hostname:	AIR
+[32m[2023-02-22T15:02:51.791] [INFO] announce - [39m0 os type:	Windows_NT
+[32m[2023-02-22T15:02:51.791] [INFO] announce - [39m0 platform:	win32
+[32m[2023-02-22T15:02:51.791] [INFO] announce - [39m0 arch:	x64
+[32m[2023-02-22T15:02:51.792] [INFO] announce - [39m0 num cpus:	8
+[32m[2023-02-22T15:02:51.793] [INFO] announce - [39m0 freemem:	12206055424
+[32m[2023-02-22T15:02:51.793] [INFO] announce - [39m0 totalmem:	34246270976
+[32m[2023-02-22T15:02:51.794] [INFO] announce - [39m0 browser:	chromium 110.0.5481.38
+[32m[2023-02-22T15:02:51.795] [INFO] announce - [39m0 user:	khtan
+[34m[2023-02-22T15:02:55.052] [TRACE] driveway - [39m0 title0: Buying New & Used Cars | Driveway url0:https://www.driveway.com/
+[34m[2023-02-22T15:02:57.575] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/
+[34m[2023-02-22T15:02:58.087] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/
+[34m[2023-02-22T15:02:58.588] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/
+[34m[2023-02-22T15:02:59.091] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/?code=XbTYd_oeEjLUfg00JympPz5rs_MA75tuUfLAcsLXXmylk&state=heESxk~hhaukfgLEUIbBgBoSssbzEmBa
+[34m[2023-02-22T15:02:59.592] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/?code=XbTYd_oeEjLUfg00JympPz5rs_MA75tuUfLAcsLXXmylk&state=heESxk~hhaukfgLEUIbBgBoSssbzEmBa
+[34m[2023-02-22T15:03:00.103] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/?code=XbTYd_oeEjLUfg00JympPz5rs_MA75tuUfLAcsLXXmylk&state=heESxk~hhaukfgLEUIbBgBoSssbzEmBa
+[34m[2023-02-22T15:03:00.609] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/?code=XbTYd_oeEjLUfg00JympPz5rs_MA75tuUfLAcsLXXmylk&state=heESxk~hhaukfgLEUIbBgBoSssbzEmBa
+[34m[2023-02-22T15:03:01.109] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/?code=XbTYd_oeEjLUfg00JympPz5rs_MA75tuUfLAcsLXXmylk&state=heESxk~hhaukfgLEUIbBgBoSssbzEmBa
+[34m[2023-02-22T15:03:01.610] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/post-login
+[34m[2023-02-22T15:03:02.110] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/post-login
+[34m[2023-02-22T15:03:02.610] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/post-login
+[34m[2023-02-22T15:03:03.110] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/mydriveway
+[34m[2023-02-22T15:03:03.110] [TRACE] driveway - [39mresult=https://www.driveway.com/mydriveway
+[34m[2023-02-22T15:03:03.114] [TRACE] driveway - [39m0 title2: [object Promise] url2:https://www.driveway.com/mydriveway
+[32m[2023-02-22T15:03:03.257] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 10947
+[32m[2023-02-22T15:03:04.547] [INFO] driveway - [39m0 logout - elapsed: 1290
+end of test
+  [32mok[39m [2m1 [22munit\unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout[2m (13.7s)[22m
+
+
+[32m  1 passed[39m[2m (23.2s)[22m
+aok
+--- Set: 18 Run: 18 2023-02-22 16:03:10.979445
+    cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
+playwright.config.ts: timeout=60000 expect.timeout=5000
+
+Running 1 test using 1 worker
+
+playwright.config.ts: timeout=60000 expect.timeout=5000
+[32m[2023-02-22T16:03:15.065] [INFO] announce - [39m0 playwright:	1.30.0
+[32m[2023-02-22T16:03:15.073] [INFO] announce - [39m0 hostname:	AIR
+[32m[2023-02-22T16:03:15.073] [INFO] announce - [39m0 os type:	Windows_NT
+[32m[2023-02-22T16:03:15.073] [INFO] announce - [39m0 platform:	win32
+[32m[2023-02-22T16:03:15.074] [INFO] announce - [39m0 arch:	x64
+[32m[2023-02-22T16:03:15.077] [INFO] announce - [39m0 num cpus:	8
+[32m[2023-02-22T16:03:15.078] [INFO] announce - [39m0 freemem:	12323344384
+[32m[2023-02-22T16:03:15.079] [INFO] announce - [39m0 totalmem:	34246270976
+[32m[2023-02-22T16:03:15.081] [INFO] announce - [39m0 browser:	chromium 110.0.5481.38
+[32m[2023-02-22T16:03:15.082] [INFO] announce - [39m0 user:	khtan
+[34m[2023-02-22T16:03:18.644] [TRACE] driveway - [39m0 title0: Buying New & Used Cars | Driveway url0:https://www.driveway.com/
+[34m[2023-02-22T16:03:21.771] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/
+[34m[2023-02-22T16:03:22.276] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/
+[34m[2023-02-22T16:03:22.783] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/
+[34m[2023-02-22T16:03:23.292] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/
+[34m[2023-02-22T16:03:23.794] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/
+[34m[2023-02-22T16:03:24.307] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/?code=IGatn-yAXmp7R7PEDh2htoBSB8QAobG64G7d_1WA6qVq_&state=Ah~ZhJziLQ4i7bVuLe_OuPJVHSlVe6Pu
+[34m[2023-02-22T16:03:24.822] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/?code=IGatn-yAXmp7R7PEDh2htoBSB8QAobG64G7d_1WA6qVq_&state=Ah~ZhJziLQ4i7bVuLe_OuPJVHSlVe6Pu
+[34m[2023-02-22T16:03:25.326] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/?code=IGatn-yAXmp7R7PEDh2htoBSB8QAobG64G7d_1WA6qVq_&state=Ah~ZhJziLQ4i7bVuLe_OuPJVHSlVe6Pu
+[34m[2023-02-22T16:03:25.827] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/?code=IGatn-yAXmp7R7PEDh2htoBSB8QAobG64G7d_1WA6qVq_&state=Ah~ZhJziLQ4i7bVuLe_OuPJVHSlVe6Pu
+[34m[2023-02-22T16:03:26.339] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/?code=IGatn-yAXmp7R7PEDh2htoBSB8QAobG64G7d_1WA6qVq_&state=Ah~ZhJziLQ4i7bVuLe_OuPJVHSlVe6Pu
+[34m[2023-02-22T16:03:26.854] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/post-login
+[34m[2023-02-22T16:03:27.357] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/post-login
+[34m[2023-02-22T16:03:27.857] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/mydriveway
+[34m[2023-02-22T16:03:27.857] [TRACE] driveway - [39m0 result=https://www.driveway.com/mydriveway
+[32m[2023-02-22T16:03:27.922] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 12315
+[32m[2023-02-22T16:03:29.375] [INFO] driveway - [39m0 logout - elapsed: 1453
+end of test
+  [32mok[39m [2m1 [22munit\unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout[2m (15.0s)[22m
+
+
+[32m  1 passed[39m[2m (17.1s)[22m
+aok
+--- Set: 19 Run: 19 2023-02-22 17:03:30.555659
+    cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
+playwright.config.ts: timeout=60000 expect.timeout=5000
+
+Running 1 test using 1 worker
+
+playwright.config.ts: timeout=60000 expect.timeout=5000
+[32m[2023-02-22T17:03:34.557] [INFO] announce - [39m0 playwright:	1.30.0
+[32m[2023-02-22T17:03:34.564] [INFO] announce - [39m0 hostname:	AIR
+[32m[2023-02-22T17:03:34.565] [INFO] announce - [39m0 os type:	Windows_NT
+[32m[2023-02-22T17:03:34.565] [INFO] announce - [39m0 platform:	win32
+[32m[2023-02-22T17:03:34.565] [INFO] announce - [39m0 arch:	x64
+[32m[2023-02-22T17:03:34.568] [INFO] announce - [39m0 num cpus:	8
+[32m[2023-02-22T17:03:34.569] [INFO] announce - [39m0 freemem:	12346503168
+[32m[2023-02-22T17:03:34.569] [INFO] announce - [39m0 totalmem:	34246270976
+[32m[2023-02-22T17:03:34.569] [INFO] announce - [39m0 browser:	chromium 110.0.5481.38
+[32m[2023-02-22T17:03:34.570] [INFO] announce - [39m0 user:	khtan
+[34m[2023-02-22T17:03:38.216] [TRACE] driveway - [39m0 title0: Buying New & Used Cars | Driveway url0:https://www.driveway.com/
+[34m[2023-02-22T17:03:41.787] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/
+[34m[2023-02-22T17:03:42.299] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/
+[34m[2023-02-22T17:03:42.802] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/
+[34m[2023-02-22T17:03:43.307] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/?code=oV5zsflJ7S2GxKIl1G563hLZ1ziRul9iCLRRWGyCrG4t3&state=wTPgUK9QOlZdgQYtJgxjxUr70JRmNJ_a
+[34m[2023-02-22T17:03:43.815] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/?code=oV5zsflJ7S2GxKIl1G563hLZ1ziRul9iCLRRWGyCrG4t3&state=wTPgUK9QOlZdgQYtJgxjxUr70JRmNJ_a
+[34m[2023-02-22T17:03:44.316] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/?code=oV5zsflJ7S2GxKIl1G563hLZ1ziRul9iCLRRWGyCrG4t3&state=wTPgUK9QOlZdgQYtJgxjxUr70JRmNJ_a
+[34m[2023-02-22T17:03:44.819] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/?code=oV5zsflJ7S2GxKIl1G563hLZ1ziRul9iCLRRWGyCrG4t3&state=wTPgUK9QOlZdgQYtJgxjxUr70JRmNJ_a
+[34m[2023-02-22T17:03:45.323] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/post-login
+[34m[2023-02-22T17:03:45.824] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/post-login
+[34m[2023-02-22T17:03:46.338] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/mydriveway
+[34m[2023-02-22T17:03:46.338] [TRACE] driveway - [39m0 result=https://www.driveway.com/mydriveway
+[32m[2023-02-22T17:03:46.501] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 11447
+[32m[2023-02-22T17:03:49.133] [INFO] driveway - [39m0 logout - elapsed: 2632
+end of test
+  [32mok[39m [2m1 [22munit\unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout[2m (15.5s)[22m
+
+
+[32m  1 passed[39m[2m (17.4s)[22m
+aok
+--- Set: 20 Run: 20 2023-02-22 18:03:50.381577
+    cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
+playwright.config.ts: timeout=60000 expect.timeout=5000
+
+Running 1 test using 1 worker
+
+playwright.config.ts: timeout=60000 expect.timeout=5000
+[32m[2023-02-22T18:03:54.403] [INFO] announce - [39m0 playwright:	1.30.0
+[32m[2023-02-22T18:03:54.411] [INFO] announce - [39m0 hostname:	AIR
+[32m[2023-02-22T18:03:54.411] [INFO] announce - [39m0 os type:	Windows_NT
+[32m[2023-02-22T18:03:54.411] [INFO] announce - [39m0 platform:	win32
+[32m[2023-02-22T18:03:54.411] [INFO] announce - [39m0 arch:	x64
+[32m[2023-02-22T18:03:54.423] [INFO] announce - [39m0 num cpus:	8
+[32m[2023-02-22T18:03:54.424] [INFO] announce - [39m0 freemem:	12843208704
+[32m[2023-02-22T18:03:54.425] [INFO] announce - [39m0 totalmem:	34246270976
+[32m[2023-02-22T18:03:54.425] [INFO] announce - [39m0 browser:	chromium 110.0.5481.38
+[32m[2023-02-22T18:03:54.426] [INFO] announce - [39m0 user:	khtan
+[34m[2023-02-22T18:03:57.916] [TRACE] driveway - [39m0 title0: Buying New & Used Cars | Driveway url0:https://www.driveway.com/
+[34m[2023-02-22T18:04:00.735] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/
+[34m[2023-02-22T18:04:01.236] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/
+[34m[2023-02-22T18:04:01.737] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/
+[34m[2023-02-22T18:04:02.242] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/?code=Hrt8io7q6wA1WAVs__6BLQpEMCWsZbY5iiY2-HqE3Qx5e&state=~x-jeaoyBnidS81ChSoQm9lZKj2x4Ht9
+[34m[2023-02-22T18:04:02.755] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/?code=Hrt8io7q6wA1WAVs__6BLQpEMCWsZbY5iiY2-HqE3Qx5e&state=~x-jeaoyBnidS81ChSoQm9lZKj2x4Ht9
+[34m[2023-02-22T18:04:03.255] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/?code=Hrt8io7q6wA1WAVs__6BLQpEMCWsZbY5iiY2-HqE3Qx5e&state=~x-jeaoyBnidS81ChSoQm9lZKj2x4Ht9
+[34m[2023-02-22T18:04:03.765] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/?code=Hrt8io7q6wA1WAVs__6BLQpEMCWsZbY5iiY2-HqE3Qx5e&state=~x-jeaoyBnidS81ChSoQm9lZKj2x4Ht9
+[34m[2023-02-22T18:04:04.277] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/post-login
+[34m[2023-02-22T18:04:04.783] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/post-login
+[34m[2023-02-22T18:04:05.290] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/post-login
+[34m[2023-02-22T18:04:05.800] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/post-login
+[34m[2023-02-22T18:04:06.309] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/post-login
+[34m[2023-02-22T18:04:06.809] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/mydriveway
+[34m[2023-02-22T18:04:06.809] [TRACE] driveway - [39m0 result=https://www.driveway.com/mydriveway
+[32m[2023-02-22T18:04:06.887] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 11892
+[32m[2023-02-22T18:04:08.264] [INFO] driveway - [39m0 logout - elapsed: 1377
+end of test
+  [32mok[39m [2m1 [22munit\unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout[2m (14.7s)[22m
 
 
 [32m  1 passed[39m[2m (16.6s)[22m
 aok
---- Set: 6 Run: 6 2023-02-17 02:54:43.353830
+--- Set: 21 Run: 21 2023-02-22 19:04:09.449312
     cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
+playwright.config.ts: timeout=60000 expect.timeout=5000
 
 Running 1 test using 1 worker
 
-[32m[2023-02-17T02:54:59.580] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 11768
-[32m[2023-02-17T02:55:00.508] [INFO] driveway - [39m0 logout - elapsed: 926
+playwright.config.ts: timeout=60000 expect.timeout=5000
+[32m[2023-02-22T19:04:13.332] [INFO] announce - [39m0 playwright:	1.30.0
+[32m[2023-02-22T19:04:13.339] [INFO] announce - [39m0 hostname:	AIR
+[32m[2023-02-22T19:04:13.340] [INFO] announce - [39m0 os type:	Windows_NT
+[32m[2023-02-22T19:04:13.340] [INFO] announce - [39m0 platform:	win32
+[32m[2023-02-22T19:04:13.340] [INFO] announce - [39m0 arch:	x64
+[32m[2023-02-22T19:04:13.341] [INFO] announce - [39m0 num cpus:	8
+[32m[2023-02-22T19:04:13.341] [INFO] announce - [39m0 freemem:	12778893312
+[32m[2023-02-22T19:04:13.342] [INFO] announce - [39m0 totalmem:	34246270976
+[32m[2023-02-22T19:04:13.342] [INFO] announce - [39m0 browser:	chromium 110.0.5481.38
+[32m[2023-02-22T19:04:13.343] [INFO] announce - [39m0 user:	khtan
+[34m[2023-02-22T19:04:17.860] [TRACE] driveway - [39m0 title0: Buy or Sell Your Car Your Way | Driveway url0:https://www.driveway.com/
+[34m[2023-02-22T19:04:21.289] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/
+[34m[2023-02-22T19:04:21.795] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/
+[34m[2023-02-22T19:04:22.296] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/
+[34m[2023-02-22T19:04:22.798] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/?code=SUcq7sS18r_mSwnLrtg68pL0vaUU12mbTrYNKjRsbLgJ1&state=IcQaqyeqwPMM-qnSzQ1NX6bGjQmAxhvx
+[34m[2023-02-22T19:04:23.313] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/?code=SUcq7sS18r_mSwnLrtg68pL0vaUU12mbTrYNKjRsbLgJ1&state=IcQaqyeqwPMM-qnSzQ1NX6bGjQmAxhvx
+[34m[2023-02-22T19:04:23.813] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/?code=SUcq7sS18r_mSwnLrtg68pL0vaUU12mbTrYNKjRsbLgJ1&state=IcQaqyeqwPMM-qnSzQ1NX6bGjQmAxhvx
+[34m[2023-02-22T19:04:24.313] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/post-login
+[34m[2023-02-22T19:04:24.832] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/post-login
+[34m[2023-02-22T19:04:25.339] [TRACE] driveway - [39mGetPageUrl: https://www.driveway.com/mydriveway
+[34m[2023-02-22T19:04:25.339] [TRACE] driveway - [39m0 result=https://www.driveway.com/mydriveway
+[32m[2023-02-22T19:04:25.417] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 11225
+[32m[2023-02-22T19:04:27.706] [INFO] driveway - [39m0 logout - elapsed: 2289
 end of test
-  [32m✓[39m  [2m1 [22munit\unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout[2m (13.9s)[22m
+  [32mok[39m [2m1 [22munit\unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout[2m (15.2s)[22m
 
 
-[32m  1 passed[39m[2m (15.5s)[22m
+[32m  1 passed[39m[2m (17.0s)[22m
 aok
---- Set: 7 Run: 7 2023-02-17 03:55:01.693617
-    cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
-
-Running 1 test using 1 worker
-
-[32m[2023-02-17T03:55:19.887] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 14080
-[32m[2023-02-17T03:55:20.894] [INFO] driveway - [39m0 logout - elapsed: 1005
-end of test
-  [32m✓[39m  [2m1 [22munit\unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout[2m (16.2s)[22m
-
-
-[32m  1 passed[39m[2m (17.8s)[22m
-aok
---- Set: 8 Run: 8 2023-02-17 04:55:21.945290
-    cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
-
-Running 1 test using 1 worker
-
-[32m[2023-02-17T04:55:38.484] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 12084
-[32m[2023-02-17T04:55:39.320] [INFO] driveway - [39m0 logout - elapsed: 834
-end of test
-  [32m✓[39m  [2m1 [22munit\unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout[2m (14.3s)[22m
-
-
-[32m  1 passed[39m[2m (16.0s)[22m
-aok
---- Set: 9 Run: 9 2023-02-17 05:55:40.369105
-    cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
-
-Running 1 test using 1 worker
-
-[32m[2023-02-17T05:56:02.635] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 17760
-[32m[2023-02-17T05:56:05.002] [INFO] driveway - [39m0 logout - elapsed: 2366
-end of test
-  [32m✓[39m  [2m1 [22munit\unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout[2m (21.4s)[22m
-
-
-[32m  1 passed[39m[2m (23.0s)[22m
-aok
---- Set: 10 Run: 10 2023-02-17 06:56:05.843693
-    cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
-
-Running 1 test using 1 worker
-
-[32m[2023-02-17T06:56:21.728] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 11305
-[32m[2023-02-17T06:56:23.743] [INFO] driveway - [39m0 logout - elapsed: 2012
-end of test
-  [32m✓[39m  [2m1 [22munit\unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout[2m (15.1s)[22m
-
-
-[32m  1 passed[39m[2m (21.8s)[22m
-aok
---- Set: 11 Run: 11 2023-02-17 07:56:30.194103
-    cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
-
-Running 1 test using 1 worker
-
-[32m[2023-02-17T07:56:49.755] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 15025
-[32m[2023-02-17T07:56:50.469] [INFO] driveway - [39m0 logout - elapsed: 713
-end of test
-  [32m✓[39m  [2m1 [22munit\unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout[2m (17.3s)[22m
-
-
-[32m  1 passed[39m[2m (24.1s)[22m
-aok
---- Set: 12 Run: 12 2023-02-17 08:56:56.763194
-    cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
-
-Running 1 test using 1 worker
-
-[32m[2023-02-17T08:57:13.249] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 12076
-[32m[2023-02-17T08:57:14.259] [INFO] driveway - [39m0 logout - elapsed: 1007
-end of test
-  [32m✓[39m  [2m1 [22munit\unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout[2m (14.3s)[22m
-
-
-[32m  1 passed[39m[2m (16.1s)[22m
-aok
-Traceback (most recent call last):
-  File "c:\cprojects\github\play\dw1\timed_loop.py", line 40, in <module>
-    time.sleep(delayInSeconds)
-KeyboardInterrupt
-^C

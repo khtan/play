@@ -1,0 +1,83 @@
+* Introduction
+This is a small demo project for the Lithia Driveway team to ???
+
+While an SDET should not be evaluated based on one testing framework, please treat this as a demo
+project for me to demonstrate how I ensure Gui tests are less flaky and ???
+
+Also it is important to point out that a Gui testing framework needs to be working a more reliable/faster
+maintenance API testing framework in order to 
+
+It is intended to show how I supplement/work with Playwright with reliability-first practices so
+that the Gui tests are as reliable as possible, along with faster debugging and maintenance response
+time. 
+
+The main idea is to isolate all user actions into pure ( as much as possible ) functions that
+can be tested in many different scenarios such as unit testing, loop/soak testing and finally
+production testing.
+
+I am using my own login account/password to benignly test it on www.driveway.com.
+By benign, I mean to judiciously use the website and not cause a traffic or incursion incident.
+This generally means that when I run a loop test, I wait 1 hour between each test. 
+
+There are a number of areas of improvements that I have not had time to address.
+1. Better documentation of the code
+2. Description of the uses of test folders : unit, qe, prod etc 
+
+* Quick results
+The first implementation of login ( function 'login' ) appeared to work on my machine but after 
+its NumToFail loop ranged from 2 to 10, for Chromium. 
+
+When I ran the same tests on my Ubuntu machine ( on WSL2 ), the failures become more obvious. It
+seems that my Ubuntu machine is somewhat slower and this helps expose the timing problems.
+
+The improved implementation of login ( function 'login_qe') shows that the page switches between several
+pages during the login process. The stable end point is when the page url becomes 'https://www.driveway.com/mydriveway'.
+This improved version is currently running an hourly loop and at the point of writing, has been passing for 
+19 hours.
+
+** table
+So in summary, it appears that login is differ between 20s and 40s, with Chromium being faster and Webkit
+being slowest. Since the Lithia team develop on Mac, I would be interested to how the Safari browser behaves.
+
+| time to login      | chromium | firefox | webkit |
+|--------------------+----------+---------+--------|
+| win 10             |       19 |      24 |     38 |
+| ubuntu on wsl2     |       28 |      42 |     40 |
+
+* Use third party libraries instead of re-investing the wheel
+** Eg 1: log4js for logging 
+** Eg 2: retry-ts for retry
+
+tsretry.spec.ts
+driveway.ts/login_qe1 login with custom retry loop 
+driveway.ts/login_qe  login with ts-retry instead of custom loop
+Both functions are tested on a common set of tests to ensure the library performs as well or better
+** List of features
+1. logging and breadcrumbing
+
+* How to run
+1. Unzip the distribution
+2. Update the entries for a valid userEmail, userPassword and userName in playwright/tests/unit/unit.e2e-spec.ts
+3. Install Playwright with
+   a. npm ci
+   b. npx playwright install
+4. Run the Chromium test with 'npm run test:debug'
+
+    
+* Misc
+Hope you've enjoyed reading this report as much as I had in crafting the demo and playing
+with the Driveway login.
+
+* Request to Felix
+Hi Felix and Daniel,
+
+I have created a small demo test project utilizing Playwright to "login/logout" of the Driveway
+website as an illustrative example of how I engineer a reliable set of Gui tests.
+
+The readme.pdf should provide an overview and some instructions if you wish to run the test.
+The dw1.zip is an archive of the source code for the demo project.
+
+Daniel, it might provide additional material for discussion when we chat tomorrow.
+
+Thanks,
+

@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { expect, Page } from '@playwright/test';
-import { isTooManyTries, retry } from 'ts-retry';
+import { retry } from 'ts-retry';
 import { Utils } from './utils';
 import Log from './logger';
 
@@ -19,9 +18,10 @@ export class Driveway {
     // precheck
     await page.goto(url);
     const url0 = 'https://www.driveway.com/';
-    log.trace(`${workerIndex} title0: ${await page.title()} url0:${await page.url()}`); // Buying New & Used Cars | Driveway
+    // Buying New & Used Cars | Driveway
+    log.trace(`${workerIndex} title0: ${await page.title()} url0:${await page.url()}`);
     await expect(page.url()).toBe(url0);
-    // action
+    // action by entering user details and submit
     await page.getByTestId('login-btn').click();
     await page.getByTestId('email-field').click();
     await page.getByTestId('email-field').fill(email);
@@ -29,10 +29,9 @@ export class Driveway {
     await page.getByTestId('password-field').fill(password);
     // not foolproof bec error icon becomes green even if substring is not correct
     await expect(page.getByTestId('error-icon')).not.toBeVisible();
-
     await page.getByTestId('login-submit-btn').click();
-    await page.waitForLoadState('networkidle');
-    log.trace(`${workerIndex} title1: ${await page.title()} url1:${await page.url()}`); // My Driveway | Driveway
+    // check landing page
+    log.trace(`${workerIndex} title1: ${await page.title()} url1:${await page.url()}`);
     const url1 = 'https://www.driveway.com/mydriveway';
     await expect(page.url()).toBe(url1);
     // postcheck
@@ -68,7 +67,7 @@ export class Driveway {
     await page.waitForLoadState('networkidle');
     log.trace(`${workerIndex} title1: ${await page.title()} url1:${await page.url()}`); // My Driveway | Driveway
     // const url1 = 'https://www.driveway.com/mydriveway';
-    const url1 = 'https://www.driveway.com/';
+    // const url1 = 'https://www.driveway.com/';
     // await expect(page.url()).toBe(url1);
     // postcheck
     await Utils.delay(10000);
@@ -132,6 +131,7 @@ export class Driveway {
     log.trace(`GetPageUrl: ${url}`);
     return url;
   }
+
   static async login_qe(
     page: Page,
     workerIndex: number,
@@ -144,9 +144,10 @@ export class Driveway {
     // precheck
     await page.goto(url);
     const url0 = 'https://www.driveway.com/';
-    log.trace(`${workerIndex} title0: ${await page.title()} url0:${await page.url()}`); // Buying New & Used Cars | Driveway
+    // Buying New & Used Cars | Driveway
+    log.trace(`${workerIndex} title0: ${await page.title()} url0:${await page.url()}`); 
     await expect(page.url()).toBe(url0);
-    // action
+    // action by entering user details and submit
     await page.getByTestId('login-btn').click();
     await page.getByTestId('email-field').click();
     await page.getByTestId('email-field').fill(email);
@@ -154,20 +155,16 @@ export class Driveway {
     await page.getByTestId('password-field').fill(password);
     // not foolproof bec error icon becomes green even if substring is not correct
     await expect(page.getByTestId('error-icon')).not.toBeVisible();
-
     await page.getByTestId('login-submit-btn').click();
-
-    // loop: make sure page.url becomes url1
+    // loop: make sure page.url becomes gets to landing page
     const url1 = 'https://www.driveway.com/mydriveway';
     const result = await retry(
       () => Driveway.GetPageUrl(page),
-      { delay: 500, maxTry: 50, until: (lastResult: string) => lastResult === url1}
+      { delay: 500, maxTry: 50, until: (lastResult: string) => lastResult === url1 }
     );
-    log.trace(`result=${result}`);
+    log.trace(`${workerIndex} result=${result}`);
     await expect(page.url()).toBe(url1);
     // postcheck
-    log.trace(`${workerIndex} title2: ${page.title()} url2:${page.url()}`);
-    // ----
     await expect(page.getByRole('button', { name: `Hi, ${username}` })).toBeVisible();
     const endTime = new Date().getTime();
     log.info(`${workerIndex} login ${username} ${email} - elapsed: ${endTime - startTime}`);

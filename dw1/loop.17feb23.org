@@ -1,0 +1,174 @@
+--- Set: 0 Run: 0 2023-02-16 20:52:37.155215
+    cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
+
+Running 1 test using 1 worker
+
+[32m[2023-02-16T20:52:54.996] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 13269
+[32m[2023-02-16T20:52:56.219] [INFO] driveway - [39m0 logout - elapsed: 1221
+end of test
+  [32m✓[39m  [2m1 [22munit\unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout[2m (15.9s)[22m
+
+
+[32m  1 passed[39m[2m (17.9s)[22m
+aok
+--- Set: 1 Run: 1 2023-02-16 21:52:57.372418
+    cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
+
+Running 1 test using 1 worker
+
+[32m[2023-02-16T21:53:16.181] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 13914
+[32m[2023-02-16T21:53:17.035] [INFO] driveway - [39m0 logout - elapsed: 852
+end of test
+  [32m✓[39m  [2m1 [22munit\unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout[2m (16.4s)[22m
+
+
+[32m  1 passed[39m[2m (18.4s)[22m
+aok
+--- Set: 2 Run: 2 2023-02-16 22:53:18.133331
+    cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
+
+Running 1 test using 1 worker
+
+[32m[2023-02-16T22:53:35.864] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 13438
+[32m[2023-02-16T22:53:36.871] [INFO] driveway - [39m0 logout - elapsed: 1005
+end of test
+  [32m✓[39m  [2m1 [22munit\unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout[2m (15.8s)[22m
+
+
+[32m  1 passed[39m[2m (17.5s)[22m
+aok
+--- Set: 3 Run: 3 2023-02-16 23:53:38.041850
+    cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
+
+Running 1 test using 1 worker
+
+[32m[2023-02-16T23:53:54.487] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 12274
+[32m[2023-02-16T23:53:55.661] [INFO] driveway - [39m0 logout - elapsed: 1171
+end of test
+  [32m✓[39m  [2m1 [22munit\unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout[2m (14.6s)[22m
+
+
+[32m  1 passed[39m[2m (16.3s)[22m
+aok
+--- Set: 4 Run: 4 2023-02-17 00:53:56.655638
+    cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
+
+Running 1 test using 1 worker
+
+[32m[2023-02-17T00:54:16.620] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 15524
+[32m[2023-02-17T00:54:17.558] [INFO] driveway - [39m0 logout - elapsed: 936
+end of test
+  [32m✓[39m  [2m1 [22munit\unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout[2m (17.9s)[22m
+
+
+[32m  1 passed[39m[2m (24.7s)[22m
+aok
+--- Set: 5 Run: 5 2023-02-17 01:54:23.883714
+    cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
+
+Running 1 test using 1 worker
+
+[32m[2023-02-17T01:54:41.160] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 12634
+[32m[2023-02-17T01:54:42.070] [INFO] driveway - [39m0 logout - elapsed: 907
+end of test
+  [32m✓[39m  [2m1 [22munit\unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout[2m (14.9s)[22m
+
+
+[32m  1 passed[39m[2m (16.6s)[22m
+aok
+--- Set: 6 Run: 6 2023-02-17 02:54:43.353830
+    cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
+
+Running 1 test using 1 worker
+
+[32m[2023-02-17T02:54:59.580] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 11768
+[32m[2023-02-17T02:55:00.508] [INFO] driveway - [39m0 logout - elapsed: 926
+end of test
+  [32m✓[39m  [2m1 [22munit\unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout[2m (13.9s)[22m
+
+
+[32m  1 passed[39m[2m (15.5s)[22m
+aok
+--- Set: 7 Run: 7 2023-02-17 03:55:01.693617
+    cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
+
+Running 1 test using 1 worker
+
+[32m[2023-02-17T03:55:19.887] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 14080
+[32m[2023-02-17T03:55:20.894] [INFO] driveway - [39m0 logout - elapsed: 1005
+end of test
+  [32m✓[39m  [2m1 [22munit\unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout[2m (16.2s)[22m
+
+
+[32m  1 passed[39m[2m (17.8s)[22m
+aok
+--- Set: 8 Run: 8 2023-02-17 04:55:21.945290
+    cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
+
+Running 1 test using 1 worker
+
+[32m[2023-02-17T04:55:38.484] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 12084
+[32m[2023-02-17T04:55:39.320] [INFO] driveway - [39m0 logout - elapsed: 834
+end of test
+  [32m✓[39m  [2m1 [22munit\unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout[2m (14.3s)[22m
+
+
+[32m  1 passed[39m[2m (16.0s)[22m
+aok
+--- Set: 9 Run: 9 2023-02-17 05:55:40.369105
+    cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
+
+Running 1 test using 1 worker
+
+[32m[2023-02-17T05:56:02.635] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 17760
+[32m[2023-02-17T05:56:05.002] [INFO] driveway - [39m0 logout - elapsed: 2366
+end of test
+  [32m✓[39m  [2m1 [22munit\unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout[2m (21.4s)[22m
+
+
+[32m  1 passed[39m[2m (23.0s)[22m
+aok
+--- Set: 10 Run: 10 2023-02-17 06:56:05.843693
+    cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
+
+Running 1 test using 1 worker
+
+[32m[2023-02-17T06:56:21.728] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 11305
+[32m[2023-02-17T06:56:23.743] [INFO] driveway - [39m0 logout - elapsed: 2012
+end of test
+  [32m✓[39m  [2m1 [22munit\unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout[2m (15.1s)[22m
+
+
+[32m  1 passed[39m[2m (21.8s)[22m
+aok
+--- Set: 11 Run: 11 2023-02-17 07:56:30.194103
+    cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
+
+Running 1 test using 1 worker
+
+[32m[2023-02-17T07:56:49.755] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 15025
+[32m[2023-02-17T07:56:50.469] [INFO] driveway - [39m0 logout - elapsed: 713
+end of test
+  [32m✓[39m  [2m1 [22munit\unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout[2m (17.3s)[22m
+
+
+[32m  1 passed[39m[2m (24.1s)[22m
+aok
+--- Set: 12 Run: 12 2023-02-17 08:56:56.763194
+    cmd: npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 --headed
+
+Running 1 test using 1 worker
+
+[32m[2023-02-17T08:57:13.249] [INFO] driveway - [39m0 login Kwee tan.k.h.usa@gmail.com - elapsed: 12076
+[32m[2023-02-17T08:57:14.259] [INFO] driveway - [39m0 logout - elapsed: 1007
+end of test
+  [32m✓[39m  [2m1 [22munit\unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout[2m (14.3s)[22m
+
+
+[32m  1 passed[39m[2m (16.1s)[22m
+aok
+Traceback (most recent call last):
+  File "c:\cprojects\github\play\dw1\timed_loop.py", line 40, in <module>
+    time.sleep(delayInSeconds)
+KeyboardInterrupt
+^C
