@@ -1,4 +1,9 @@
-;; emacs -batch -l ert -l ert0.el -eval '(ert-run-tests-batch-and-exit "t3")'
+;; The invocation has interaction with the shell 
+;;  | kwee1-ubuntu | emacs shell works
+;;  | air          | emacs shell does not work
+;;  | air          | git bash shell works
+;;    emacs -batch -l ert -l ert0.el -eval '(ert-run-tests-batch-and-exit "t3")'
+;; But switching " and ' also does not work
 ;; This may have permanent side effects
 ;; stdbuf -i0 -o0 -e0 emacs -batch -l ert -l ert0.el -f ert-run-tests-batch-and-exit
 (require 'ert)
