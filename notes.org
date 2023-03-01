@@ -56,6 +56,61 @@ branch.main.merge=refs/heads/main
 *** classic menu has shutdown if u choose the Win7 style
 * projects
 ** elisp
+*** ert domino
+The Spacemacs layer emacs-lisp installs overseer.
+But overseer requires ert-runner, and ert-runner request cask
+I have several reservations going this route.
+1. All these seems to suggest that they will only run on Linux and not Windows
+2. Documentation on ert-runner and cask seems old and does not mention Windows
+   Also no longer maintained
+3. Both overseer and ert-runner makes use of cask.
+   Cask is a project management tool but seems to no longer used by newer packages
+
+https://github.com/tonini/overseer.el - latest release 2015
+https://github.com/rejeep/ert-runner.el - latest release 2020
+https://github.com/cask/cask - latest release 2022 
+*** ert domino decision
+Stop at ert and save time by not working on cask, ert-runner and overseer.
+Just use the basic invocations on the shell to run each test directly
+
+https://caiorss.github.io/Emacs-Elisp-Programming
+   ielm - emacs interactive elisp shell 
+https://stackoverflow.com/questions/5238245/elisp-programming-whats-the-best-setup 2011
+
+
+
+2. Can VS Code do lisp development? Yes for clisp but nothing for elisp
+
+https://github.com/p3r7/awesome-elisp
+https://lispcookbook.github.io/cl-cookbook/editor-support.html
+
+*** ? https://thewanderingcoder.com/2015/02/emacs-lisp-adding-tests-ert-runner-and-overseer/
+sudo apt install python3
+curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python3
+~/.cask/Cask file add the line (depends-on "ert-runner")
+
+!!!                    DEPRECATION NOTICE
+!!!
+!!!
+!!!    The cask `go` script will be removed on 2021/06/01.
+!!!
+!!!    This is due to security concerns about the way python is
+!!!    invoked from curl, and to remove the python dependency from cask.
+!!!
+!!!    The way to install cask without depending on the `go` script
+!!!    is very simple.  Just clone Cask and pass the PATH.
+!!!
+!!!        git clone https://github.com/cask/cask ~/.cask
+!!!        PATH=$HOME/.cask/bin:$PATH
+!!!
+!!!        # If you want to make it permanent
+!!!        echo 'PATH=$HOME/.cask/bin:$PATH' >> .bashrc
+!!!
+The above asks to update ~/.bashrc 
+My HOME has ~/.profile
+
+[[https://thewanderingcoder.com/2015/02/refactoring-beginning-emacs-lisp-i-adding-tests/][refactoring 'beginning emacs lisp' I: adding tests]]
+
 ** [[c:\cprojects\github\play][pw-template ( playwright )]]
 create demo and then add the pieces for eslint etc
 make corrections per eslint and sonarlint
@@ -718,6 +773,14 @@ https://github.com/franckLdx/ts-retry
 
 
 Something still missing - git-credential-store?
+
+*** ? 
+1. added a soft link in /usr/bin/python to /usr/bin/python3
+
+The following only works if runnig from .cask directory
+   cask version
+   cask info
+cask init . fails with command 'init' not available
 
 * aside : to be transferred
 ** classic menu has shutdown if u choose the Win7 style

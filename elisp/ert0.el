@@ -1,4 +1,5 @@
-;; The invocation has interaction with the shell 
+;; * comments
+;; The invocation has interaction with the shell
 ;;  | kwee1-ubuntu | emacs shell works
 ;;  | air          | emacs shell does not work
 ;;  | air          | git bash shell works
@@ -7,6 +8,7 @@
 ;; This may have permanent side effects
 ;; stdbuf -i0 -o0 -e0 emacs -batch -l ert -l ert0.el -f ert-run-tests-batch-and-exit
 (require 'ert)
+;; ** utility print-two-variables
 (defun print-two-variables (var1 var2)
   "Print two variables with different output functions"
   (print "-- print")
@@ -25,24 +27,43 @@
   ;; put this last to flush, bec pp does not seem to flush
   (message "message: %s - %s" var1 var2)
 )
+;; ** tests
+;; *** t0-how-to-print-string
 (ert-deftest t0-how-to-print-string()
   (let ((msg "t0-how-to-print-string")(msg2 "hello world"))
     (print-two-variables msg msg2)
   )
 )
-
-
+;; *** t1-how-to-print-list
 (ert-deftest t1-how-to-print-list()
   (let ((msg '(rose violet daisy buttercup))(msg2 "world"))
     (print-two-variables msg msg2)
 ))
-
+;; *** t2-how-to-print-boolean
 (ert-deftest t2-how-to-print-boolean()
+  "Printing t and nil"
   (let ((msg t)(msg2 nil))
     (print-two-variables msg msg2)
 ))
-
+;; *** t3-how-to-print-boolean
 (ert-deftest t3-how-to-print-boolean()
+"Printing expressions turning t and f"
   (let ((msg (= 1 1))(msg2 (= 1 2)))
     (print-two-variables msg msg2)
 ))
+;; *** t4-how-to-print-variable-value
+(ert-deftest t4-how-to-print-variable-value()
+"Printing a variable fill-column's value"
+  (let ((msg fill-column))
+     (print msg)
+  )
+)
+;; *** t5-should-not-treat-variable-as-function
+(ert-deftest t5-should-not-treat-variable-as-function()
+  "Should not be able to treat fill-column variable as a function"
+  :expected-result :failed
+  (let ((msg (fill-column)))
+    (print msg)
+    (message ">%s<" msg)
+  )
+)
