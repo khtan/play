@@ -111,6 +111,13 @@ My HOME has ~/.profile
 
 [[https://thewanderingcoder.com/2015/02/refactoring-beginning-emacs-lisp-i-adding-tests/][refactoring 'beginning emacs lisp' I: adding tests]]
 
+*** ?
+how to print the type of an element?
+how to compare 2 lists?
+(format "%s" <sequence>) to convert lists to string for comparison?
+what does list= mean?
+string-equal and string=?
+
 ** [[c:\cprojects\github\play][pw-template ( playwright )]]
 create demo and then add the pieces for eslint etc
 make corrections per eslint and sonarlint

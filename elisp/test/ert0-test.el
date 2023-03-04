@@ -28,6 +28,8 @@
   (message "message: %s - %s" var1 var2)
 )
 ;; ** tests
+;; need something here
+;; ** ch01
 ;; *** t0-how-to-print-string
 (ert-deftest t0-how-to-print-string()
   (let ((msg "t0-how-to-print-string")(msg2 "hello world"))
@@ -58,8 +60,12 @@
      (print msg)
   )
 )
-;; *** t5-should-not-treat-variable-as-function
-(ert-deftest t5-should-not-treat-variable-as-function()
+;; *** variables
+;; The author shows how errors are manifested in emacs with a void-function and void-variable case
+;; For ert, we can either use the expected-result or should-error
+;;   should-error is preferred because the error string can be checked
+;; *** x1.7-void-function-expected-fail
+(ert-deftest x1.7-expected-fail-void-function()
   "Should not be able to treat fill-column variable as a function"
   :expected-result :failed
   (let ((msg (fill-column)))
@@ -67,3 +73,36 @@
     (message ">%s<" msg)
   )
 )
+;; *** x1.7-void-function-expected-fail
+(ert-deftest x1.7-should-error-void-function()
+  "Should not be able to treat fill-column variable as a function"
+  (let
+    (
+      (msg (should-error(fill-column) :type 'void-function))
+    )
+    (print msg)
+    (message ">%s< %s" msg (listp msg))
+  );; let
+);; ert-deftest
+;; *** x1.7-void-variable
+(ert-deftest x1.8a-void-variable()
+  "Should not be able to treat + as a variable"
+  (should-error (+) :type 'void-variable) 
+)
+(ert-deftest x1.8-void-variable()
+  "Should not be able to treat + as a variable"
+  :expected-result :failed
+  (let ((msg +))
+    (print msg)
+    (message ">%s<" msg)
+  )
+)
+;; *** how to print errors
+(ert-deftest t5-should-error()
+  "How to use should-error"
+  (let ((msg (should-error (/ 1 0))))
+    (print msg)
+    (message ">%s<" msg)
+    )
+)
+
