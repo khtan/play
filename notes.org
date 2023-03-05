@@ -807,8 +807,10 @@ https://www.geeksforgeeks.org/how-to-install-configure-and-use-git-on-ubuntu/
 ohttps://manpages.ubuntu.com/manpages/focal/en/man1/git-credential-store.1.html
    git-credential-store
 
-1> git config credential.helper store
-2> git push http://
+1> x - incorrect git config credential.helper store
+   git config credential.helper /usr/local/bin/git-credential-manager
+2> git config credential.credentialstore cache
+2> git push
 enter username, password
 
 * aside : to be transferred
