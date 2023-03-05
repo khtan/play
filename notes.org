@@ -813,5 +813,7 @@ ohttps://manpages.ubuntu.com/manpages/focal/en/man1/git-credential-store.1.html
 2> git push
 enter username, password
 
+magit invokes a github dialog with asks for the personal token
+
 * aside : to be transferred
 ** classic menu has shutdown if u choose the Win7 style
