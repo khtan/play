@@ -900,5 +900,9 @@ cache keeps in memory for a certain period only and purged after 15 min
 Fails bec credential.credentialStore not set
 cache would not work well across sessions
 git config credential.credentialStore plaintext
+
+note the camelcase for Store
+kwee1/wsl2 is now able to push automatically
+
 * aside : to be transferred
 ** classic menu has shutdown if u choose the Win7 style
