@@ -803,6 +803,7 @@ The following only works if runnig from .cask directory
 cask init . fails with command 'init' not available
 
 ** kwee1: ubuntu: git-credential-manager
+*** notes
 https://www.geeksforgeeks.org/how-to-install-configure-and-use-git-on-ubuntu/
 ohttps://manpages.ubuntu.com/manpages/focal/en/man1/git-credential-store.1.html
    git-credential-store
@@ -814,6 +815,11 @@ ohttps://manpages.ubuntu.com/manpages/focal/en/man1/git-credential-store.1.html
 enter username, password
 
 magit invokes a github dialog with asks for the personal token
+*** x
+| air   | windows | git able to remember credentials |
+| air   | wsl2    | not yet tried                    |
+| kwee1 | windows |                                  | d:\cprojects\github\play
+| kwee1 | wsl2    | git does not remember credential | $HOME/cprojects/github/play
 
 * aside : to be transferred
 ** classic menu has shutdown if u choose the Win7 style
