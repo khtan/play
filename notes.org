@@ -893,6 +893,10 @@ git config --get user.name
 git config --unset user.name
 
 ***** first checkin, have to enter token
+***** second checkin, still have to enter token
+So the cache entry did not seem to work
+cache keeps in memory for a certain period only and purged after 15 min
+**** Try credential.helper store
 
 * aside : to be transferred
 ** classic menu has shutdown if u choose the Win7 style
