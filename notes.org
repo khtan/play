@@ -824,7 +824,74 @@ magit invokes a github dialog with asks for the personal token
 kwee1@ubuntu
    git push prompts for github dialog but does not remember the token
 kwee1@win10
-   git push ? 
+   git push - authen is automatic
+**** ubuntu khtan@kwee1:~/cprojects/github/play$ git config --list --show-origin
+WARNING: terminal is not fully functional
+Press RETURN to continue 
+
+file:/home/khtan/.gitconfig     user.name=KHT@kwee1-ubuntu
+file:/home/khtan/.gitconfig     user.email=tan.k.h@juno.com
+file:/home/khtan/.gitconfig     credential.helper=/usr/local/bin/git-credential-manager
+file:/home/khtan/.gitconfig     credential.https://dev.azure.com.usehttppath=true
+file:.git/config        core.repositoryformatversion=0
+file:.git/config        core.filemode=true
+file:.git/config        core.bare=false
+file:.git/config        core.logallrefupdates=true
+file:.git/config        remote.origin.url=https://github.com/khtan/play.git
+file:.git/config        remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+file:.git/config        branch.main.remote=origin
+file:.git/config        branch.main.merge=refs/heads/main
+file:.git/config        credential.helper=/usr/local/bin/git-credential-manager
+file:.git/config        credential.credentialstore=cache
+
+**** win10 d:\cprojects\github\play>git config --list --show-origin
+git config --list --show-origin
+file:"C:\\ProgramData/Git/config"	core.symlinks=false
+file:"C:\\ProgramData/Git/config"	core.autocrlf=true
+file:"C:\\ProgramData/Git/config"	core.fscache=true
+file:"C:\\ProgramData/Git/config"	color.diff=auto
+file:"C:\\ProgramData/Git/config"	color.status=auto
+file:"C:\\ProgramData/Git/config"	color.branch=auto
+file:"C:\\ProgramData/Git/config"	color.interactive=true
+file:"C:\\ProgramData/Git/config"	help.format=html
+file:"C:\\ProgramData/Git/config"	rebase.autosquash=true
+file:"c:\\Program Files\\Git\\mingw64/etc/gitconfig"	http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+file:"c:\\Program Files\\Git\\mingw64/etc/gitconfig"	http.sslbackend=openssl
+file:"c:\\Program Files\\Git\\mingw64/etc/gitconfig"	diff.astextplain.textconv=astextplain
+file:"c:\\Program Files\\Git\\mingw64/etc/gitconfig"	filter.lfs.clean=git-lfs clean -- %f
+file:"c:\\Program Files\\Git\\mingw64/etc/gitconfig"	filter.lfs.smudge=git-lfs smudge -- %f
+file:"c:\\Program Files\\Git\\mingw64/etc/gitconfig"	filter.lfs.process=git-lfs filter-process
+file:"c:\\Program Files\\Git\\mingw64/etc/gitconfig"	filter.lfs.required=true
+file:"c:\\Program Files\\Git\\mingw64/etc/gitconfig"	credential.helper=manager
+file:"c:\\Program Files\\Git\\mingw64/etc/gitconfig"	core.editor='C:\Program Files (x86)\Notepad++\notepad++.exe' -multiInst -notabbar -nosession -noPlugin
+file:d:/users/khtan/spacemacsHome1/.gitconfig	user.email=tan.k.h@juno.com
+file:d:/users/khtan/spacemacsHome1/.gitconfig	user.name=KHT@kwee1
+file:.git/config	core.repositoryformatversion=0
+file:.git/config	core.filemode=false
+file:.git/config	core.bare=false
+file:.git/config	core.logallrefupdates=true
+file:.git/config	core.symlinks=false
+file:.git/config	core.ignorecase=true
+file:.git/config	remote.origin.url=https://github.com/khtan/play.git
+file:.git/config	remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+file:.git/config	branch.main.remote=origin
+file:.git/config	branch.main.merge=refs/heads/main
+
+**** win10 credential.helper = manager, nothing else but ubuntu uses both .helper, .credentialstore
+**** https://git-scm.com/book/en/v2/Git-Tools-Credential-Storage
+This suggests that we remove credential.credentialstore key
+set credential.helper=cache
+// sample keys: core.editor, user.name, user.email
+
+// listing all
+git config --list --show-origin
+// to set
+git config user.name "value"
+// to view
+git config --get user.name
+// to remove
+git config --unset user.name
+
 
 * aside : to be transferred
 ** classic menu has shutdown if u choose the Win7 style
