@@ -821,5 +821,10 @@ magit invokes a github dialog with asks for the personal token
 | kwee1 | windows |                                  | d:\cprojects\github\play
 | kwee1 | wsl2    | git does not remember credential | $HOME/cprojects/github/play
 
+kwee1@ubuntu
+   git push prompts for github dialog but does not remember the token
+kwee1@win10
+   git push ? 
+
 * aside : to be transferred
 ** classic menu has shutdown if u choose the Win7 style
