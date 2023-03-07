@@ -892,6 +892,7 @@ git config --get user.name
 // to remove
 git config --unset user.name
 
+***** first checkin, have to enter token
 
 * aside : to be transferred
 ** classic menu has shutdown if u choose the Win7 style
