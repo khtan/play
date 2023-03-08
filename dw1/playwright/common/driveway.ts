@@ -145,7 +145,7 @@ export class Driveway {
     await page.goto(url);
     const url0 = 'https://www.driveway.com/';
     // Buying New & Used Cars | Driveway
-    log.trace(`${workerIndex} title0: ${await page.title()} url0:${await page.url()}`); 
+    log.trace(`${workerIndex} title0: ${await page.title()} url0:${await page.url()}`);
     await expect(page.url()).toBe(url0);
     // action by entering user details and submit
     await page.getByTestId('login-btn').click();

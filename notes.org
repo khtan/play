@@ -794,7 +794,7 @@ https://github.com/franckLdx/ts-retry
 
 Something still missing - git-credential-store?
 
-*** ? 
+*** python softlink needed for cask
 1. added a soft link in /usr/bin/python to /usr/bin/python3
 
 The following only works if runnig from .cask directory
@@ -802,7 +802,26 @@ The following only works if runnig from .cask directory
    cask info
 cask init . fails with command 'init' not available
 
-** kwee1: ubuntu: git-credential-manager
+** kwee1-ubuntu: right shift key
+The right-shift problem returned and fixed by rebooting.
+There is some interference from Win 10 Sticky keys.
+So turned off Sticky/Filter keys in kwee1
+
+** kwee1-ubuntu: Google Drive desktop not available on linux
+*** The idea of sharing files using G Drive only works for Windows and MacOS
+The G Drive Desktop is not available for Linux.
+There are other solutions specifically for Linux but in that case, we could also use Dropbox etc.
+Overall idea of sharing files on Linux implies the files are not synced but edited directly.
+This could possibly slow the access down.
+**** nautilus
+https://www.makeuseof.com/tag/access-google-drive-ubuntu/
+Turns out the Gnome file managers like nautilus cannot interpret the /mnt/<google drive> properly.
+Alternative to turn on the Gnome Online a/c will allow direct access but the speed may be problematic?
+
+Need to try to see
+**** others
+https://www.raidrive.com/ is a service that works for linux/gdrive.
+** kwee1-ubuntu: git-credential-manager
 *** notes
 https://www.geeksforgeeks.org/how-to-install-configure-and-use-git-on-ubuntu/
 ohttps://manpages.ubuntu.com/manpages/focal/en/man1/git-credential-store.1.html
