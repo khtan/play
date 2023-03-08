@@ -816,11 +816,11 @@ enter username, password
 
 magit invokes a github dialog with asks for the personal token
 *** x
-| air   | windows | git able to remember credentials | c:\cprojects\github\play
-| air   | wsl2    | not yet tried                    |
-| kwee1 | windows |                                  | d:\cprojects\github\play
-| kwee1 | wsl2    | git does not remember credential | $HOME/cprojects/github/play
-
+| air     | windows      | git able to remember credentials | c:\cprojects\github\play    |
+| air     | wsl2         | not yet tried                    |                             |
+| kwee1   | windows      |                                  | d:\cprojects\github\play    |
+| kwee1   | wsl2 u 22    | git does not remember credential | $HOME/cprojects/github/play |
+| rooibos | ubuntu 18.04 |                                  |                             |
 
 kwee1@ubuntu
    git push prompts for github dialog but does not remember the token
