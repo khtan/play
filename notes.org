@@ -816,10 +816,11 @@ enter username, password
 
 magit invokes a github dialog with asks for the personal token
 *** x
-| air   | windows | git able to remember credentials |
+| air   | windows | git able to remember credentials | c:\cprojects\github\play
 | air   | wsl2    | not yet tried                    |
 | kwee1 | windows |                                  | d:\cprojects\github\play
 | kwee1 | wsl2    | git does not remember credential | $HOME/cprojects/github/play
+
 
 kwee1@ubuntu
    git push prompts for github dialog but does not remember the token
@@ -903,6 +904,15 @@ git config credential.credentialStore plaintext
 
 note the camelcase for Store
 kwee1/wsl2 is now able to push automatically
+
+Since I had to use 'plaintext', the credentials is stored in
+/home/khtan/.git-credentials
+
+It also reveals the URL that could have been used to push
+https://stackoverflow.com/questions/52216687/location-of-git-credentials-file-in-windows-10
+  For Windows 10, %UserProfile%\.git-credentials or in Credentials Manager
+  For kwee1, %UserProfile%\.git-credentials does not exist
+  Credentials Manager shows Windows Credentials for air etc
 
 * aside : to be transferred
 ** classic menu has shutdown if u choose the Win7 style
