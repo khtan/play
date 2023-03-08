@@ -914,5 +914,36 @@ https://stackoverflow.com/questions/52216687/location-of-git-credentials-file-in
   For kwee1, %UserProfile%\.git-credentials does not exist
   Credentials Manager shows Windows Credentials for air etc
 
+**** rooibos
+https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git?platform=linux
+  Shows 2 ways to configure git authentication
+*****  1) using git cli ( gh )
+https://github.com/cli/cli#installation
+https://github.com/cli/cli/blob/trunk/docs/install_linux.md
+   > type -p curl >/dev/null || sudo apt install curl -y
+   >
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list
+
+sudo apt update
+sudo apt install gh -y
+
+*****  2) using Git Credential Manager (GCM)
+It seems GCM is more generic and works for Bitbucket etc.
+Turns out to be incorrect and would force me to use plaintext
+
+0. install Git
+1. install GCM
+sudo dpkg -i Downloads/gcm-linux_amd64.2.0.935.deb
+suod dpkg -P gcm // reverse
+2. configure GCM
+git-credential-manager configure
+git-credential-manager unconfigure // to reverse
+
+   The problem is the GCM credential stores are not very convenient for linux
+   git-s built-in credential cache is not persistent
+   plaintext is not secure -- that is what is used on kwee1/ubuntu
+
 * aside : to be transferred
 ** classic menu has shutdown if u choose the Win7 style
