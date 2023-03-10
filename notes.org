@@ -1,7 +1,7 @@
 * meta
 ** startups
-//		#+STARTUP: hidestars	                                                     169-280AD
-#+SEQ_TODO: TODO(t!) START(s!) STUCK(k!) WAIT(w!) | DONE(d!) CANCEL(c!) D                 !)
+//		#+STARTUP: hidestars
+#+SEQ_TODO: TODO(t!) START(s!) STUCK(k!) WAIT(w!) | DONE(d!) CANCEL(c!)
 #+PROPERTY: imp_ALL high medium low                                                       
 #+PROPERTY: urg_ALL immediate shortterm longterm
 #+PROPERTY: loc_ALL home office
@@ -974,5 +974,118 @@ git-credential-manager unconfigure // to reverse
    git-s built-in credential cache is not persistent
    plaintext is not secure -- that is what is used on kwee1/ubuntu
 
+** rooibos: direct access to google drive
+use it to see st.org etc and check usability/speed/corruption/convenience
+
+** rooibos: Shift-Tab does not work
+*** summary
+ChatGPT suggests:
+1) hello.txt with tab and shift-tab and use hexl-mode to show that both adds 0xff09
+   character instead of 0xfe20 for
+2) Use to display keycode/symbol for Tab and Shift-Tab keys
+xmodmap -pk | grep -E 'Tab|ISO_Left_Tab'
+     23    	0xff09 (Tab)	0xfe20 (ISO_Left_Tab)	0xff09 (Tab)	0xfe20 (ISO_Left_Tab)
+
+This is a system wide problem and reproduced with Gedit etc. So for the time being,
+have to leave it be. But the ChatGPT info is useful, hence captured here.
+*** chatgpt session
+**** In emacs, where is the global-map file?
+In Emacs, the global keymap is not stored in a file, but is instead defined within the Emacs Lisp source code. Specifically, it is defined in the C source file "keymap.c" which is compiled into the Emacs executable.
+
+You can view the definition of the global keymap by evaluating the expression (current-global-map) in Emacs, which will return a value that represents the keymap. Alternatively, you can view the source code for the global keymap by opening the "keymap.c" file in the Emacs source code and searching for the definition of the global_map variable.
+**** Running emacs 28.2 in ubuntu 20.04 shows that shift-tab key does not work. Any reports to confirm this?
+I am not aware of any widespread reports of the Shift-Tab key not working in Emacs 28.2 on Ubuntu 20.04. However, there are a few things you can check to troubleshoot the issue:
+
+    Check that your keyboard layout is correct and that the Shift and Tab keys are functioning properly. You can test this by typing Shift-Tab in a text editor outside of Emacs and seeing if it produces the expected result (typically, this will move the cursor to the previous field or element in the UI).
+
+    Check if the key combination has been remapped or bound to a different function in your Emacs configuration. You can do this by looking in your Emacs init file (typically ~/.emacs or ~/.emacs.d/init.el) for any lines that contain Shift-Tab, S-TAB, or [(shift tab)]. If you find any, try commenting them out or removing them to see if that resolves the issue.
+
+    Try starting Emacs with the -Q option to disable your custom configuration and load only the default settings. If the Shift-Tab key works in this mode, then the issue is likely related to your configuration and you can narrow down the problem by selectively enabling parts of your configuration until you find the culprit.
+**** (1) is correct. What is the problem?
+If you have confirmed that your keyboard layout is correct and the Shift-Tab key combination works outside of Emacs, then the problem may be related to your Emacs configuration.
+
+It is possible that the Shift-Tab key combination has been remapped or bound to a different function in your Emacs configuration, which is preventing it from functioning as expected. To troubleshoot this, you can look for any custom keybindings in your Emacs init file (typically ~/.emacs or ~/.emacs.d/init.el) that use the Shift-Tab key combination, and try commenting them out or removing them to see if that resolves the issue.
+
+Alternatively, it is possible that there is a bug or compatibility issue with your version of Emacs (28.2) on Ubuntu 20.04 that is causing the Shift-Tab key combination to not work properly. In this case, you may want to check if there are any known issues or patches available for your version of Emacs, or consider upgrading to a newer version of Emacs that may have resolved the issue.
+**** Sorry I mean (1) is identifies the problem. How can I check the key maps for Ubuntu 20.04
+To check the key maps on Ubuntu 20.04, you can use the xev utility, which is part of the X11 window system that Ubuntu uses by default. xev allows you to capture and display X events, including keyboard events, and their associated key codes and symbols.
+
+To use xev, open a terminal window and type the following command:
+
+xev
+
+This will open a small window that listens for events. To test the Shift-Tab key combination, move the mouse pointer into the xev window and press Shift-Tab. You should see a stream of events appear in the terminal window, including information about the key press and release events.
+
+Look for the lines that begin with "KeyPress" and "KeyRelease", and note the values of the "keycode" and "keysym" fields. The "keycode" field represents the numerical key code for the key, and the "keysym" field represents the symbolic key value associated with the key.
+
+You can use these values to check if the Shift-Tab key combination is being recognized correctly by Ubuntu. For example, you can use the following command to display the key map for your current X11 session:
+
+perl
+
+xmodmap -pk | grep -E 'Tab|ISO_Left_Tab'
+
+This will display the key codes and symbols for the Tab and Shift-Tab keys. If the Shift-Tab key is recognized correctly, you should see an entry for "ISO_Left_Tab" with a keycode that matches the value reported by xev.
+
+If you do not see the expected key code or symbol for the Shift-Tab key, it may indicate a problem with your keyboard layout or X11 configuration. In that case, you may want to consult the Ubuntu documentation or forums for further troubleshooting steps.
+
+**** Does Ubuntu 20.04 have a problem with shift-tab key?
+I am not aware of any widespread problems with the Shift-Tab key combination specifically on Ubuntu 20.04. However, it is possible that some users may experience issues with this key combination due to factors such as their keyboard layout, Emacs configuration, or other software and hardware configurations.
+
+If you are experiencing issues with the Shift-Tab key combination on Ubuntu 20.04, I would recommend checking your keyboard layout and trying the troubleshooting steps I outlined in my previous responses. Additionally, you may want to search online forums or support channels to see if other users have reported similar issues or if there are any known bugs or compatibility issues with your particular setup.
+**** How can I check my keyboard layout in Ubuntu 20.04?
+You can check your keyboard layout in Ubuntu 20.04 by following these steps:
+
+    Open the "Settings" application from the launcher or by clicking on the gear icon in the top-right corner of the screen.
+
+    In the "Settings" application, click on the "Keyboard" option.
+
+    Under the "Keyboard" settings, look for the "Layout" section. This section should display your current keyboard layout, as well as any other layouts that are installed on your system.
+
+    To view more details about your keyboard layout, click on the "Options" button next to the layout name. This will open a new window that displays various options and settings for the selected layout.
+
+    In the "Options" window, you can view information about the layout's language, variant, and other settings such as the key to compose special characters, the behavior of the Alt and Ctrl keys, and more.
+
+    If you need to change your keyboard layout, you can do so by clicking on the "+" button under the "Layouts" section and selecting a new layout from the list. You can also use the "Options" button to configure specific settings for each layout.
+
+By checking your keyboard layout settings, you can ensure that the Shift-Tab key combination is mapped correctly on your system, and that any issues you are experiencing are not related to a misconfigured or incompatible layout.
+**** The keyboard layout is correct for Tab and Left Tab. How do I check the X11 configuration for Shift-Tab key?
+To check the X11 configuration for the Shift-Tab key, you can use the xmodmap command, which allows you to view and modify the keymaps used by X11. Here are the steps you can follow:
+
+    Open a terminal window on your Ubuntu 20.04 system.
+
+    Type the following command to view the current keymap:
+
+xmodmap -pke
+
+This will display a list of keycodes and their associated keysyms, which represent the key values for each key on your keyboard.
+
+Look for the lines that correspond to the Shift and Tab keys. The Shift key is usually labeled "Shift_L" or "Shift_R", and the Tab key is usually labeled "Tab".
+
+Note the keycode value for the Shift key. This is the numerical code that X11 uses to identify the key.
+
+If the keycode value for the Shift key is different from what you saw in xev, you can remap it using the xmodmap command. For example, to remap the Shift-Tab key combination to the Tab key, you can type the following command:
+
+python
+
+    xmodmap -e "keycode <SHIFT_KEYCODE> = Tab ISO_Left_Tab"
+
+    Replace <SHIFT_KEYCODE> with the keycode value you noted earlier.
+
+    This command will remap the Shift key to act like the Tab key, and also map the ISO_Left_Tab symbol to the Tab key, which allows Emacs to recognize the Shift-Tab key combination.
+
+    Note that this remapping will only apply to your current X11 session. If you want to make it permanent, you can add the xmodmap command to your startup script (e.g. ~/.xsessionrc).
+
+I hope this helps you resolve the issue with the Shift-Tab key combination in Emacs.
+**** When 'xmodmap -pke' returns the line 'keycode 23 = Tab ISO_Left_Tab Tab ISO_Left_Tab', what does each entry to the right of the = mean?
+
+When the xmodmap -pke command returns a line like:
+
+keycode 23 = Tab ISO_Left_Tab Tab ISO_Left_Tab
+
+The entries to the right of the equals sign (=) represent the key symbols that are associated with the keycode value (in this case, keycode 23).
+
+In this example, there are four key symbols associated with keycode 23, separated by spaces. The first symbol is Tab, which is the primary symbol associated with the Tab key. The second symbol is ISO_Left_Tab, which is an alternate symbol for the Tab key that is used to produce a different character (a backwards tab). The third and fourth symbols are both Tab again, but with the additional modifier ISO_Left_Tab. These additional symbols allow you to produce the same characters as the primary Tab symbol, but with a different modifier key (in this case, the left-hand Tab key).
+
+The reason for having multiple symbols associated with a single keycode is to allow for different behaviors depending on the current keyboard layout and modifiers. For example, some keyboard layouts may use the ISO_Left_Tab symbol instead of the regular Tab symbol for the Tab key, and some applications may interpret the ISO_Left_Tab symbol differently than the regular Tab symbol. The additional symbols with the ISO_Left_Tab modifier allow for these variations to be handled correctly.
 * aside : to be transferred
 ** classic menu has shutdown if u choose the Win7 style
