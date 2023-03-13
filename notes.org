@@ -974,5 +974,30 @@ git-credential-manager unconfigure // to reverse
    git-s built-in credential cache is not persistent
    plaintext is not secure -- that is what is used on kwee1/ubuntu
 
+** outlining for lisp code
+The problem is that there are several modes at play
+outline-mode
+hs-mode
+outshine-mode
+
+*** show-hide
+| hide block                    | C-c @ C-d | hs-hide-block
+| show block                    | C-c @ C-s | hs-show-block
+| hide all                      | C-c @ C-t | hs-hide-all
+| show all                      | C-c @ C-a | hs-show-all
+| hide level                    | C-c @ C-l | hs-hide-level
+| toggle hiding                 | C-c @ C-e | hs-toggle-hiding
+| hide comments when hiding-all |           |
+| reveal on isearch             |           |
+** outlining and orgmode
+*** look at the 3 books that I have, only one covers outlining
+2022-MasteringEmacs : nothing on outline, orgmode in passing
+2016-EmacsFieldGuide : nothing on { outline, orgmode, org-mode }
+1999-TeachYourselfEmacsIn24Hrs : Hr15: overview of a file
+   nothing on org-mode, orgmode
+*** TeachYourself Hr15: overview of a file
+focusing on part of a buffer
+using outline or narrowing
+folding text
 * aside : to be transferred
 ** classic menu has shutdown if u choose the Win7 style

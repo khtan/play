@@ -37,7 +37,7 @@ then warn of a tiger"
       (message "fill-column less than %d" size)
   )
 )
-                                        ; tests
+; tests
 (fill-column-check 20)
 (fill-column-check 100)
 
