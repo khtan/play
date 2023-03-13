@@ -999,7 +999,7 @@ outshine-mode
 focusing on part of a buffer
 using outline or narrowing
 folding text
-=======
+
 ** rooibos: direct access to google drive
 use it to see st.org etc and check usability/speed/corruption/convenience
 
@@ -1113,5 +1113,55 @@ The entries to the right of the equals sign (=) represent the key symbols that a
 In this example, there are four key symbols associated with keycode 23, separated by spaces. The first symbol is Tab, which is the primary symbol associated with the Tab key. The second symbol is ISO_Left_Tab, which is an alternate symbol for the Tab key that is used to produce a different character (a backwards tab). The third and fourth symbols are both Tab again, but with the additional modifier ISO_Left_Tab. These additional symbols allow you to produce the same characters as the primary Tab symbol, but with a different modifier key (in this case, the left-hand Tab key).
 
 The reason for having multiple symbols associated with a single keycode is to allow for different behaviors depending on the current keyboard layout and modifiers. For example, some keyboard layouts may use the ISO_Left_Tab symbol instead of the regular Tab symbol for the Tab key, and some applications may interpret the ISO_Left_Tab symbol differently than the regular Tab symbol. The additional symbols with the ISO_Left_Tab modifier allow for these variations to be handled correctly.
+** rooibos: vnc viewer window takes up vertical space
+This is a minor issue but takes a lot of time
+chatgpt says that tigervnc has a vncconfig dialog that can be used to exclude display frills but
+my ubuntu says there is "No VNC extension on display :0".
+Turns out vncext is not installed by tigervnc-server
+Best to leave this out for the moment
+** rooibos: emacs 28 indent-region incorrectly comments out region
+*** My Spacemacs is showing a .el file as ELisp/d on Ubuntu and Emcas-Lisp on Windows. What is the difference due to?
+
+The difference in how Spacemacs displays the file type for the .el file on Ubuntu and Windows is likely due to the way that Spacemacs is configured to detect and handle different file types.
+
+In general, Emacs and Spacemacs use "magic" file signatures to detect the type of file based on its contents. These magic signatures can be specific to different platforms or operating systems, which can lead to different file type detections on different systems.
+
+For example, on Ubuntu, Spacemacs may be using a magic signature that matches the contents of the .el file to the ELisp/d file type, while on Windows, it may be using a different signature that matches it to the Emacs-Lisp file type.
+
+The difference in file type detection may not necessarily indicate any significant difference in how the file is handled by Spacemacs, since both ELisp/d and Emacs-Lisp are types of Lisp files that can be edited and executed in Emacs. However, it is worth checking the Spacemacs documentation or configuration files to see if there are any specific differences in how these file types are handled or if there are any platform-specific configurations that could be affecting the file type detection.
+*** In Emacs, what is the difference between an ELisp/d file and an 'Emacs-Lisp' file?
+There is no difference between an ELisp/d file and an "Emacs-Lisp" file. "ELisp/d" is short for "Emacs Lisp data", which refers to files that contain data in Emacs Lisp format, while "Emacs-Lisp" refers to files that contain Emacs Lisp code. Both file types use the same Emacs Lisp language, and can be edited and executed in Emacs using the same commands and functions.
+
+The file type detection in Emacs or Spacemacs may use different labels or extensions to distinguish between different types of Emacs Lisp files, but these differences are generally cosmetic and do not affect how the files are handled or executed by Emacs. In general, any file that contains Emacs Lisp code or data can be considered an "Emacs Lisp" file and can be edited and executed in Emacs using the appropriate commands and functions.
+*** In Emacs 28, running the function indent-region comments out the region, instead of indenting it. Has this been reported as a problem?
+Yes, this issue has been reported and is a known bug in Emacs 28. When the indent-region function is used on a region that contains comments, Emacs 28 may incorrectly comment out the region instead of indenting it.
+
+This issue has been reported on the Emacs Bug Tracker, and a fix has been included in the development version of Emacs 28. The fix is expected to be included in the next release of Emacs 28.
+
+In the meantime, if you encounter this issue, you can use the comment-region function to uncomment the region before indenting it, and then use the comment-region function again to re-comment the region if necessary. Alternatively, you can try using the development version of Emacs 28, which includes the fix for this issue.
+*** Is this bug only for elisp files or any file type?
+This bug in Emacs 28 affects any file type that contains comments, not just Elisp files. When the indent-region function is used on a region that contains comments, Emacs 28 may incorrectly comment out the region instead of indenting it, regardless of the file type.
+
+Therefore, if you encounter this issue in Emacs 28, it can occur in any file type that contains comments, including programming language files such as C, Python, or Java, as well as plain text files such as Markdown or Org mode files.
+*** The elisp file that I am working on does contain comments but the region that I select does not have any comments. Does the bug still add comments to the region for indent-region?
+It's possible that the bug in Emacs 28 is causing comments to be added to the region even if there are no comments present in the selected region. This behavior has been reported by some users in the Emacs Bug Tracker.
+
+If you're encountering this issue and you're sure that there are no comments in the selected region, you may want to try updating Emacs to the latest version or using an older version of Emacs until the bug is fixed. Alternatively, you can try using a different function to indent the region, such as tab-to-tab-stop or indent-rigidly, which may not be affected by this bug.
+
+If you're still having trouble, you can report the issue to the Emacs Bug Tracker to help the developers track down and fix the problem.
+** rooibos: revive1.el
+1) write the output somewhere else
+   env variable for revive-input, revive-output?
+   or a file that specifies both input and output
+
+2) using some sample emacs configuration, write out the files for shell buffer etc
+
+3) identify why failure of one buffer loading causes entire load to fail.
+   ideally, should just write error and continue
+
+4) write tests and re-factor code to do the above
+
+5) check Intro Tutorial to see when defvar etc are introduced
+   
 * aside : to be transferred
 ** classic menu has shutdown if u choose the Win7 style
