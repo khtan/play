@@ -1162,6 +1162,10 @@ If you're still having trouble, you can report the issue to the Emacs Bug Tracke
 4) write tests and re-factor code to do the above
 
 5) check Intro Tutorial to see when defvar etc are introduced
-   
+*** ~/revive.tan.el
+(1 (nil ((truncate-partial-width-windows . 50) (make-backup-files . t) (version-control) (visible-bell) (file-name-history) (buffer-name-history) (minibuffer-history))) (80 25 ((0 0 80 24)) ((nil "*scratch*" 1 1))))
+
 * aside : to be transferred
 ** classic menu has shutdown if u choose the Win7 style
+** rooibos: what pdf reader/editor to read ebooks
+just like pdf-tracker on windows

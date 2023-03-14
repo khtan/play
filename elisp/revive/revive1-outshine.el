@@ -472,7 +472,7 @@ those variable have already localized by their major mode.")
   "*User defined list of the mode specific local variables to save.")
 
 (defvar revive:configuration-file
-  (if (eq system-type 'ms-dos) "~/_revive.el" "~/.revive.el")
+  (if (eq system-type 'ms-dos) "~/_revive.tan.el" "~/.revive.tan.el")
   "*File to save window configuration")
 
 (defvar revive:ignore-buffer-pattern "^ \\*"
