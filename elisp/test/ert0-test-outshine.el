@@ -65,7 +65,7 @@
 ;; For ert, we can either use the expected-result or should-error
 ;;   should-error is preferred because the error string can be checked
 ;; **** x1.7-expected-fail-void-function
-(ert-deftest x1.7-expected-fail-void-function()
+(ert-deftest t1-7a-expected-fail-void-function()
   "Should not be able to treat fill-column variable as a function"
   :expected-result :failed
   (let ((msg (fill-column)))
@@ -74,7 +74,7 @@
   )
 )
 ;; **** x1.7-should-error-void-function
-(ert-deftest x1.7-should-error-void-function()
+(ert-deftest t1-7b-should-error-void-function()
   "Should not be able to treat fill-column variable as a function"
   (let
     (
@@ -85,11 +85,7 @@
   );; let
 );; ert-deftest
 ;; **** x1.7-void-variable
-(ert-deftest x1.7a-void-variable()
-  "Should not be able to treat + as a variable"
-  (should-error (+) :type 'void-variable)
-)
-(ert-deftest x1.7-void-variable()
+(ert-deftest t1-7c-void-variable()
   "Should not be able to treat + as a variable"
   :expected-result :failed
   (let ((msg +))
@@ -107,11 +103,11 @@
 )
 ;; *** 1.8 arguments
 ;; **** concat example
-(ert-deftest t1.8.1.a-concat()
+(ert-deftest t1-8-1a-concat()
   "1. should does not need to know which element is expected, which is the value of test"
     (should (string= (concat "abc" "def") "abcdef"))
 )
-(ert-deftest t1.8.1.b-concat()
+(ert-deftest t1-8-1b-concat()
   "1. this version is easier to debug if there are problems"
   (let
     ((msg1 "abc")(msg2 "def")(expectedmsg "abcdef"))
@@ -119,7 +115,7 @@
     (should (string= concatmsg expectedmsg))
   )
 )
-(ert-deftest t1.8.1.c-substring()
+(ert-deftest t1-8-1c-substring()
   "substring"
     (should (string= (substring "The quick brown fox jumped" 16 19) "fox"))
 )
@@ -127,7 +123,7 @@
   "number-to-string"
     (should (string= (concat "The " (number-to-string (+ 2 fill-column)) " red foxes") "The 72 red foxes"))
 )
-(ert-deftest t1.8.3.a-variable-number-of-arguments()
+(ert-deftest t1-8-3a-variable-number-of-arguments()
   "?"
     (should (= (+) 0))
     (should (= (*) 1))
@@ -136,8 +132,58 @@
     (should (= (+ 3 4 5) 12))
     (should (= (* 3 4 5) 60))
 )
-(ert-deftest t1.8.4.a-wrong-object-type-as-argument()
+(ert-deftest t1-8-4a-wrong-object-type-as-argument()
   "1. should-error returns a list, the first element is the error-type"
   (should (equal (should-error (+ 2 'hello)) '(wrong-type-argument number-or-marker-p hello)))
+)
+;; **** 1.8.5 message function
+(ert-deftest t1-8-5a-message()
+  "1. "
+    (should
+      ( string= 
+        (message "This message appears in the echo area")
+        "This message appears in the echo area"
+      )
+    )
+)
+(ert-deftest t1-8-5b-buffer-name()
+  "1. buffer-name is  *temp* during ert execution"
+    (should 
+      (string= 
+        (message "The name of this buffer is >%s<" (buffer-name))
+        "The name of this buffer is > *temp*<"
+      )
+    )
+)
+;; *** 1.9 setting value of variable
+;; **** 1.9.1 using set
+(ert-deftest t1-9-1a-set()
+  "using set"
+  (set 'flowers '(rose violet daisy buttercup))
+  (should (equal flowers '(rose violet daisy buttercup)))
+)
+;; ***** 1.9.2 using setq
+(ert-deftest t1-9-2a-setq()
+  "using setq"
+  (setq flowers '(rose violet daisy buttercup))
+  (should (equal flowers '(rose violet daisy buttercup)))
+)
+(ert-deftest t1-9-2b-setq-multiple-variables()
+  "using setq on multiple variables?"
+  (setq flowers '(rose violet daisy buttercup)
+        trees '(pine fir oak maple)
+        herbivores '(gazelle antelope zebra)
+  )
+  (should (equal flowers '(rose violet daisy buttercup)))
+  (should (equal trees '(pine fir oak maple)))
+  (should (equal herbivores '(gazelle antelope zebra)))
+)
+;; ***** 1.9.3 counting
+(ert-deftest t1-9-3a-counting()
+  "counting"
+  (setq counter 0)
+  (should (= counter 0))  
+  (setq counter (+ counter 1))
+  (should (= counter 1))
 )
 

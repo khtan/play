@@ -132,6 +132,10 @@ there are several lisp extensions for vs code
 
    after adding .el for file association with commonlisp, it is able to show syntax very well
 
+*** ert coding guidelines
+1. ert tests if named with dots like t2.4 will show up as t2\.4 and makes ugly reading
+   Keep the names separated with dashes instead
+   
 ** [[c:\cprojects\github\play][pw-template ( playwright )]]
 create demo and then add the pieces for eslint etc
 make corrections per eslint and sonarlint
