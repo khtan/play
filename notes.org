@@ -10,12 +10,13 @@
 ** motivation
 The idea is to have one repo for all places to try things etc
 ** registry
-| machine      | os    | directory                |
-|--------------+-------+--------------------------|
-| air-win10    | win10 | c:\cprojects\github\play |
-| kwee1-ubuntu | wsl2  | ~/cprojects/github/play  |
-| kwee1-win10  | win10 | d:/cprojects/github/play |
-|              |       |                          |
+| machine      | os     | directory                |
+|--------------+--------+--------------------------|
+| air-win10    | win10  | c:\cprojects\github\play |
+| kwee1-ubuntu | wsl2   | ~/cprojects/github/play  |
+| kwee1-win10  | win10  | d:/cprojects/github/play |
+| rooibos      | ubuntu | ~/projects/github/play   |
+
 ** github password ( do not put here )
 A minor change to test push again from air
 ->air remembers
@@ -1165,6 +1166,15 @@ If you're still having trouble, you can report the issue to the Emacs Bug Tracke
 *** ~/revive.tan.el
 (1 (nil ((truncate-partial-width-windows . 50) (make-backup-files . t) (version-control) (visible-bell) (file-name-history) (buffer-name-history) (minibuffer-history))) (80 25 ((0 0 80 24)) ((nil "*scratch*" 1 1))))
 
+** TODO rooibos: make chemacs2 more indenpdent
+- State "TODO"       from              [2023-03-14 Tue 10:41]
+The .spacemacs should be moved into ~/emacs.d/init.el
+The chemacs2 script should ensure that .spacemacs does not exist
+
+** DONE kwee1: wsl unable to access /mnt/g
+CLOSED: [2023-03-14 Tue 09:53]
+- State "DONE"       from              [2023-03-14 Tue 09:53]
+Had to use wsl --shutdown and restart Ubuntu
 * aside : to be transferred
 ** classic menu has shutdown if u choose the Win7 style
 ** rooibos: what pdf reader/editor to read ebooks
