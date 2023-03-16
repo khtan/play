@@ -1172,8 +1172,81 @@ If you're still having trouble, you can report the issue to the Emacs Bug Tracke
 
 ** TODO rooibos: make chemacs2 more indenpdent
 - State "TODO"       from              [2023-03-14 Tue 10:41]
+*** intent
 The .spacemacs should be moved into ~/emacs.d/init.el
 The chemacs2 script should ensure that .spacemacs does not exist
+*** best practice: don't hide folders, ie just bloats things and makes it hard to see
+Add all emacs work in ~/emacsConfig
+Q) emacsStuff or emacsConfig?
+
+git clone https://github.com/syl20bnr/spacemacs ~/emacsConfig/spacemacs.develop
+
+user-emacs-directory = ~/emacsConfig/spacemacs.develop
+mkdir ~/emacsConfig/spacemacs.d
+touch ~/emacsConfig/spacemacs.d/init.el
+
+
+spacemacs              ~/emacsConfig/spacemacs.d
+spacemac0              ~/emacsConfig/spacemacs0.d
+
+The real missing document is how to create the spacemacs.d folder and what it needs
+
+chemacs2
+
+(("spacemacs" . ((user-emacs-directory . "~/emacsConfig/spacemacs.develop")
+                 (env . (("SPACEMACSDIR" . "~/emacsConfig/spacemacs.d")))))
+
+ ("spacemacs0" . ((user-emacs-directory . "~/emacsConfig/spacemacs.develop")
+                        (env . (("SPACEMACSDIR" . "~/emacsConfig/spacemacs0.d")))))
+
+ ("emacs" . ((user-emacs-directory . "~/spacemacsConfig/emacs.d")
+)))
+
+*** rooibos: turns out chemacs and spacemacs on .spacemacs.d not exactly working yet
+1) Instead of .emacs.d, keep all emacs config in folder ~/emacsConfig
+The HOME directory should have a ~/.emacs.d that is Chemacs2's version with a .emacs-profiles.el
+That should point to ~/emacsConfig/spacemacsd
+
+Default installation:
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+Alternate installation:
+mkdir ~/emacsConfig/spacemacs
+git clone https://github.com/syl20bnr/spacemacs ~/emacsConfig/spacemacs
+HOME=~/~/emacsConfig/spacemacs
+
+https://develop.spacemacs.org/doc/QUICK_START.html
+  contents of .spacemacs should be copied into the init.el file
+
+https://github.com/syl20bnr/spacemacs/blob/master/README.md#prerequisites
+     
+https://github.com/plexus/chemacs2
+  distinguishes between user-emacs-directory and SPACEMACSDIR
+
+Able to create a working Chemacs2 where 
+emacs // defaults to spacemacs
+emacs --with-profile spacemacs
+emacs --with-profile spacemacs0
+emacs --with-profile emacs
+all work correctly.
+Observed that emacsConfig/spacemacs.d and emacsConfig/spacemacs0.d only contains init.el ( aka .spacemacs ).
+All updates to the layers are reflected to the spacemacs installation (spacemacs.develop)
+While this allows the init.el to be separately version controlled, there is a disconnect that makes it
+less useful.
+In fact, the entire emacsConfig is probably worth versioning except that spacemacs.develop is a clone from
+Spacemacs directly. 
+
+My conclusion is that the separation of user-emacs-directory and SPACEMACSDIR is arbitary and artificial.
+If a layer is added in SPACEMACSDIR/init.el, it installs stuff in user-emacs-directory.
+If a second SPACEMACSDIR2/init.el is different, spacemacs goes through all the trouble of uninstalling/installing
+to match the new init.el. So going back and forth just causes a lot of work.
+
+By definition, the meanings and intent of user-emacs-directory and SPACEMACSDIR is correct. It is just that 
+the implementation results in unexpected dependency.
+So it is simpler to combine the two. But u cannot because of the architectural logic. Spacemacs wants to create
+a init.el in user-emacs-directory and there is already a init.el in SPACEMACDIR ( not sure for what purpose )
+So 2 directories have to be packaged together as one.
+
+
 
 ** DONE kwee1: wsl unable to access /mnt/g
 CLOSED: [2023-03-14 Tue 09:53]
