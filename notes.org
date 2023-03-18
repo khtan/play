@@ -1170,7 +1170,9 @@ If you're still having trouble, you can report the issue to the Emacs Bug Tracke
 *** ~/revive.tan.el
 (1 (nil ((truncate-partial-width-windows . 50) (make-backup-files . t) (version-control) (visible-bell) (file-name-history) (buffer-name-history) (minibuffer-history))) (80 25 ((0 0 80 24)) ((nil "*scratch*" 1 1))))
 
-** TODO rooibos: make chemacs2 more indenpdent
+** DONE rooibos: make chemacs2 more indenpdent
+CLOSED: [2023-03-16 Thu 14:14]
+- State "DONE"       from "TODO"       [2023-03-16 Thu 14:14]
 - State "TODO"       from              [2023-03-14 Tue 10:41]
 *** intent
 The .spacemacs should be moved into ~/emacs.d/init.el
@@ -1211,7 +1213,9 @@ Default installation:
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 Alternate installation:
 mkdir ~/emacsConfig/spacemacs
-git clone https://github.com/syl20bnr/spacemacs ~/emacsConfig/spacemacs
+git clone https://github.com/syl20bnr/spacemacs ~/emacsConfig/spacemacs.develop
+git clone https://github.com/syl20bnr/spacemacs ~/emacsConfig/spacemacs0.develop
+
 HOME=~/~/emacsConfig/spacemacs
 
 https://develop.spacemacs.org/doc/QUICK_START.html
@@ -1245,8 +1249,17 @@ the implementation results in unexpected dependency.
 So it is simpler to combine the two. But u cannot because of the architectural logic. Spacemacs wants to create
 a init.el in user-emacs-directory and there is already a init.el in SPACEMACDIR ( not sure for what purpose )
 So 2 directories have to be packaged together as one.
-
-
+*** rooibos: ~/.emacs-profiles.el
+(
+ ("default"   . ((user-emacs-directory . "~/emacsConfig/spacemacs.develop")
+                 (env . (("SPACEMACSDIR" . "~/emacsConfig/spacemacs.d")))))
+ ("spacemacs" . ((user-emacs-directory . "~/emacsConfig/spacemacs.develop")
+                 (env . (("SPACEMACSDIR" . "~/emacsConfig/spacemacs.d")))))
+ ("spacemacs0". ((user-emacs-directory . "~/emacsConfig/spacemacs0.develop")
+                 (env . (("SPACEMACSDIR" . "~/emacsConfig/spacemacs0.d")))))
+ ("emacs" . ((user-emacs-directory . "~/emacsConfig/emacs.d")
+	     ))
+ )
 
 ** DONE kwee1: wsl unable to access /mnt/g
 CLOSED: [2023-03-14 Tue 09:53]
