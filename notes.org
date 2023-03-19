@@ -10,12 +10,12 @@
 ** motivation
 The idea is to have one repo for all places to try things etc
 ** registry
-| machine      | os     | directory                |
-|--------------+--------+--------------------------|
-| air-win10    | win10  | c:\cprojects\github\play |
-| kwee1-ubuntu | wsl2   | ~/cprojects/github/play  |
-| kwee1-win10  | win10  | d:/cprojects/github/play |
-| rooibos      | ubuntu | ~/projects/github/play   |
+| machine      | os     | directory                | chemacs2 |
+|--------------+--------+--------------------------+----------|
+| air-win10    | win10  | c:\cprojects\github\play |          |
+| kwee1-ubuntu | wsl2   | ~/cprojects/github/play  |          |
+| kwee1-win10  | win10  | d:/cprojects/github/play |          |
+| rooibos      | ubuntu | ~/projects/github/play   | yes      |
 
 ** github password ( do not put here )
 A minor change to test push again from air
