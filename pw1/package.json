@@ -1,0 +1,16 @@
+{
+  "name": "pw1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+      "test:example" : "npx playwright test -c playwright.config.ts tests/example.spec.ts",
+      "test:demo" : "npx playwright test -c playwright-demo.config.ts tests-examples/demo-todo-app.spec.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.31.2"
+  }
+}

@@ -1,0 +1,18 @@
+* Intent
+Sometimes Playwright fails for unknown reasons and it is good to have a simple set of canonical tests that work
+off the bat. This is the set that Playwright's Getting Started page provides.
+
+However, some of the defaults are for the interactive user rather than production user.
+
+This repo captures some of the minor changes :
+
+1. Add testMatch to configuration file so that .spec.ts and .e2e-spec.ts are valid tess.
+   This allows the distinction between pure non Gui tests and Gui tests.
+
+2. The reporter html output is changed to list so that it is easier to record/compare runs.
+
+3. package.json is updated with test:hello and test:demo so that the provided tests have 
+   a simple npm run interface.
+   The folder doc contains a working run for both npm run test:hello and npm run test:example
+
+

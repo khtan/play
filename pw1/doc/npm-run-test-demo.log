@@ -1,0 +1,81 @@
+
+> pw1@1.0.0 test:demo
+> npx playwright test -c playwright-demo.config.ts tests-examples/demo-todo-app.spec.ts
+
+
+[2mRunning [22m72[2m tests using [22m2[2m workers[22m
+
+  [32m✓[39m  [2m2 [22m[chromium] › demo-todo-app.spec.ts:40:7 › New Todo › should clear text input field when an item is added[2m (2.7s)[22m
+  [32m✓[39m  [2m1 [22m[chromium] › demo-todo-app.spec.ts:14:7 › New Todo › should allow me to add todo items[2m (2.8s)[22m
+  [32m✓[39m  [2m3 [22m[chromium] › demo-todo-app.spec.ts:53:7 › New Todo › should append new items to the bottom of the list[2m (2.4s)[22m
+  [32m✓[39m  [2m4 [22m[chromium] › demo-todo-app.spec.ts:82:7 › Mark all as completed › should allow me to mark all items as completed[2m (2.4s)[22m
+  [32m✓[39m  [2m5 [22m[chromium] › demo-todo-app.spec.ts:91:7 › Mark all as completed › should allow me to clear the complete state of all items[2m (1.9s)[22m
+  [32m✓[39m  [2m6 [22m[chromium] › demo-todo-app.spec.ts:101:7 › Mark all as completed › complete all checkbox should update state when items are completed / cleared[2m (2.0s)[22m
+  [32m✓[39m  [2m7 [22m[chromium] › demo-todo-app.spec.ts:124:7 › Item › should allow me to mark items as complete[2m (1.6s)[22m
+  [32m✓[39m  [2m8 [22m[chromium] › demo-todo-app.spec.ts:149:7 › Item › should allow me to un-mark items as complete[2m (1.6s)[22m
+  [32m✓[39m  [2m9 [22m[chromium] › demo-todo-app.spec.ts:174:7 › Item › should allow me to edit an item[2m (1.7s)[22m
+  [32m✓[39m  [2m10 [22m[chromium] › demo-todo-app.spec.ts:200:7 › Editing › should hide other controls when editing[2m (1.8s)[22m
+  [32m✓[39m  [2m11 [22m[chromium] › demo-todo-app.spec.ts:210:7 › Editing › should save edits on blur[2m (2.0s)[22m
+  [32m✓[39m  [2m12 [22m[chromium] › demo-todo-app.spec.ts:224:7 › Editing › should trim entered text[2m (2.9s)[22m
+  [32m✓[39m  [2m13 [22m[chromium] › demo-todo-app.spec.ts:238:7 › Editing › should remove the item if an empty text string was entered[2m (2.9s)[22m
+  [32m✓[39m  [2m14 [22m[chromium] › demo-todo-app.spec.ts:250:7 › Editing › should cancel edits on escape[2m (2.4s)[22m
+  [32m✓[39m  [2m15 [22m[chromium] › demo-todo-app.spec.ts:260:7 › Counter › should display the current number of todo items[2m (1.6s)[22m
+  [32m✓[39m  [2m16 [22m[chromium] › demo-todo-app.spec.ts:285:7 › Clear completed button › should display the correct text[2m (1.5s)[22m
+  [32m✓[39m  [2m17 [22m[chromium] › demo-todo-app.spec.ts:290:7 › Clear completed button › should remove completed items when clicked[2m (1.4s)[22m
+  [32m✓[39m  [2m18 [22m[chromium] › demo-todo-app.spec.ts:298:7 › Clear completed button › should be hidden when there are no items that are completed[2m (1.4s)[22m
+  [32m✓[39m  [2m19 [22m[chromium] › demo-todo-app.spec.ts:306:7 › Persistence › should persist its data[2m (1.4s)[22m
+  [32m✓[39m  [2m20 [22m[chromium] › demo-todo-app.spec.ts:342:7 › Routing › should allow me to display active items[2m (2.9s)[22m
+  [32m✓[39m  [2m21 [22m[chromium] › demo-todo-app.spec.ts:352:7 › Routing › should respect the back button[2m (3.7s)[22m
+  [32m✓[39m  [2m22 [22m[chromium] › demo-todo-app.spec.ts:378:7 › Routing › should allow me to display completed items[2m (2.5s)[22m
+  [32m✓[39m  [2m23 [22m[chromium] › demo-todo-app.spec.ts:385:7 › Routing › should allow me to display all items[2m (2.1s)[22m
+  [32m✓[39m  [2m24 [22m[chromium] › demo-todo-app.spec.ts:394:7 › Routing › should highlight the currently applied filter[2m (1.7s)[22m
+  [32m✓[39m  [2m25 [22m[firefox] › demo-todo-app.spec.ts:14:7 › New Todo › should allow me to add todo items[2m (4.4s)[22m
+  [32m✓[39m  [2m26 [22m[firefox] › demo-todo-app.spec.ts:40:7 › New Todo › should clear text input field when an item is added[2m (4.6s)[22m
+  [32m✓[39m  [2m27 [22m[firefox] › demo-todo-app.spec.ts:53:7 › New Todo › should append new items to the bottom of the list[2m (1.9s)[22m
+  [32m✓[39m  [2m28 [22m[firefox] › demo-todo-app.spec.ts:82:7 › Mark all as completed › should allow me to mark all items as completed[2m (2.2s)[22m
+  [32m✓[39m  [2m29 [22m[firefox] › demo-todo-app.spec.ts:91:7 › Mark all as completed › should allow me to clear the complete state of all items[2m (1.9s)[22m
+  [32m✓[39m  [2m30 [22m[firefox] › demo-todo-app.spec.ts:101:7 › Mark all as completed › complete all checkbox should update state when items are completed / cleared[2m (2.1s)[22m
+  [32m✓[39m  [2m31 [22m[firefox] › demo-todo-app.spec.ts:124:7 › Item › should allow me to mark items as complete[2m (2.0s)[22m
+  [32m✓[39m  [2m32 [22m[firefox] › demo-todo-app.spec.ts:149:7 › Item › should allow me to un-mark items as complete[2m (2.0s)[22m
+  [32m✓[39m  [2m33 [22m[firefox] › demo-todo-app.spec.ts:174:7 › Item › should allow me to edit an item[2m (1.8s)[22m
+  [32m✓[39m  [2m34 [22m[firefox] › demo-todo-app.spec.ts:200:7 › Editing › should hide other controls when editing[2m (1.6s)[22m
+  [32m✓[39m  [2m35 [22m[firefox] › demo-todo-app.spec.ts:210:7 › Editing › should save edits on blur[2m (1.5s)[22m
+  [32m✓[39m  [2m36 [22m[firefox] › demo-todo-app.spec.ts:224:7 › Editing › should trim entered text[2m (1.7s)[22m
+  [32m✓[39m  [2m37 [22m[firefox] › demo-todo-app.spec.ts:238:7 › Editing › should remove the item if an empty text string was entered[2m (1.8s)[22m
+  [32m✓[39m  [2m38 [22m[firefox] › demo-todo-app.spec.ts:250:7 › Editing › should cancel edits on escape[2m (1.6s)[22m
+  [32m✓[39m  [2m39 [22m[firefox] › demo-todo-app.spec.ts:260:7 › Counter › should display the current number of todo items[2m (1.4s)[22m
+  [32m✓[39m  [2m40 [22m[firefox] › demo-todo-app.spec.ts:285:7 › Clear completed button › should display the correct text[2m (1.5s)[22m
+  [32m✓[39m  [2m41 [22m[firefox] › demo-todo-app.spec.ts:290:7 › Clear completed button › should remove completed items when clicked[2m (1.7s)[22m
+  [32m✓[39m  [2m42 [22m[firefox] › demo-todo-app.spec.ts:298:7 › Clear completed button › should be hidden when there are no items that are completed[2m (1.7s)[22m
+  [32m✓[39m  [2m43 [22m[firefox] › demo-todo-app.spec.ts:306:7 › Persistence › should persist its data[2m (2.1s)[22m
+  [32m✓[39m  [2m44 [22m[firefox] › demo-todo-app.spec.ts:342:7 › Routing › should allow me to display active items[2m (1.8s)[22m
+  [32m✓[39m  [2m45 [22m[firefox] › demo-todo-app.spec.ts:352:7 › Routing › should respect the back button[2m (2.0s)[22m
+  [32m✓[39m  [2m46 [22m[firefox] › demo-todo-app.spec.ts:378:7 › Routing › should allow me to display completed items[2m (1.7s)[22m
+  [32m✓[39m  [2m47 [22m[firefox] › demo-todo-app.spec.ts:385:7 › Routing › should allow me to display all items[2m (1.9s)[22m
+  [32m✓[39m  [2m48 [22m[firefox] › demo-todo-app.spec.ts:394:7 › Routing › should highlight the currently applied filter[2m (2.0s)[22m
+  [32m✓[39m  [2m50 [22m[webkit] › demo-todo-app.spec.ts:40:7 › New Todo › should clear text input field when an item is added[2m (4.7s)[22m
+  [32m✓[39m  [2m49 [22m[webkit] › demo-todo-app.spec.ts:14:7 › New Todo › should allow me to add todo items[2m (5.0s)[22m
+  [32m✓[39m  [2m51 [22m[webkit] › demo-todo-app.spec.ts:53:7 › New Todo › should append new items to the bottom of the list[2m (4.1s)[22m
+  [32m✓[39m  [2m52 [22m[webkit] › demo-todo-app.spec.ts:82:7 › Mark all as completed › should allow me to mark all items as completed[2m (5.9s)[22m
+  [32m✓[39m  [2m53 [22m[webkit] › demo-todo-app.spec.ts:91:7 › Mark all as completed › should allow me to clear the complete state of all items[2m (6.1s)[22m
+  [32m✓[39m  [2m54 [22m[webkit] › demo-todo-app.spec.ts:101:7 › Mark all as completed › complete all checkbox should update state when items are completed / cleared[2m (6.2s)[22m
+  [32m✓[39m  [2m55 [22m[webkit] › demo-todo-app.spec.ts:124:7 › Item › should allow me to mark items as complete[2m (6.1s)[22m
+  [32m✓[39m  [2m56 [22m[webkit] › demo-todo-app.spec.ts:149:7 › Item › should allow me to un-mark items as complete[2m (6.4s)[22m
+  [32m✓[39m  [2m57 [22m[webkit] › demo-todo-app.spec.ts:174:7 › Item › should allow me to edit an item[2m (5.8s)[22m
+  [32m✓[39m  [2m58 [22m[webkit] › demo-todo-app.spec.ts:200:7 › Editing › should hide other controls when editing[2m (5.3s)[22m
+  [32m✓[39m  [2m59 [22m[webkit] › demo-todo-app.spec.ts:210:7 › Editing › should save edits on blur[2m (5.2s)[22m
+  [32m✓[39m  [2m60 [22m[webkit] › demo-todo-app.spec.ts:224:7 › Editing › should trim entered text[2m (5.4s)[22m
+  [32m✓[39m  [2m61 [22m[webkit] › demo-todo-app.spec.ts:238:7 › Editing › should remove the item if an empty text string was entered[2m (4.9s)[22m
+  [32m✓[39m  [2m62 [22m[webkit] › demo-todo-app.spec.ts:250:7 › Editing › should cancel edits on escape[2m (5.9s)[22m
+  [32m✓[39m  [2m63 [22m[webkit] › demo-todo-app.spec.ts:260:7 › Counter › should display the current number of todo items[2m (4.5s)[22m
+  [32m✓[39m  [2m64 [22m[webkit] › demo-todo-app.spec.ts:285:7 › Clear completed button › should display the correct text[2m (3.6s)[22m
+  [32m✓[39m  [2m65 [22m[webkit] › demo-todo-app.spec.ts:290:7 › Clear completed button › should remove completed items when clicked[2m (3.5s)[22m
+  [32m✓[39m  [2m66 [22m[webkit] › demo-todo-app.spec.ts:298:7 › Clear completed button › should be hidden when there are no items that are completed[2m (4.1s)[22m
+  [32m✓[39m  [2m67 [22m[webkit] › demo-todo-app.spec.ts:306:7 › Persistence › should persist its data[2m (5.7s)[22m
+  [32m✓[39m  [2m68 [22m[webkit] › demo-todo-app.spec.ts:342:7 › Routing › should allow me to display active items[2m (6.4s)[22m
+  [32m✓[39m  [2m69 [22m[webkit] › demo-todo-app.spec.ts:352:7 › Routing › should respect the back button[2m (6.5s)[22m
+  [32m✓[39m  [2m70 [22m[webkit] › demo-todo-app.spec.ts:378:7 › Routing › should allow me to display completed items[2m (5.8s)[22m
+  [32m✓[39m  [2m71 [22m[webkit] › demo-todo-app.spec.ts:385:7 › Routing › should allow me to display all items[2m (6.0s)[22m
+  [32m✓[39m  [2m72 [22m[webkit] › demo-todo-app.spec.ts:394:7 › Routing › should highlight the currently applied filter[2m (4.6s)[22m
+
+[32m  72 passed[39m[2m (2.2m)[22m
