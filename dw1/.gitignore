@@ -1,5 +1,9 @@
+# Emacs backups
+*.*~
+# Nocommits
 *nocommit*
 *nocommit/
+# Playwright
 node_modules/
 /test-results/
 /playwright-report/

@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test:example": "npx playwright test -c playwright/config/playwright-example.config.ts playwright/tests/qe/example.e2e-spec.ts",
+    "test:demo": "npx playwright test -c playwright/config/playwright-demo.config.ts playwright/tests-examples/demo-todo-app.e2e-spec.ts",
     "test:debug": "npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0"
   },
   "keywords": [],
