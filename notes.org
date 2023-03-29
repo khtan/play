@@ -56,7 +56,9 @@ branch.main.merge=refs/heads/main
 ** aside : to be transferred
 *** classic menu has shutdown if u choose the Win7 style
 * projects
-** kwee1-ubuntu: File mode specification error: (invalid-function org-assert-version)
+** DONE kwee1-ubuntu: File mode specification error: (invalid-function org-assert-version)
+CLOSED: [2023-03-29 Wed 09:30]
+- State "DONE"       from              [2023-03-29 Wed 09:30]
 https://github.com/syl20bnr/spacemacs/issues/15869
 Remove /home/../.emacs.d/elpa/27.1/develop/org-9.6
 Remove /home/../.emacs.d/elpa/28.2/develop/org-9.6
@@ -916,7 +918,7 @@ ohttps://manpages.ubuntu.com/manpages/focal/en/man1/git-credential-store.1.html
 enter username, password
 
 magit invokes a github dialog with asks for the personal token
-*** x
+*** git auth behavior on machines
 | pc      | os           |                                  | play workspace              | user.name          | user.email       |
 | air     | windows      | git able to remember credentials | c:\cprojects\github\play    |                    |                  |
 | air     | wsl2         | not yet tried                    |                             |                    |                  |
