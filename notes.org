@@ -2,7 +2,7 @@
 ** startups
 //		#+STARTUP: hidestars
 #+SEQ_TODO: TODO(t!) START(s!) STUCK(k!) WAIT(w!) | DONE(d!) CANCEL(c!)
-#+PROPERTY: imp_ALL high medium low                                                       
+#+PROPERTY: imp_ALL high medium low
 #+PROPERTY: urg_ALL immediate shortterm longterm
 #+PROPERTY: loc_ALL home office
 #+COLUMNS: %imp %urg %loc
@@ -12,10 +12,10 @@ The idea is to have one repo for all places to try things etc
 ** registry
 | machine      | os     | directory                | chemacs2 | emacs |
 |--------------+--------+--------------------------+----------+-------|
-| air-win10    | win10  | c:\cprojects\github\play |          | 26.3  |
-| kwee1-ubuntu | wsl2   | ~/cprojects/github/play  |          | 27.1  |
-| kwee1-win10  | win10  | d:/cprojects/github/play |          | 26.3  |
-| rooibos      | ubuntu | ~/projects/github/play   | yes      | 28.2  |
+| air-win10    | win10  | c:\cprojects\github\play |          |  28.2 |
+| kwee1-ubuntu | wsl2   | ~/cprojects/github/play  |          |  27.1 |
+| kwee1-win10  | win10  | d:/cprojects/github/play |          |  28.2 |
+| rooibos      | ubuntu | ~/projects/github/play   | yes      |  28.2 |
 
 ** github password ( do not put here )
 A minor change to test push again from air
@@ -56,6 +56,54 @@ branch.main.merge=refs/heads/main
 ** aside : to be transferred
 *** classic menu has shutdown if u choose the Win7 style
 * projects
+** kwee1-ubuntu: File mode specification error: (invalid-function org-assert-version)
+https://github.com/syl20bnr/spacemacs/issues/15869
+Remove /home/../.emacs.d/elpa/27.1/develop/org-9.6
+Remove /home/../.emacs.d/elpa/28.2/develop/org-9.6
+
+** revive.el : study and replicate revive.el
+*** intent
+This might be simpler for now
+Create a blank config
+Create a simple config
+*** need to install revive.el
+Copied revive.el from C:\programs\emacs-26.3-x86_64\share\emacs\site-lisp\revive.el
+Then add (load-package revive) in dotspacemacs/user-config in init.el
+
+Did not see the same code in spacemacsHome2/.spacemacs for //air, so not sure how //air's spacemacs2.bat
+loads revive.el
+*** how to push folder to github?
+To push your Emacs configuration files in the emacsConfig folder to GitHub, you can follow these steps:
+
+G1. Create a new repository on GitHub. You can do this by logging in to your GitHub account, clicking on the "+" icon in the top right corner of the page, and selecting "New repository".
+
+G2. Name your repository and choose whether it should be public or private.
+    Once you have created your repository, copy the URL for your repository. You can find the URL by clicking on the "Clone or download" button on your repository page.
+
+https://github.com/khtan-private/emacsConfig.git
+
+P1. Open a command prompt or terminal window and navigate to your emacsConfig folder.
+P2. Add a .gitignore to exclude folders etc
+P3. Initialize a new Git repository in your emacsConfig folder by running the following command:
+> git init
+P4. Add all the files in your emacsConfig folder to the Git repository by running the following command:
+> git add .
+This will stage all the files in the folder for the next commit.
+P5. Commit your changes with a descriptive commit message by running the following command:
+> git commit -m "Initial commit"
+Replace "Initial commit" with a descriptive message that summarizes the changes you have made.
+
+P6. Set the remote repository URL to the URL of your GitHub repository by running the following command:
+> git remote add origin <github-repository-url>
+Replace <github-repository-url> with the URL you copied in step 3.
+
+P7. Push your changes to GitHub by running the following command:
+> git push -u origin main
+This will push the changes in your local Git repository to your remote GitHub repository.
+The -u option sets the upstream branch for the master branch, which means that you can simply run git push in the future to push changes to your GitHub repository.
+
+That's it! Your Emacs configuration files should now be on GitHub.
+
 ** update emacs on air/kwee1
 *** kwee1
 install emacs 28.2

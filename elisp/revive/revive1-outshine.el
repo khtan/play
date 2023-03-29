@@ -700,7 +700,7 @@ Variable-List is a return value of revive:varlist."
     (widen)
     (goto-char (point-min))
     (and (search-forward revive:version-prefix nil t)
-	 (goto-char (match-beginning 0)) (kill-line 1))
+	(goto-char (match-beginning 0)) (kill-line 1))
     (insert (format "%s%s\n" revive:version-prefix revive:version))
     (setq num (or num 1))
     (if (re-search-forward (format "^(%d" num) nil t)
