@@ -10,12 +10,12 @@
 ** motivation
 The idea is to have one repo for all places to try things etc
 ** registry
-| machine      | os     | directory                | chemacs2 | emacs |
-|--------------+--------+--------------------------+----------+-------|
-| air-win10    | win10  | c:\cprojects\github\play |          |  28.2 |
-| kwee1-ubuntu | wsl2   | ~/cprojects/github/play  |          |  27.1 |
-| kwee1-win10  | win10  | d:/cprojects/github/play |          |  28.2 |
-| rooibos      | ubuntu | ~/projects/github/play   | yes      |  28.2 |
+| machine      | os     | directory                |
+|--------------+--------+--------------------------+
+| air-win10    | win10  | c:\cprojects\github\play |
+| kwee1-ubuntu | wsl2   | ~/cprojects/github/play  |
+| kwee1-win10  | win10  | d:/cprojects/github/play |
+| rooibos      | ubuntu | ~/projects/github/play   |
 
 ** github password ( do not put here )
 A minor change to test push again from air
@@ -55,26 +55,19 @@ branch.main.merge=refs/heads/main
 7th change
 ** aside : to be transferred
 *** classic menu has shutdown if u choose the Win7 style
-* projects
-** DONE kwee1-ubuntu: File mode specification error: (invalid-function org-assert-version)
-CLOSED: [2023-03-29 Wed 09:30]
-- State "DONE"       from              [2023-03-29 Wed 09:30]
-https://github.com/syl20bnr/spacemacs/issues/15869
-Remove /home/../.emacs.d/elpa/27.1/develop/org-9.6
-Remove /home/../.emacs.d/elpa/28.2/develop/org-9.6
-
-** revive.el : study and replicate revive.el
-*** intent
+** projects
+*** revive.el : study and replicate revive.el
+**** intent
 This might be simpler for now
 Create a blank config
 Create a simple config
-*** need to install revive.el
+**** need to install revive.el
 Copied revive.el from C:\programs\emacs-26.3-x86_64\share\emacs\site-lisp\revive.el
 Then add (load-package revive) in dotspacemacs/user-config in init.el
 
 Did not see the same code in spacemacsHome2/.spacemacs for //air, so not sure how //air's spacemacs2.bat
 loads revive.el
-*** how to push folder to github?
+**** how to push folder to github?
 To push your Emacs configuration files in the emacsConfig folder to GitHub, you can follow these steps:
 
 G1. Create a new repository on GitHub. You can do this by logging in to your GitHub account, clicking on the "+" icon in the top right corner of the page, and selecting "New repository".
@@ -106,37 +99,14 @@ The -u option sets the upstream branch for the master branch, which means that y
 
 That's it! Your Emacs configuration files should now be on GitHub.
 
-** update emacs on air/kwee1
-*** kwee1
-install emacs 28.2
-set PATH 
-then the spacemacs1.bat may not work ? cleaned up spacemacsHome1
-in hindsight should not
-
-install chemacs2
-add .emacs-profiles.el
-add spacemacs and then see how spacemacs behaves
-
-the problem is that emacs/spacemacs is more fundamental than git or node/playwright 
-so best to install one shot 
-*** air
-1. fix spacemacs2.bat to use path to emacs 26 and ensure it works
-2. install emacs 28.2, chemacs2 and reuse .emacs-profile.el
-3. bring up and allow installation
-**** unexpected problem: air system PATH around 3040 characters but some update now restricts to 2047
-Uninstalled VS 2017 and SQL Server 2012, 2014, 2017
-Did not free up much space on C: - still at 54G free
-Something may not be right here
-*** kwee1 : installed Signal and Whatsapp
-
-** setup kwee1 so that I can access all data
+*** setup kwee1 so that I can access all data
 family.eco is currently on a local drive air@f: 
 need to put it on gdrive, just like the rest so that any machine with Ecco installed can access
 
 family-usa.eco created and disconnect to be independent
 
-** elisp
-*** ert domino
+*** elisp
+**** ert domino
 The Spacemacs layer emacs-lisp installs overseer.
 But overseer requires ert-runner, and ert-runner request cask
 I have several reservations going this route.
@@ -149,7 +119,7 @@ I have several reservations going this route.
 https://github.com/tonini/overseer.el - latest release 2015
 https://github.com/rejeep/ert-runner.el - latest release 2020
 https://github.com/cask/cask - latest release 2022 
-*** ert domino decision
+**** ert domino decision
 Stop at ert and save time by not working on cask, ert-runner and overseer.
 Just use the basic invocations on the shell to run each test directly
 
@@ -164,7 +134,7 @@ https://stackoverflow.com/questions/5238245/elisp-programming-whats-the-best-set
 https://github.com/p3r7/awesome-elisp
 https://lispcookbook.github.io/cl-cookbook/editor-support.html
 
-*** ? https://thewanderingcoder.com/2015/02/emacs-lisp-adding-tests-ert-runner-and-overseer/
+**** ? https://thewanderingcoder.com/2015/02/emacs-lisp-adding-tests-ert-runner-and-overseer/
 sudo apt install python3
 curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python3
 ~/.cask/Cask file add the line (depends-on "ert-runner")
@@ -191,13 +161,13 @@ My HOME has ~/.profile
 
 [[https://thewanderingcoder.com/2015/02/refactoring-beginning-emacs-lisp-i-adding-tests/][refactoring 'beginning emacs lisp' I: adding tests]]
 
-*** ?
+**** ?
 how to print the type of an element?
 how to compare 2 lists?
 (format "%s" <sequence>) to convert lists to string for comparison?
 what does list= mean?
 string-equal and string=?
-*** vs code
+**** vs code
 problem: emacs does not highlight syntax of lisp easily so when my file is off, I have to compile to know
 like to see whether vs code can immediately show the unbalanced syntax
 vs code document page lists many languages but not lisp - why?
@@ -211,26 +181,26 @@ there are several lisp extensions for vs code
 
    after adding .el for file association with commonlisp, it is able to show syntax very well
 
-*** ert coding guidelines
+**** ert coding guidelines
 1. ert tests if named with dots like t2.4 will show up as t2\.4 and makes ugly reading
    Keep the names separated with dashes instead
    
-** [[c:\cprojects\github\play][pw-template ( playwright )]]
+*** [[c:\cprojects\github\play][pw-template ( playwright )]]
 create demo and then add the pieces for eslint etc
 make corrections per eslint and sonarlint
-** dw1 ( playwright/driveway )
-*** a/c - be open and clear for this situation
+*** dw1 ( playwright/driveway )
+**** a/c - be open and clear for this situation
 tan.k.h.usa@gmail.com JalanMasuk4!
 division of tests folder
    unit
    qe
-*** npx playwright codegen www.driveway.com --output x.js
-*** DONE use extensions .spec.ts and e2e-spec.ts to distinguish between non gui and gui tests
+**** npx playwright codegen www.driveway.com --output x.js
+**** DONE use extensions .spec.ts and e2e-spec.ts to distinguish between non gui and gui tests
     CLOSED: [2023-02-16 Thu 15:28]
 
     - State "DONE"       from "TODO"       [2023-02-16 Thu 15:28]
     - State "TODO"       from              [2023-02-15 Wed 17:14]
-*** playwright/test-results.16feb23/loop.org
+**** playwright/test-results.16feb23/loop.org
 | Timeout value | Failure run |
 |          5000 |           2 |
 |        100000 |          14 |
@@ -239,11 +209,11 @@ Failure after 14 runs
 Failure is due to 
 net::ERR_ABORTED HEAD https://www.driveway.com/_next/data/auksaRstBdYcp9cFKE2Se/index.json?code=fTpes1uugALz8_B9xUdBJom15IXVgTbM6z2cHB5VNTKxl&state=_NiRDcqbv6ug80zgdc_q74tMhDI3%7EaMb
 
-*** options
+**** options
 1. Each function ( login, logout ) needs a verifying line
 2. increase timeout value
 3. write a loop that increases the timeout and retests
-*** execution context was destroyed
+**** execution context was destroyed
 [31m  1) unit\unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout [90m====================================[31m[39m
 
     locator.isVisible: Execution context was destroyed, most likely because of a navigation
@@ -281,11 +251,11 @@ After reimplementing the navigation:
 2. checked for error-icon
 
 The weak spot on button losing context went away. Was able to run until #12 (hrs) without problem.
-*** set up on kwee1-ubuntu and run uninterrupted for whole day ( 24 hrs ) to see
-**** kwee1-ubuntu needs node and npm 
+**** set up on kwee1-ubuntu and run uninterrupted for whole day ( 24 hrs ) to see
+***** kwee1-ubuntu needs node and npm 
 sudo apt update
 sudo apt install nodejs npm 
-***** problem: wsl2 path contains /mnt/c stuff that npm accidentally calls
+****** problem: wsl2 path contains /mnt/c stuff that npm accidentally calls
 https://stackoverflow.com/questions/67802387/wsl-path-contains-windows-directories-how-to-elegantly-fix-it-to-exclude-only
 
 Fixed:
@@ -295,12 +265,12 @@ Fixed:
 Had to install google-chrome as well
 https://linuxgenie.net/how-to-install-google-chrome-on-ubuntu-22-04/
 
-**** ubuntu npx playwright install not sufficient
+***** ubuntu npx playwright install not sufficient
 sudo apt-get install libdbus-glib-1-2
 sudo apt-get install libevent-2.1.7 gstreamer1.0-libav
 sudo npx playwright install-deps
-**** [[https://askubuntu.com/questions/1444962/cant-install-firefox-in-wsl-since-it-sais-i-need-to-use-snap-but-snap-doesnt][wsl can't install firefox]]
-***** steps work
+***** [[https://askubuntu.com/questions/1444962/cant-install-firefox-in-wsl-since-it-sais-i-need-to-use-snap-but-snap-doesnt][wsl can't install firefox]]
+****** steps work
 sudo snap remove firefox
 sudo apt remove firefox
 sudo add-apt-repository ppa:mozillateam/ppa
@@ -317,7 +287,7 @@ Pin-Priority: 501
 sudo apt update
 sudo apt install firefox
 
-**** wsl install epiphany to get webkit browser on ubuntu
+***** wsl install epiphany to get webkit browser on ubuntu
 https://www.linuxhelp.com/how-to-install-epiphany-browser-in-ubuntu
 https://zoomadmin.com/HowToInstall/UbuntuPackage/epiphany-browser
 to install:
@@ -326,21 +296,21 @@ to install:
 to invoke:
    epiphany-browser&
 
-**** [[https://linuxhint.com/install-visual-studio-code-ubuntu22-04/][install vs code on ubuntu]]
-***** steps
+***** [[https://linuxhint.com/install-visual-studio-code-ubuntu22-04/][install vs code on ubuntu]]
+****** steps
 sudo apt update && sudo apt upgrade -y
 sudo apt install software-properties-common apt-transport-https wget -y
 wget -O- https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor | sudo tee /usr/share/keyrings/vscode.gpg
 echo deb [arch=amd64 signed-by=/usr/share/keyrings/vscode.gpg] https://packages.microsoft.com/repos/vscode stable main | sudo tee /etc/apt/sources.list.d/vscode.list
 sudo apt update 
 sudo apt install code
-***** invoke
+****** invoke
 khtan@kwee1:~/cprojects/github/play/dw1$ code .
 To use Visual Studio Code with the Windows Subsystem for Linux, please install Visual Studio Code in Windows and uninstall the Linux version in WSL. You can then use the `code` command in a WSL terminal just as you would in a normal command prompt.
 Do you want to continue anyway? [y/N] n
-***** ? sudo apt remove code 
+****** ? sudo apt remove code 
 
-*** dw1 run on ubuntu
+**** dw1 run on ubuntu
 khtan@kwee1:~/cprojects/github/play/dw1$ npm run test:debug -- --browser=all
 
 > pw1@1.0.0 test:debug /home/khtan/cprojects/github/play/dw1
@@ -376,7 +346,7 @@ end of test
   ✓  3 [webkit] › unit/unit.e2e-spec.ts:5:7 › unittests › t0-unitloginlogout (48.9s)
 
   3 passed (1.5m)
-*** dw1 run on air
+**** dw1 run on air
 c:\cprojects\github\play\dw1>npm run test:debug -- --browser=all
 
 > pw1@1.0.0 test:debug
@@ -412,12 +382,12 @@ end of test
 
   3 passed (45.8s)
 
-*** ts-retry
+**** ts-retry
 https://github.com/normartin/ts-retry-promise
 https://github.com/franckLdx/ts-retry
 
-*** air transcript
-**** c:\cprojects\github\play\dw1>npm run test:debug -- --browser=chromium
+**** air transcript
+***** c:\cprojects\github\play\dw1>npm run test:debug -- --browser=chromium
  npm run test:debug -- --browser=chromium
 
  > pw1@1.0.0 test:debug
@@ -446,7 +416,7 @@ https://github.com/franckLdx/ts-retry
 
 
    1 passed (14.4s)
-**** c:\cprojects\github\play\dw1>npm run test:debug -- --browser=firefox
+***** c:\cprojects\github\play\dw1>npm run test:debug -- --browser=firefox
  npm run test:debug -- --browser=firefox
 
  > pw1@1.0.0 test:debug
@@ -475,7 +445,7 @@ https://github.com/franckLdx/ts-retry
 
 
    1 passed (24.7s)
-**** c:\cprojects\github\play\dw1>npm run test:debug -- --browser=webkit
+***** c:\cprojects\github\play\dw1>npm run test:debug -- --browser=webkit
  npm run test:debug -- --browser=webkit
 
  > pw1@1.0.0 test:debug
@@ -521,8 +491,8 @@ https://github.com/franckLdx/ts-retry
 
    1 passed (28.3s)
 
-*** kwee1 transcript
-**** > npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 "--browser=webkit"
+**** kwee1 transcript
+***** > npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 "--browser=webkit"
 
 
  Running 1 test using 1 worker
@@ -580,7 +550,7 @@ https://github.com/franckLdx/ts-retry
  end of test
    ✓  1 [webkit] › unit/unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout (51.7s)
    1 passed (55.0s)
-****  khtan@kwee1:~/cprojects/github/play/dw1$ npm run test:debug -- --browser=firefox
+*****  khtan@kwee1:~/cprojects/github/play/dw1$ npm run test:debug -- --browser=firefox
 
  > pw1@1.0.0 test:debug /home/khtan/cprojects/github/play/dw1
  > npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 "--browser=firefox"
@@ -644,7 +614,7 @@ https://github.com/franckLdx/ts-retry
  end of test
    ✓  1 [firefox] › unit/unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout (1.0m)
    1 passed (1.1m)
-****  khtan@kwee1:~/cprojects/github/play/dw1$ npm run test:debug -- --browser=chromium
+*****  khtan@kwee1:~/cprojects/github/play/dw1$ npm run test:debug -- --browser=chromium
 
  > pw1@1.0.0 test:debug /home/khtan/cprojects/github/play/dw1
  > npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 "--browser=chromium"
@@ -695,7 +665,7 @@ https://github.com/franckLdx/ts-retry
  end of test
    ✓  1 [chromium] › unit/unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout (37.8s)
    1 passed (39.7s)> pw1@1.0.0 test:debug /home/khtan/cprojects/github/play/dw1
-****  khtan@kwee1:~/cprojects/github/play/dw1$ npm run test:debug -- --browser=webkit
+*****  khtan@kwee1:~/cprojects/github/play/dw1$ npm run test:debug -- --browser=webkit
 
  > pw1@1.0.0 test:debug /home/khtan/cprojects/github/play/dw1
  > npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 "--browser=webkit"
@@ -756,7 +726,7 @@ https://github.com/franckLdx/ts-retry
  end of test
    ✓  1 [webkit] › unit/unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout (51.7s)
    1 passed (55.0s)
-****  khtan@kwee1:~/cprojects/github/play/dw1$ npm run test:debug -- --browser=firefox
+*****  khtan@kwee1:~/cprojects/github/play/dw1$ npm run test:debug -- --browser=firefox
 
  > pw1@1.0.0 test:debug /home/khtan/cprojects/github/play/dw1
  > npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 "--browser=firefox"
@@ -820,7 +790,7 @@ https://github.com/franckLdx/ts-retry
  end of test
    ✓  1 [firefox] › unit/unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout (1.0m)
    1 passed (1.1m)
-****  khtan@kwee1:~/cprojects/github/play/dw1$ npm run test:debug -- --browser=chromium
+*****  khtan@kwee1:~/cprojects/github/play/dw1$ npm run test:debug -- --browser=chromium
 
  > pw1@1.0.0 test:debug /home/khtan/cprojects/github/play/dw1
  > npx playwright test -c playwright/config/playwright.config.ts playwright/tests/unit/unit.e2e-spec.ts -g t0 "--browser=chromium"
@@ -871,14 +841,14 @@ https://github.com/franckLdx/ts-retry
  end of test
    ✓  1 [chromium] › unit/unit.e2e-spec.ts:9:7 › unittests › t0-unitloginlogout (37.8s)
    1 passed (39.7s)
-*** air: can test parallel login/logout tests
+**** air: can test parallel login/logout tests
 
 
 
 
 Something still missing - git-credential-store?
 
-*** python softlink needed for cask
+**** python softlink needed for cask
 1. added a soft link in /usr/bin/python to /usr/bin/python3
 
 The following only works if runnig from .cask directory
@@ -886,27 +856,13 @@ The following only works if runnig from .cask directory
    cask info
 cask init . fails with command 'init' not available
 
-** kwee1-ubuntu: right shift key
+*** kwee1-ubuntu: right shift key
 The right-shift problem returned and fixed by rebooting.
 There is some interference from Win 10 Sticky keys.
 So turned off Sticky/Filter keys in kwee1
 
-** kwee1-ubuntu: Google Drive desktop not available on linux
-*** The idea of sharing files using G Drive only works for Windows and MacOS
-The G Drive Desktop is not available for Linux.
-There are other solutions specifically for Linux but in that case, we could also use Dropbox etc.
-Overall idea of sharing files on Linux implies the files are not synced but edited directly.
-This could possibly slow the access down.
-**** nautilus
-https://www.makeuseof.com/tag/access-google-drive-ubuntu/
-Turns out the Gnome file managers like nautilus cannot interpret the /mnt/<google drive> properly.
-Alternative to turn on the Gnome Online a/c will allow direct access but the speed may be problematic?
-
-Need to try to see
-**** others
-https://www.raidrive.com/ is a service that works for linux/gdrive.
-** kwee1-ubuntu: git-credential-manager
-*** notes
+*** kwee1-ubuntu: git-credential-manager
+**** notes
 https://www.geeksforgeeks.org/how-to-install-configure-and-use-git-on-ubuntu/
 ohttps://manpages.ubuntu.com/manpages/focal/en/man1/git-credential-store.1.html
    git-credential-store
@@ -918,7 +874,7 @@ ohttps://manpages.ubuntu.com/manpages/focal/en/man1/git-credential-store.1.html
 enter username, password
 
 magit invokes a github dialog with asks for the personal token
-*** git auth behavior on machines
+**** git auth behavior on machines
 | pc      | os           |                                  | play workspace              | user.name          | user.email       |
 | air     | windows      | git able to remember credentials | c:\cprojects\github\play    |                    |                  |
 | air     | wsl2         | not yet tried                    |                             |                    |                  |
@@ -933,7 +889,7 @@ kwee1@ubuntu
    git push prompts for github dialog but does not remember the token
 kwee1@win10
    git push - authen is automatic
-**** ubuntu khtan@kwee1:~/cprojects/github/play$ git config --list --show-origin
+***** ubuntu khtan@kwee1:~/cprojects/github/play$ git config --list --show-origin
 WARNING: terminal is not fully functional
 Press RETURN to continue 
 
@@ -952,7 +908,7 @@ file:.git/config        branch.main.merge=refs/heads/main
 file:.git/config        credential.helper=/usr/local/bin/git-credential-manager
 file:.git/config        credential.credentialstore=cache
 
-**** win10 d:\cprojects\github\play>git config --list --show-origin
+***** win10 d:\cprojects\github\play>git config --list --show-origin
 git config --list --show-origin
 file:"C:\\ProgramData/Git/config"	core.symlinks=false
 file:"C:\\ProgramData/Git/config"	core.autocrlf=true
@@ -985,8 +941,8 @@ file:.git/config	remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
 file:.git/config	branch.main.remote=origin
 file:.git/config	branch.main.merge=refs/heads/main
 
-**** win10 credential.helper = manager, nothing else but ubuntu uses both .helper, .credentialstore
-**** https://git-scm.com/book/en/v2/Git-Tools-Credential-Storage
+***** win10 credential.helper = manager, nothing else but ubuntu uses both .helper, .credentialstore
+***** https://git-scm.com/book/en/v2/Git-Tools-Credential-Storage
 This suggests that we remove credential.credentialstore key
 set credential.helper=cache
 // sample keys: core.editor, user.name, user.email
@@ -1000,11 +956,11 @@ git config --get user.name
 // to remove
 git config --unset user.name
 
-***** first checkin, have to enter token
-***** second checkin, still have to enter token
+****** first checkin, have to enter token
+****** second checkin, still have to enter token
 So the cache entry did not seem to work
 cache keeps in memory for a certain period only and purged after 15 min
-**** Try credential.helper store
+***** Try credential.helper store
 Fails bec credential.credentialStore not set
 cache would not work well across sessions
 git config credential.credentialStore plaintext
@@ -1021,10 +977,10 @@ https://stackoverflow.com/questions/52216687/location-of-git-credentials-file-in
   For kwee1, %UserProfile%\.git-credentials does not exist
   Credentials Manager shows Windows Credentials for air etc
 
-**** rooibos
+***** rooibos
 https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git?platform=linux
   Shows 2 ways to configure git authentication
-*****  1) using git cli ( gh )
+******  1) using git cli ( gh )
 https://github.com/cli/cli#installation
 https://github.com/cli/cli/blob/trunk/docs/install_linux.md
    > type -p curl >/dev/null || sudo apt install curl -y
@@ -1042,7 +998,7 @@ Used browser to login and establish auth, not personal token
 The 'gh' manual is in https://cli.github.com/manual
 
 
-***** 2) using Git Credential Manager (GCM) // drop/not secure
+****** 2) using Git Credential Manager (GCM) // drop/not secure
 It seems GCM is more generic and works for Bitbucket etc.
 Turns out to be incorrect and would force me to use plaintext
 
@@ -1058,13 +1014,13 @@ git-credential-manager unconfigure // to reverse
    git-s built-in credential cache is not persistent
    plaintext is not secure -- that is what is used on kwee1/ubuntu
 
-** outlining for lisp code
+*** outlining for lisp code
 The problem is that there are several modes at play
 outline-mode
 hs-mode
 outshine-mode
 
-*** show-hide
+**** show-hide
 | hide block                    | C-c @ C-d | hs-hide-block
 | show block                    | C-c @ C-s | hs-show-block
 | hide all                      | C-c @ C-t | hs-hide-all
@@ -1073,22 +1029,19 @@ outshine-mode
 | toggle hiding                 | C-c @ C-e | hs-toggle-hiding
 | hide comments when hiding-all |           |
 | reveal on isearch             |           |
-** outlining and orgmode
-*** look at the 3 books that I have, only one covers outlining
+*** outlining and orgmode
+**** look at the 3 books that I have, only one covers outlining
 2022-MasteringEmacs : nothing on outline, orgmode in passing
 2016-EmacsFieldGuide : nothing on { outline, orgmode, org-mode }
 1999-TeachYourselfEmacsIn24Hrs : Hr15: overview of a file
    nothing on org-mode, orgmode
-*** TeachYourself Hr15: overview of a file
+**** TeachYourself Hr15: overview of a file
 focusing on part of a buffer
 using outline or narrowing
 folding text
 
-** rooibos: direct access to google drive
-use it to see st.org etc and check usability/speed/corruption/convenience
-
-** rooibos: Shift-Tab does not work
-*** summary
+*** rooibos: Shift-Tab does not work
+**** summary
 ChatGPT suggests:
 1) hello.txt with tab and shift-tab and use hexl-mode to show that both adds 0xff09
    character instead of 0xfe20 for
@@ -1098,12 +1051,12 @@ xmodmap -pk | grep -E 'Tab|ISO_Left_Tab'
 
 This is a system wide problem and reproduced with Gedit etc. So for the time being,
 have to leave it be. But the ChatGPT info is useful, hence captured here.
-*** chatgpt session
-**** In emacs, where is the global-map file?
+**** chatgpt session
+***** In emacs, where is the global-map file?
 In Emacs, the global keymap is not stored in a file, but is instead defined within the Emacs Lisp source code. Specifically, it is defined in the C source file "keymap.c" which is compiled into the Emacs executable.
 
 You can view the definition of the global keymap by evaluating the expression (current-global-map) in Emacs, which will return a value that represents the keymap. Alternatively, you can view the source code for the global keymap by opening the "keymap.c" file in the Emacs source code and searching for the definition of the global_map variable.
-**** Running emacs 28.2 in ubuntu 20.04 shows that shift-tab key does not work. Any reports to confirm this?
+***** Running emacs 28.2 in ubuntu 20.04 shows that shift-tab key does not work. Any reports to confirm this?
 I am not aware of any widespread reports of the Shift-Tab key not working in Emacs 28.2 on Ubuntu 20.04. However, there are a few things you can check to troubleshoot the issue:
 
     Check that your keyboard layout is correct and that the Shift and Tab keys are functioning properly. You can test this by typing Shift-Tab in a text editor outside of Emacs and seeing if it produces the expected result (typically, this will move the cursor to the previous field or element in the UI).
@@ -1111,13 +1064,13 @@ I am not aware of any widespread reports of the Shift-Tab key not working in Ema
     Check if the key combination has been remapped or bound to a different function in your Emacs configuration. You can do this by looking in your Emacs init file (typically ~/.emacs or ~/.emacs.d/init.el) for any lines that contain Shift-Tab, S-TAB, or [(shift tab)]. If you find any, try commenting them out or removing them to see if that resolves the issue.
 
     Try starting Emacs with the -Q option to disable your custom configuration and load only the default settings. If the Shift-Tab key works in this mode, then the issue is likely related to your configuration and you can narrow down the problem by selectively enabling parts of your configuration until you find the culprit.
-**** (1) is correct. What is the problem?
+***** (1) is correct. What is the problem?
 If you have confirmed that your keyboard layout is correct and the Shift-Tab key combination works outside of Emacs, then the problem may be related to your Emacs configuration.
 
 It is possible that the Shift-Tab key combination has been remapped or bound to a different function in your Emacs configuration, which is preventing it from functioning as expected. To troubleshoot this, you can look for any custom keybindings in your Emacs init file (typically ~/.emacs or ~/.emacs.d/init.el) that use the Shift-Tab key combination, and try commenting them out or removing them to see if that resolves the issue.
 
 Alternatively, it is possible that there is a bug or compatibility issue with your version of Emacs (28.2) on Ubuntu 20.04 that is causing the Shift-Tab key combination to not work properly. In this case, you may want to check if there are any known issues or patches available for your version of Emacs, or consider upgrading to a newer version of Emacs that may have resolved the issue.
-**** Sorry I mean (1) is identifies the problem. How can I check the key maps for Ubuntu 20.04
+***** Sorry I mean (1) is identifies the problem. How can I check the key maps for Ubuntu 20.04
 To check the key maps on Ubuntu 20.04, you can use the xev utility, which is part of the X11 window system that Ubuntu uses by default. xev allows you to capture and display X events, including keyboard events, and their associated key codes and symbols.
 
 To use xev, open a terminal window and type the following command:
@@ -1138,11 +1091,11 @@ This will display the key codes and symbols for the Tab and Shift-Tab keys. If t
 
 If you do not see the expected key code or symbol for the Shift-Tab key, it may indicate a problem with your keyboard layout or X11 configuration. In that case, you may want to consult the Ubuntu documentation or forums for further troubleshooting steps.
 
-**** Does Ubuntu 20.04 have a problem with shift-tab key?
+***** Does Ubuntu 20.04 have a problem with shift-tab key?
 I am not aware of any widespread problems with the Shift-Tab key combination specifically on Ubuntu 20.04. However, it is possible that some users may experience issues with this key combination due to factors such as their keyboard layout, Emacs configuration, or other software and hardware configurations.
 
 If you are experiencing issues with the Shift-Tab key combination on Ubuntu 20.04, I would recommend checking your keyboard layout and trying the troubleshooting steps I outlined in my previous responses. Additionally, you may want to search online forums or support channels to see if other users have reported similar issues or if there are any known bugs or compatibility issues with your particular setup.
-**** How can I check my keyboard layout in Ubuntu 20.04?
+***** How can I check my keyboard layout in Ubuntu 20.04?
 You can check your keyboard layout in Ubuntu 20.04 by following these steps:
 
     Open the "Settings" application from the launcher or by clicking on the gear icon in the top-right corner of the screen.
@@ -1158,7 +1111,7 @@ You can check your keyboard layout in Ubuntu 20.04 by following these steps:
     If you need to change your keyboard layout, you can do so by clicking on the "+" button under the "Layouts" section and selecting a new layout from the list. You can also use the "Options" button to configure specific settings for each layout.
 
 By checking your keyboard layout settings, you can ensure that the Shift-Tab key combination is mapped correctly on your system, and that any issues you are experiencing are not related to a misconfigured or incompatible layout.
-**** The keyboard layout is correct for Tab and Left Tab. How do I check the X11 configuration for Shift-Tab key?
+***** The keyboard layout is correct for Tab and Left Tab. How do I check the X11 configuration for Shift-Tab key?
 To check the X11 configuration for the Shift-Tab key, you can use the xmodmap command, which allows you to view and modify the keymaps used by X11. Here are the steps you can follow:
 
     Open a terminal window on your Ubuntu 20.04 system.
@@ -1186,7 +1139,7 @@ python
     Note that this remapping will only apply to your current X11 session. If you want to make it permanent, you can add the xmodmap command to your startup script (e.g. ~/.xsessionrc).
 
 I hope this helps you resolve the issue with the Shift-Tab key combination in Emacs.
-**** When 'xmodmap -pke' returns the line 'keycode 23 = Tab ISO_Left_Tab Tab ISO_Left_Tab', what does each entry to the right of the = mean?
+***** When 'xmodmap -pke' returns the line 'keycode 23 = Tab ISO_Left_Tab Tab ISO_Left_Tab', what does each entry to the right of the = mean?
 
 When the xmodmap -pke command returns a line like:
 
@@ -1197,14 +1150,14 @@ The entries to the right of the equals sign (=) represent the key symbols that a
 In this example, there are four key symbols associated with keycode 23, separated by spaces. The first symbol is Tab, which is the primary symbol associated with the Tab key. The second symbol is ISO_Left_Tab, which is an alternate symbol for the Tab key that is used to produce a different character (a backwards tab). The third and fourth symbols are both Tab again, but with the additional modifier ISO_Left_Tab. These additional symbols allow you to produce the same characters as the primary Tab symbol, but with a different modifier key (in this case, the left-hand Tab key).
 
 The reason for having multiple symbols associated with a single keycode is to allow for different behaviors depending on the current keyboard layout and modifiers. For example, some keyboard layouts may use the ISO_Left_Tab symbol instead of the regular Tab symbol for the Tab key, and some applications may interpret the ISO_Left_Tab symbol differently than the regular Tab symbol. The additional symbols with the ISO_Left_Tab modifier allow for these variations to be handled correctly.
-** rooibos: vnc viewer window takes up vertical space
+*** rooibos: vnc viewer window takes up vertical space, causes win max to truncate
 This is a minor issue but takes a lot of time
 chatgpt says that tigervnc has a vncconfig dialog that can be used to exclude display frills but
 my ubuntu says there is "No VNC extension on display :0".
 Turns out vncext is not installed by tigervnc-server
 Best to leave this out for the moment
-** rooibos: emacs 28 indent-region incorrectly comments out region
-*** My Spacemacs is showing a .el file as ELisp/d on Ubuntu and Emcas-Lisp on Windows. What is the difference due to?
+*** rooibos: emacs 28 indent-region incorrectly comments out region
+**** My Spacemacs is showing a .el file as ELisp/d on Ubuntu and Emcas-Lisp on Windows. What is the difference due to?
 
 The difference in how Spacemacs displays the file type for the .el file on Ubuntu and Windows is likely due to the way that Spacemacs is configured to detect and handle different file types.
 
@@ -1213,138 +1166,27 @@ In general, Emacs and Spacemacs use "magic" file signatures to detect the type o
 For example, on Ubuntu, Spacemacs may be using a magic signature that matches the contents of the .el file to the ELisp/d file type, while on Windows, it may be using a different signature that matches it to the Emacs-Lisp file type.
 
 The difference in file type detection may not necessarily indicate any significant difference in how the file is handled by Spacemacs, since both ELisp/d and Emacs-Lisp are types of Lisp files that can be edited and executed in Emacs. However, it is worth checking the Spacemacs documentation or configuration files to see if there are any specific differences in how these file types are handled or if there are any platform-specific configurations that could be affecting the file type detection.
-*** In Emacs, what is the difference between an ELisp/d file and an 'Emacs-Lisp' file?
+**** In Emacs, what is the difference between an ELisp/d file and an 'Emacs-Lisp' file?
 There is no difference between an ELisp/d file and an "Emacs-Lisp" file. "ELisp/d" is short for "Emacs Lisp data", which refers to files that contain data in Emacs Lisp format, while "Emacs-Lisp" refers to files that contain Emacs Lisp code. Both file types use the same Emacs Lisp language, and can be edited and executed in Emacs using the same commands and functions.
 
 The file type detection in Emacs or Spacemacs may use different labels or extensions to distinguish between different types of Emacs Lisp files, but these differences are generally cosmetic and do not affect how the files are handled or executed by Emacs. In general, any file that contains Emacs Lisp code or data can be considered an "Emacs Lisp" file and can be edited and executed in Emacs using the appropriate commands and functions.
-*** In Emacs 28, running the function indent-region comments out the region, instead of indenting it. Has this been reported as a problem?
+**** In Emacs 28, running the function indent-region comments out the region, instead of indenting it. Has this been reported as a problem?
 Yes, this issue has been reported and is a known bug in Emacs 28. When the indent-region function is used on a region that contains comments, Emacs 28 may incorrectly comment out the region instead of indenting it.
 
 This issue has been reported on the Emacs Bug Tracker, and a fix has been included in the development version of Emacs 28. The fix is expected to be included in the next release of Emacs 28.
 
 In the meantime, if you encounter this issue, you can use the comment-region function to uncomment the region before indenting it, and then use the comment-region function again to re-comment the region if necessary. Alternatively, you can try using the development version of Emacs 28, which includes the fix for this issue.
-*** Is this bug only for elisp files or any file type?
+**** Is this bug only for elisp files or any file type?
 This bug in Emacs 28 affects any file type that contains comments, not just Elisp files. When the indent-region function is used on a region that contains comments, Emacs 28 may incorrectly comment out the region instead of indenting it, regardless of the file type.
 
 Therefore, if you encounter this issue in Emacs 28, it can occur in any file type that contains comments, including programming language files such as C, Python, or Java, as well as plain text files such as Markdown or Org mode files.
-*** The elisp file that I am working on does contain comments but the region that I select does not have any comments. Does the bug still add comments to the region for indent-region?
+**** The elisp file that I am working on does contain comments but the region that I select does not have any comments. Does the bug still add comments to the region for indent-region?
 It's possible that the bug in Emacs 28 is causing comments to be added to the region even if there are no comments present in the selected region. This behavior has been reported by some users in the Emacs Bug Tracker.
 
 If you're encountering this issue and you're sure that there are no comments in the selected region, you may want to try updating Emacs to the latest version or using an older version of Emacs until the bug is fixed. Alternatively, you can try using a different function to indent the region, such as tab-to-tab-stop or indent-rigidly, which may not be affected by this bug.
 
 If you're still having trouble, you can report the issue to the Emacs Bug Tracker to help the developers track down and fix the problem.
-** rooibos: revive1.el
-1) write the output somewhere else
-   env variable for revive-input, revive-output?
-   or a file that specifies both input and output
-
-2) using some sample emacs configuration, write out the files for shell buffer etc
-
-3) identify why failure of one buffer loading causes entire load to fail.
-   ideally, should just write error and continue
-
-4) write tests and re-factor code to do the above
-
-5) check Intro Tutorial to see when defvar etc are introduced
-*** ~/revive.tan.el
-(1 (nil ((truncate-partial-width-windows . 50) (make-backup-files . t) (version-control) (visible-bell) (file-name-history) (buffer-name-history) (minibuffer-history))) (80 25 ((0 0 80 24)) ((nil "*scratch*" 1 1))))
-
-** DONE rooibos: make chemacs2 more indenpdent
-CLOSED: [2023-03-16 Thu 14:14]
-- State "DONE"       from "TODO"       [2023-03-16 Thu 14:14]
-- State "TODO"       from              [2023-03-14 Tue 10:41]
-*** intent
-The .spacemacs should be moved into ~/emacs.d/init.el
-The chemacs2 script should ensure that .spacemacs does not exist
-*** best practice: don't hide folders, ie just bloats things and makes it hard to see
-Add all emacs work in ~/emacsConfig
-Q) emacsStuff or emacsConfig?
-
-git clone https://github.com/syl20bnr/spacemacs ~/emacsConfig/spacemacs.develop
-
-user-emacs-directory = ~/emacsConfig/spacemacs.develop
-mkdir ~/emacsConfig/spacemacs.d
-touch ~/emacsConfig/spacemacs.d/init.el
-
-
-spacemacs              ~/emacsConfig/spacemacs.d
-spacemac0              ~/emacsConfig/spacemacs0.d
-
-The real missing document is how to create the spacemacs.d folder and what it needs
-
-chemacs2
-
-(("spacemacs" . ((user-emacs-directory . "~/emacsConfig/spacemacs.develop")
-                 (env . (("SPACEMACSDIR" . "~/emacsConfig/spacemacs.d")))))
-
- ("spacemacs0" . ((user-emacs-directory . "~/emacsConfig/spacemacs.develop")
-                        (env . (("SPACEMACSDIR" . "~/emacsConfig/spacemacs0.d")))))
-
- ("emacs" . ((user-emacs-directory . "~/spacemacsConfig/emacs.d")
-)))
-
-*** rooibos: turns out chemacs and spacemacs on .spacemacs.d not exactly working yet
-1) Instead of .emacs.d, keep all emacs config in folder ~/emacsConfig
-The HOME directory should have a ~/.emacs.d that is Chemacs2's version with a .emacs-profiles.el
-That should point to ~/emacsConfig/spacemacsd
-
-Default installation:
-git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-Alternate installation:
-mkdir ~/emacsConfig/spacemacs
-git clone https://github.com/syl20bnr/spacemacs ~/emacsConfig/spacemacs.develop
-git clone https://github.com/syl20bnr/spacemacs ~/emacsConfig/spacemacs0.develop
-
-HOME=~/~/emacsConfig/spacemacs
-
-https://develop.spacemacs.org/doc/QUICK_START.html
-  contents of .spacemacs should be copied into the init.el file
-
-https://github.com/syl20bnr/spacemacs/blob/master/README.md#prerequisites
-
-https://github.com/plexus/chemacs2
-  distinguishes between user-emacs-directory and SPACEMACSDIR
-
-Able to create a working Chemacs2 where
-emacs // defaults to spacemacs
-emacs --with-profile spacemacs
-emacs --with-profile spacemacs0
-emacs --with-profile emacs
-all work correctly.
-Observed that emacsConfig/spacemacs.d and emacsConfig/spacemacs0.d only contains init.el ( aka .spacemacs ).
-All updates to the layers are reflected to the spacemacs installation (spacemacs.develop)
-While this allows the init.el to be separately version controlled, there is a disconnect that makes it
-less useful.
-In fact, the entire emacsConfig is probably worth versioning except that spacemacs.develop is a clone from
-Spacemacs directly.
-
-My conclusion is that the separation of user-emacs-directory and SPACEMACSDIR is arbitary and artificial.
-If a layer is added in SPACEMACSDIR/init.el, it installs stuff in user-emacs-directory.
-If a second SPACEMACSDIR2/init.el is different, spacemacs goes through all the trouble of uninstalling/installing
-to match the new init.el. So going back and forth just causes a lot of work.
-
-By definition, the meanings and intent of user-emacs-directory and SPACEMACSDIR is correct. It is just that
-the implementation results in unexpected dependency.
-So it is simpler to combine the two. But u cannot because of the architectural logic. Spacemacs wants to create
-a init.el in user-emacs-directory and there is already a init.el in SPACEMACDIR ( not sure for what purpose )
-So 2 directories have to be packaged together as one.
-*** rooibos: ~/.emacs-profiles.el
-(
- ("default"   . ((user-emacs-directory . "~/emacsConfig/spacemacs.develop")
-                 (env . (("SPACEMACSDIR" . "~/emacsConfig/spacemacs.d")))))
- ("spacemacs" . ((user-emacs-directory . "~/emacsConfig/spacemacs.develop")
-                 (env . (("SPACEMACSDIR" . "~/emacsConfig/spacemacs.d")))))
- ("spacemacs0". ((user-emacs-directory . "~/emacsConfig/spacemacs0.develop")
-                 (env . (("SPACEMACSDIR" . "~/emacsConfig/spacemacs0.d")))))
- ("emacs" . ((user-emacs-directory . "~/emacsConfig/emacs.d")
-	     ))
- )
-
-** DONE kwee1: wsl unable to access /mnt/g
-CLOSED: [2023-03-14 Tue 09:53]
-- State "DONE"       from              [2023-03-14 Tue 09:53]
-Had to use wsl --shutdown and restart Ubuntu
-* aside : to be transferred
-** classic menu has shutdown if u choose the Win7 style
-** rooibos: what pdf reader/editor to read ebooks
+** aside : to be transferred
+*** classic menu has shutdown if u choose the Win7 style
+*** rooibos: what pdf reader/editor to read ebooks
 just like pdf-tracker on windows
