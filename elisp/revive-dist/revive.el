@@ -763,8 +763,16 @@ Variable-List is a return value of revive:varlist."
 Configuration should be saved by save-current-configuration."
   (interactive "p")
   (setq num (or num 1))
+	 ;; Call resume1 with the default config-file and pass num as an argument
+	 (resume1 revive:configuration-file num))
+
+(defun resume1 (config-file &optional num)
+  "Resume1 window/buffer configuration specified by config-file path."
+  (interactive "f\np")
+  (setq num (or num 1))
+  (message "resume1(%s, %s)" config-file num)
   (let (sexp bufs x config)
-    (find-file (expand-file-name revive:configuration-file))
+    (find-file (expand-file-name config-file))
     (goto-char (point-min))
     (emacs-lisp-mode)
     (if (null (search-forward revive:version-prefix nil t))
