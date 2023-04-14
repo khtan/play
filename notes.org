@@ -62,6 +62,7 @@ This might be simpler for now
 Create a blank config
 Create a simple config
 **** need to install revive.el
+Q? Which machine is this? I think given the c:\programs, it is kwee1-windows
 Copied revive.el from C:\programs\emacs-26.3-x86_64\share\emacs\site-lisp\revive.el
 Then add (load-package revive) in dotspacemacs/user-config in init.el
 
@@ -98,6 +99,29 @@ This will push the changes in your local Git repository to your remote GitHub re
 The -u option sets the upstream branch for the master branch, which means that you can simply run git push in the future to push changes to your GitHub repository.
 
 That's it! Your Emacs configuration files should now be on GitHub.
+
+**** surgically refactor resume so that resume1 can open any configuration file
+Was going to use kh-lotus organization but realized that nealford/emacs contains too much of other stuff.
+So just keep in play/elisp/revive
+
+This thread was to study in detail the original revive code.
+revive0.el
+revive1-outshine.el
+
+I now have a working code that I surgically added resume1 to do what I need. It is simple and works
+very well.
+
+Q) Where should the distribution code be kept? revive.el
+
+How about creating a folder called revive-distribution
+  check in revive.el
+  then the updated revive.el
+
+**** Use revive-dist to copy new revive.el to all machines
+1. [X] kwee1 // cp revive.el c:/programs/emacs-28.2/emacs-28.2/share/emacs/site-lisp/revive.el
+2. [X] kwee1-ubuntu // sudo cp to /usr/share/emacs/site-lisp
+3. [X] air // similar to kwee1
+4. [ ] rooibos
 
 *** setup kwee1 so that I can access all data
 family.eco is currently on a local drive air@f: 
