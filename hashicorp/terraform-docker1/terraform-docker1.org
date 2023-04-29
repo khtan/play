@@ -1,0 +1,85 @@
+* source
+https://developer.hashicorp.com/terraform/tutorials/docker-get-started
+Above is the start page for Getting Started with Terraform and Docker.
+What is means is to use Terraform with Docker as the medium.
+
+There are 7 tutorials
+
+Q) It also means that Terraform can also work with Docker Compose and Kubernetes, but the overlap becomes more painful.
+* air: /c/cprojects/github/play/hashicorp/terraform-docker1
+** tutorial0-broken
+This contains the initial main.tf.
+*** tf init works
+*** >terraform init
+terraform init
+
+Initializing the backend...
+
+Initializing provider plugins...
+- Finding kreuzwerker/docker versions matching "~> 2.15.0"...
+- Installing kreuzwerker/docker v2.15.0...
+- Installed kreuzwerker/docker v2.15.0 (self-signed, key ID BD080C4571C6104C)
+
+Partner and community providers are signed by their developers.
+If you'd like to know more about provider signing, you can read about it here:
+https://www.terraform.io/docs/cli/plugins/signing.html
+
+Terraform has created a lock file .terraform.lock.hcl to record the provider
+selections it made above. Include this file in your version control repository
+so that Terraform can guarantee to make the same selections by default when
+you run "terraform init" in the future.
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+*** tf apply fails because provider not found
+The reason is that kreuzwerker/docker v2.15.0 only works on Linux and not Windows
+*** >terraform apply
+terraform apply
+╷
+│ Warning: Deprecated attribute
+│ 
+│   on main.tf line 18, in resource "docker_container" "nginx":
+│   18:   image = docker_image.nginx.latest
+│ 
+│ The attribute "latest" is deprecated. Refer to the provider documentation
+│ for details.
+╵
+╷
+│ Error: Error initializing Docker client: protocol not available
+│ 
+│   with provider["registry.terraform.io/kreuzwerker/docker"],
+│   on main.tf line 10, in provider "docker":
+│   10: provider "docker" {}
+│ 
+╵
+
+** tutorial0 what is infrastructure as code with terrafrom
+The full working example is in tutorial0 and you are supposed to run in the terminal they provided, so that you don't
+need to install terraform etc. However, since I already have terraform installed, I took a different tack and tried
+the example.
+
+Turns out that the initial main.tf only works for Linux and not Windows.
+
+** tutorial1 install terraform
+** tutorial2 build infrastructure
+No file needs to be created. Just an exposition of tutorial1/main.tf
+
+terraform fmt
+terraform validate
+terraform show // show the state
+terraform state list // cli for managing state or inquiry
+** tutorial3 change infrastructure
+change external = 8080 to exeternal = 8000
+terraform understands to destroy the old resource and recreate
+** tutorial4 destroy infrastructure
+destroy, already used
+** tutorial5 define input variables
+docker apply -var "container_name=YetAnotherName"
+** tutorial6 query data with outputs
