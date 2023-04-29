@@ -117,7 +117,9 @@ How about creating a folder called revive-distribution
   check in revive.el
   then the updated revive.el
 
-**** Use revive-dist to copy new revive.el to all machines
+**** DONE Use revive-dist to copy new revive.el to all machines
+CLOSED: [2023-04-13 Thu 20:04]
+- State "DONE"       from              [2023-04-13 Thu 20:04]
 1. [X] kwee1 // cp revive.el c:/programs/emacs-28.2/emacs-28.2/share/emacs/site-lisp/revive.el
 2. [X] kwee1-ubuntu // sudo cp to /usr/share/emacs/site-lisp
 3. [X] air // similar to kwee1
