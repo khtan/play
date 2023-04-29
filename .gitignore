@@ -17,6 +17,9 @@ test-results
 *.~undo-tree
 
 # Terraform
+## kwee - lock.hcl, dont checkin because currently will destroy .terraform
+.terraform.lock.hcl
+
 ## Local .terraform directories
 **/.terraform/*
 
