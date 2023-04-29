@@ -8,7 +8,10 @@ There are 7 tutorials
 Q) It also means that Terraform can also work with Docker Compose and Kubernetes, but the overlap becomes more painful.
 * air: /c/cprojects/github/play/hashicorp/terraform-docker1
 ** tutorial0-broken
-This contains the initial main.tf.
+main0.txt is the initial main.tf
+The extension needs to be changed bec terraform works on directories and reads all .tf files.
+This convenience is an abberation of standard cli conventions like docker where the target file
+can be defaulted or specified on the command line.
 *** tf init works
 *** >terraform init
 terraform init
@@ -40,6 +43,7 @@ rerun this command to reinitialize your working directory. If you forget, other
 commands will detect it and remind you to do so if necessary.
 *** tf apply fails because provider not found
 The reason is that kreuzwerker/docker v2.15.0 only works on Linux and not Windows
+*** Fix: update kruezwerker/docker to v3.0.2
 *** >terraform apply
 terraform apply
 ╷
@@ -60,6 +64,19 @@ terraform apply
 │ 
 ╵
 
+*** tf fails because attribute "latest" for docker_image.nginx.latest does not exist
+*** Fix: refactor the "latest" attribute into string
+<   name         = "nginx:latest"
+---
+>   name = "nginx"
+18c18
+<   image = docker_image.nginx.latest
+---
+>   image = "${docker_image.nginx.name}:latest"
+
+I think docker_image.nginx.latest is a typo and never existed correctly since the attribute was not defined
+So, the fact that it works on Linux is suspicious
+*** This fix works and is in tutorial0
 ** tutorial0 what is infrastructure as code with terrafrom
 The full working example is in tutorial0 and you are supposed to run in the terminal they provided, so that you don't
 need to install terraform etc. However, since I already have terraform installed, I took a different tack and tried
@@ -68,11 +85,23 @@ the example.
 Turns out that the initial main.tf only works for Linux and not Windows.
 
 ** tutorial1 install terraform
+The tutorial designer now shows how the user can install terraform etc.
+This is strange because he uses 2 different main.tf, one for Linux and one for Windows.
+The Windows version has a provider with named pipes.
+
+However, by kruezwerker/docker v3.0.2, this functionality is internal and the original Linux main.tf also
+works on Windows
+** tutorial1a
+This is an example of using locals and external programs ( uname, jq ) in order to determine the plaform
+and add the named pipes only for Windows.
+While kreuzwerker/docker v3.0.1 solves this problem in a more elegant way, this dynamic determination of
+plaform and setting the correct values for the provider also works.
+
 ** tutorial2 build infrastructure
 No file needs to be created. Just an exposition of tutorial1/main.tf
 
-terraform fmt
-terraform validate
+terraform fmt // formats the .tf files to enforce coding style
+terraform validate // save time without needing to apply
 terraform show // show the state
 terraform state list // cli for managing state or inquiry
 ** tutorial3 change infrastructure
@@ -80,6 +109,26 @@ change external = 8080 to exeternal = 8000
 terraform understands to destroy the old resource and recreate
 ** tutorial4 destroy infrastructure
 destroy, already used
-** tutorial5 define input variables
-docker apply -var "container_name=YetAnotherName"
-** tutorial6 query data with outputs
+** tutorial5(6) define input variables (query data with outputs)
+terraform apply -var "container_name=YetAnotherName"
+This introduces the files variables.tf and outputs.tf to keep sections of code separate.
+** tutorial5a
+This removes the variables.tf and outputs.tf and keeps everything in main.tf.
+Still works correctly.
+
+terraform validate does not print outputs.
+To do so, use terraform plan.
+
+
+* summary
+terraform init
+terraform plan // not introduced yet
+terraform apply
+terraform apply -var "container_name=YetAnotherName"
+check docker is running with "docker ps"
+terraform destroy
+
+terraform fmt
+terraform valiate
+terraform show
+terraform state list
