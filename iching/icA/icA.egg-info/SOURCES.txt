@@ -1,0 +1,12 @@
+setup.py
+cli/__init__.py
+cli/hello.py
+icA.egg-info/PKG-INFO
+icA.egg-info/SOURCES.txt
+icA.egg-info/dependency_links.txt
+icA.egg-info/entry_points.txt
+icA.egg-info/top_level.txt
+lib/__init__.py
+lib/core.py
+unittest/__init__.py
+unittest/test_core.py
