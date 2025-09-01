@@ -10,12 +10,12 @@
 ** motivation
 The idea is to have one repo for all places to try things etc
 ** registry
-| machine      | os     | directory                |
-|--------------+--------+--------------------------|
-| air-win10    | win10  | c:\cprojects\github\play |
-| kwee1-ubuntu | wsl2   | ~/cprojects/github/play  |
-| kwee1-win10  | win10  | d:/cprojects/github/play |
-| rooibos      | ubuntu | ~/projects/github/play   |
+| machine      | os     | directory                     |
+|--------------+--------+-------------------------------|
+| air-win10    | win10  | c:\cprojects\github\play      |
+| kwee1-ubuntu | wsl2   | ~/cprojects/github/play       |
+| kwee1-win10  | win10  | d:/cprojects.2025/github/play |
+| rooibos      | ubuntu | ~/projects/github/play        |
 
 ** github password ( do not put here )
 A minor change to test push again from air
@@ -53,8 +53,25 @@ branch.main.merge=refs/heads/main
 
 6th change
 7th change
-** aside : to be transferred
-*** classic menu has shutdown if u choose the Win7 style
+** projects.2025
+*** iching
+**** Idea
+This would be a series of simple tools
+  | 1 | showfiles sf | given a list of hexagram numbers, open the appropriate .jpg in a standard location |   |
+  | 2 | showlist sl  | given a list of hexagrams, create a .html that displays the list                 |   |
+  | 2 |              | straightline and circular                                                        |   |
+  | 3 | showops so   | given a list of hexagrams, derive its derivatives                                |   |
+  | 3 |              | derivatives are: inverse, converse, nuclear                                      |   |
+
+Definition of hexagram list: currently start with a number of may enhance into
+h.m1,m2 etc as simple format for hexagram and moving lines.
+Q) Develop with python or c#
+   Later, might do both but for quick and simple tasks, Python is faster and there are more libraries
+   But what about type checking?
+**** Naming convention?
+yj-show
+ic-show
+
 ** projects
 *** revive.el : study and replicate revive.el
 **** intent
