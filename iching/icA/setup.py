@@ -7,6 +7,7 @@ setup(
     entry_points={
         'console_scripts': [
             'hello=cli.hello:main',
+            'sf=cli.sf:main',
         ],
     },
 )

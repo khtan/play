@@ -1,6 +1,7 @@
 setup.py
 cli/__init__.py
 cli/hello.py
+cli/sf.py
 icA.egg-info/PKG-INFO
 icA.egg-info/SOURCES.txt
 icA.egg-info/dependency_links.txt
