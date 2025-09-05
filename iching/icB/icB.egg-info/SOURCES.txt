@@ -1,0 +1,10 @@
+setup.py
+cli/__init__.py
+cli/hello.py
+icB.egg-info/PKG-INFO
+icB.egg-info/SOURCES.txt
+icB.egg-info/dependency_links.txt
+icB.egg-info/entry_points.txt
+icB.egg-info/top_level.txt
+lib/__init__.py
+lib/core.py
