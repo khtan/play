@@ -21,6 +21,12 @@ Table shamelessly stolen from the venv docs.
 *** Activate Virtual Environment in VS Code
 VS Code should ask you if you want to activate the new virtual environment. If it doesn't you can activate the virtual environment by clicking on the Python interpreter version in the bottom left of the VS Code window, or by running the VS Code command for it: Ctrl+Shift+P and type Python: Select Interpreter
 
+** icB
+*** checklist
+|    |                      |
+| OK | run pytest in vscode |
+|    |                      |
+
 ** I have a simple python project with folders for library (lib), unittest (unittest) and command line (cli)
 I am using ./setup.py to development and I install with "pip install -e " so that the development env is live.
 How do I run the unittests?
