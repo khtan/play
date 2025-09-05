@@ -5,8 +5,9 @@
 2. Create a new virtual environment called venv: python -m venv venv
 3. Activate the virtual environment (see tables below)
 4. Install packages: pip install -r requirements.txt
-5. Make a copy of config_template.json and name it config.json
-6. Populate config.json with the appropriate values for each field
+5. Make cli project editable : pip install -e .
+6. Make a copy of config_template.json and name it config.json
+7. Populate config.json with the appropriate values for each field
 *** activation
 Table shamelessly stolen from the venv docs.
 
