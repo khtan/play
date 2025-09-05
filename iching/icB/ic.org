@@ -1,0 +1,26 @@
+* root
+** venv usage
+*** first time setup
+1. Switch to the project dir: cd zdiscovery-load-tests
+2. Create a new virtual environment called venv: python -m venv venv
+3. Activate the virtual environment (see tables below)
+4. Install packages: pip install -r requirements.txt
+5. Make a copy of config_template.json and name it config.json
+6. Populate config.json with the appropriate values for each field
+*** activation
+Table shamelessly stolen from the venv docs.
+
+| Platform | Shell           | Command to activate virtual environment |
+| POSIX    | bash/zsh        | $ source ./venv/bin/activate            |
+|          | fish            | $ source ./venv/bin/activate.fish       |
+|          | csh/tcsh        | $ source ./venv/bin/activate.csh        |
+|          | PowerShell Core | $ ./venv/bin/Activate.ps1               |
+| Windows  | cmd.exe         | C:> .\venv\Scripts\activate.bat         |
+|          | PowerShell      | PS C:> .\venv\Scripts\Activate.ps1      |
+
+*** Activate Virtual Environment in VS Code
+VS Code should ask you if you want to activate the new virtual environment. If it doesn't you can activate the virtual environment by clicking on the Python interpreter version in the bottom left of the VS Code window, or by running the VS Code command for it: Ctrl+Shift+P and type Python: Select Interpreter
+
+** I have a simple python project with folders for library (lib), unittest (unittest) and command line (cli)
+I am using ./setup.py to development and I install with "pip install -e " so that the development env is live.
+How do I run the unittests?
