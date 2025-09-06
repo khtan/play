@@ -1,6 +1,8 @@
 colorama==0.4.6
+-e git+https://github.com/khtan/play.git@3c28f5b8785927b108ae6b812f7c6ab6849a17b4#egg=icB&subdirectory=iching\icb
 iniconfig==2.1.0
 packaging==25.0
 pluggy==1.6.0
 Pygments==2.19.2
 pytest==8.4.2
+pytest-mock==3.15.0
