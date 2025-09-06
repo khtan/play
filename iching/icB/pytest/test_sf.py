@@ -8,7 +8,7 @@ import pytest
 lib_path = os.path.join(os.path.dirname(__file__), '..')
 sys.path.insert(0, lib_path)
 
-from cli.sf import main # pytest: disable=C0413
+from cli.sf import main # pylint: disable=C0413
 
 @pytest.mark.parametrize("mock_argv, expected_output", [
     (['sf.py', 'TestName'], "Hello, TestName"),

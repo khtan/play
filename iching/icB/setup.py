@@ -1,3 +1,4 @@
+""" Setup script for the ic package with console scripts."""
 from setuptools import setup, find_packages
 
 setup(
