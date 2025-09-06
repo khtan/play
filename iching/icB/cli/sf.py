@@ -9,10 +9,10 @@ log_level_name = os.getenv('LOG_LEVEL', 'WARNING').upper()
 
 # Convert the string to the actual logging constant
 try:
-    log_level = getattr(logging, log_level_name)
+    log_level: int = getattr(logging, log_level_name)
 except AttributeError:
     # Handle the case of an invalid log level name
-    log_level = logging.WARNING
+    log_level: int = logging.WARNING
 logging.basicConfig(level=log_level)
 
 # Set up logging
