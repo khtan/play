@@ -22,6 +22,21 @@ Table shamelessly stolen from the venv docs.
 *** Activate Virtual Environment in VS Code
 VS Code should ask you if you want to activate the new virtual environment. If it doesn't you can activate the virtual environment by clicking on the Python interpreter version in the bottom left of the VS Code window, or by running the VS Code command for it: Ctrl+Shift+P and type Python: Select Interpreter
 
+** Results
+*** [[https://www.youtube.com/watch?v=qkxf583t4Vc&ab_channel=ArjanCodes][video: why u should think twice b4 using returns in Python]]
+  not using try-catch exceptions is not a Python idiom
+  Valid cases to use Returns
+  education, ie learnign
+  simplify cross language development by using the same FP paradigm patterns
+  internal took, clearly defined rules and guidelines for style and package use?
+  1. proof of concept, new style of coding
+  2. legacy parts may use exceptions
+
+     Use Returns everywhere or no where
+     Not staple in Python currently
+*** [[https://returns.readthedocs.io/en/latest/pages/quickstart.html][returns 0.26.0 doc/Quickstart]]
+*** [[https://github.com/dry-python/returns?tab=readme-ov-file][github dry-python/returns]]
+
 ** icB
 *** checklist
 |    |                      |
