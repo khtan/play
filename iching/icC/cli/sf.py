@@ -1,8 +1,28 @@
-""" cli/sf.py """
+""" View hexagrams on Windows """
 import sys
 import os
 import logging
+from argparse import ArgumentParser, SUPPRESS, RawDescriptionHelpFormatter
 from  typing import List
+# constants
+PROGRAM = 'icC/cli/sf.py'
+
+# argparser
+ap = ArgumentParser(
+    prog=PROGRAM,
+    formatter_class=RawDescriptionHelpFormatter,
+    description=__doc__,
+    add_help=False,
+    epilog="""
+Notes:
+Sample Usage:
+"""
+)
+required = ap.add_argument_group('required arguments')
+required.add_argument('-x', '--hexagram', type=int, choices=range(1, 65), required=True)
+optional = ap.add_argument_group('optional arguments')
+optional.add_argument('-h', '--help', action='help', default=SUPPRESS,
+                      help='show this help message and exit')
 
 # Get the log level from an environment variable, default to 'WARNING'
 log_level_name = os.getenv('LOG_LEVEL', 'WARNING').upper()
@@ -21,16 +41,26 @@ logger = logging.getLogger(__name__)
 # Add the lib directory to the path so we can import it
 lib_path = os.path.join(os.path.dirname(__file__), '..')
 sys.path.insert(0, lib_path)
-from lib.core import greet, view_file # pylint: disable=C0413
+from lib.core import view_file # pylint: disable=C0413
+
+def to_padded_string(n: int) -> str:
+    """ Convert a number to a zero-padded string """
+    return f"{n:02}"
+
+def get_hexagram_path(n: int) -> str:
+    """ Get the path to the hexagram image """
+    hexname = to_padded_string(n)
+    return r"I:\My Drive\lib-home\religion\iching\iching-cards" + "\\" + hexname + ".jpg"
 
 def main() -> None:
     """ Main function for the CLI tool """
     # logger.debug("lib_path: {}", lib_path)
     logger.debug("lib_path: %s", lib_path)
     args: List[str] = sys.argv
-    name: str = args[1] if len(args) > 1 else "SFWorld"
-    print(greet(name))
-
-    view_file(r"I:\My Drive\lib-home\religion\iching\iching-cards\01.jpg")
+    # Why ap.parse_args(args) does not work?
+    options=ap.parse_args(args[1:])
+    hexpath: str = get_hexagram_path(int(options.hexagram))
+    view_file(hexpath)
 if __name__ == "__main__":
     main()
+# EOF
