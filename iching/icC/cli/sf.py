@@ -19,7 +19,7 @@ Sample Usage:
 """
 )
 required = ap.add_argument_group('required arguments')
-required.add_argument('-x', '--hexagram', type=int, choices=range(1, 65), required=True)
+required.add_argument('-x', '--hexa', type=int, choices=range(1, 65), nargs='+', required=True, help='Hexagram numbers 1-64')
 optional = ap.add_argument_group('optional arguments')
 optional.add_argument('-h', '--help', action='help', default=SUPPRESS,
                       help='show this help message and exit')
@@ -59,8 +59,9 @@ def main() -> None:
     args: List[str] = sys.argv
     # Why ap.parse_args(args) does not work?
     options=ap.parse_args(args[1:])
-    hexpath: str = get_hexagram_path(int(options.hexagram))
-    view_file(hexpath)
+    for hexagram_num in options.hexa:
+        hexpath: str = get_hexagram_path(int(hexagram_num))
+        view_file(hexpath)
 if __name__ == "__main__":
     main()
 # EOF
