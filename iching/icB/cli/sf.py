@@ -21,7 +21,7 @@ logger = logging.getLogger(__name__)
 # Add the lib directory to the path so we can import it
 lib_path = os.path.join(os.path.dirname(__file__), '..')
 sys.path.insert(0, lib_path)
-from lib.core import greet # pylint: disable=C0413
+from lib.core import greet, view_file # pylint: disable=C0413
 
 def main() -> None:
     """ Main function for the CLI tool """
@@ -31,5 +31,6 @@ def main() -> None:
     name: str = args[1] if len(args) > 1 else "SFWorld"
     print(greet(name))
 
+    view_file(r"I:\My Drive\lib-home\religion\iching\iching-cards\01.jpg")
 if __name__ == "__main__":
     main()
