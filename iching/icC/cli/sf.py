@@ -6,17 +6,18 @@ from argparse import ArgumentParser, SUPPRESS, RawDescriptionHelpFormatter
 from  typing import List
 # constants
 PROGRAM = 'icC/cli/sf.py'
-
+EPILOG = """
+Notes: 01 Qian-Initiating, 02 Kun-Responding, 29 Kan-Dark, 30 Li-Bright, 51 Zhen-Action, 52 Gen-Still, 57 Xun-Proceed Humbly, 58 Dui-Joyful
+       63 Ji Ji-Already Fulfilled, 64 Wei Ji-Not Yet Fulfilled
+Sample Usage: TBD
+"""
 # argparser
 ap = ArgumentParser(
     prog=PROGRAM,
     formatter_class=RawDescriptionHelpFormatter,
     description=__doc__,
     add_help=False,
-    epilog="""
-Notes: 01 Qian, 02 Kun, 29 Kan, 30 Li, 51 Zhen, 52 Gen, 57 Xun, 58 Dui
-Sample Usage:
-"""
+    epilog=EPILOG
 )
 required = ap.add_argument_group('required arguments')
 required.add_argument('-x', '--hexa',
