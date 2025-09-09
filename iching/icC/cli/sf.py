@@ -14,7 +14,7 @@ ap = ArgumentParser(
     description=__doc__,
     add_help=False,
     epilog="""
-Notes:
+Notes: 01 Qian, 02 Kun, 29 Kan, 30 Li, 51 Zhen, 52 Gen, 57 Xun, 58 Dui
 Sample Usage:
 """
 )
