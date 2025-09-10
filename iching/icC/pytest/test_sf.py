@@ -11,8 +11,9 @@ sys.path.insert(0, lib_path)
 from cli.sf import main # pylint: disable=C0413
 
 @pytest.mark.parametrize("mock_argv, expected_output", [
-    (['sf.py', 'TestName'], "following arguments are required"),
-    # (['sf.py'], "required arguments"),
+    (['sf.py', '-x 1'], "are required"), # one correct arg
+    # (['sf.py', 'TestName'], "following arguments are required"), # one incorrect arg
+    # (['sf.py'], "required arguments"), # zero arg
 ])
 def test_main(mocker, mock_argv, expected_output):
     """Test the main function with and without a name argument."""
@@ -30,4 +31,8 @@ def test_main(mocker, mock_argv, expected_output):
     print ("STDERR:", errout)
     # assert expected_output in output, (
     # f"Expected substring '{expected_output}' not found in '{output}'")
-    
+
+def test_out():
+    """Test the main function output."""
+    print("This is test_out")# This is a placeholder for an actual test case
+    assert True

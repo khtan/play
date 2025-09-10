@@ -62,11 +62,11 @@ def main() -> None:
     if len(args) < 2:
         ap.print_help()
         sys.exit(1)
-    else:
-        options=ap.parse_args(args[1:])
-        for hexagram_num in options.hexa:
-            hexpath: str = get_hexagram_path(int(hexagram_num))
-            view_file(hexpath)
+
+    options=ap.parse_args(args[1:])
+    for hexagram_num in options.hexa:
+        hexpath: str = get_hexagram_path(int(hexagram_num))
+        view_file(hexpath)
 
 if __name__ == "__main__":
     main()
