@@ -1,4 +1,8 @@
-""" test_sf.py """
+""" test_sf.py 
+ This implementation is probably not correct because it actually calls the main function which is not mocked.
+ The side effect of bringing up the .jpg file is observed. 
+ This makes the test dependent on its evironment.
+"""
 import os
 import sys
 from io import StringIO

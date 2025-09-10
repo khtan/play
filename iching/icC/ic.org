@@ -133,7 +133,7 @@ if __name__ == "__main__":
     main()
 # EOF
 
-**** ds : This is a command line .py.
+**** ds : Below is a command line .py file
 There are 3 refactorings to modify the source.
 The refactorings are intended to create reusable functions for future command lines.
 1. Write a function setup_logging with appropriate parameters so that main can call it and pass in the global variables.
@@ -141,7 +141,6 @@ The refactorings are intended to create reusable functions for future command li
 3. Write a function setup_path to encapsulate the modification of os.path, again so that the function can
    be called in main
 sf.py:
-
 
 ** I have a simple python project with folders for library (lib), unittest (unittest) and command line (cli)
 I am using ./setup.py to development and I install with "pip install -e " so that the development env is live.
