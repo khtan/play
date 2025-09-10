@@ -1,10 +1,11 @@
+"""Test cases for lib/core.py"""
 import sys
 import os
 
 # Add the lib directory to the path so we can import it
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
-from lib.core import greet, add
+from lib.core import greet, add # pylint: disable=C0413
 
 def test_greet():
     """Test the greet function."""
