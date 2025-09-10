@@ -3,71 +3,81 @@ import sys
 import os
 import logging
 from argparse import ArgumentParser, SUPPRESS, RawDescriptionHelpFormatter
-from  typing import List
-# constants
+from typing import List
+
+# Constants
 PROGRAM = 'icC/cli/sf.py'
 EPILOG = """
 Notes: 01 Qian-Initiating, 02 Kun-Responding, 29 Kan-Dark, 30 Li-Bright, 51 Zhen-Action, 52 Gen-Still, 57 Xun-Proceed Humbly, 58 Dui-Joyful
        63 Ji Ji-Already Fulfilled, 64 Wei Ji-Not Yet Fulfilled
 Sample Usage: TBD
 """
-# argparser
-ap = ArgumentParser(
-    prog=PROGRAM,
-    formatter_class=RawDescriptionHelpFormatter,
-    description=__doc__,
-    add_help=False,
-    epilog=EPILOG
-)
-required = ap.add_argument_group('required arguments')
-required.add_argument('-x', '--hexa',
-    type=int, choices=range(1, 65), nargs='+', required=True, help='Hexagram numbers 1-64')
-optional = ap.add_argument_group('optional arguments')
-optional.add_argument('-h', '--help', action='help', default=SUPPRESS,
-                      help='show this help message and exit')
+# internal functions
+def setup_logging() -> logging.Logger:
+    """Set up logging configuration and return logger instance."""
+    log_level_name = os.getenv('LOG_LEVEL', 'WARNING').upper()
+    try:
+        log_level = getattr(logging, log_level_name)
+    except AttributeError:
+        log_level = logging.WARNING
+    logging.basicConfig(level=log_level)
+    return logging.getLogger(__name__)
 
-# Get the log level from an environment variable, default to 'WARNING'
-log_level_name = os.getenv('LOG_LEVEL', 'WARNING').upper()
+def setup_command_parser() -> ArgumentParser:
+    """Create and configure command line argument parser."""
+    ap = ArgumentParser(
+        prog=PROGRAM,
+        formatter_class=RawDescriptionHelpFormatter,
+        description=__doc__,
+        add_help=False,
+        epilog=EPILOG
+    )
+    required = ap.add_argument_group('required arguments')
+    required.add_argument('-x', '--hexa',
+        type=int, choices=range(1, 65), nargs='+', required=True,
+        help='Hexagram numbers 1-64')
+    optional = ap.add_argument_group('optional arguments')
+    optional.add_argument('-h', '--help', action='help', default=SUPPRESS,
+                        help='show this help message and exit')
+    return ap
 
-# Convert the string to the actual logging constant
-try:
-    log_level: int = getattr(logging, log_level_name)
-except AttributeError:
-    # Handle the case of an invalid log level name
-    log_level: int = logging.WARNING
-logging.basicConfig(level=log_level)
+def setup_path() -> str:
+    """Add lib directory to Python path and return the path."""
+    lib_path = os.path.join(os.path.dirname(__file__), '..')
+    sys.path.insert(0, lib_path)
+    return lib_path
 
-# Set up logging
-logger = logging.getLogger(__name__)
-
-# Add the lib directory to the path so we can import it
-lib_path = os.path.join(os.path.dirname(__file__), '..')
-sys.path.insert(0, lib_path)
-from lib.core import view_file # pylint: disable=C0413
-
-def to_padded_string(n: int) -> str:
-    """ Convert a number to a zero-padded string """
-    return f"{n:02}"
-
-def get_hexagram_path(n: int) -> str:
-    """ Get the path to the hexagram image """
-    hexname = to_padded_string(n)
-    return r"I:\My Drive\lib-home\religion\iching\iching-cards" + "\\" + hexname + ".jpg"
-
+# Main function
 def main() -> None:
-    """ Main function for the CLI tool """
-    # logger.debug("lib_path: {}", lib_path)
+    """Main function for the CLI tool"""
+    logger = setup_logging()
+    ap = setup_command_parser()
+    lib_path = setup_path()
+
     logger.debug("lib_path: %s", lib_path)
+
+    # Import after setting up path
+    from lib.core import view_file  # pylint: disable=C0415
+
     args: List[str] = sys.argv
     if len(args) < 2:
         ap.print_help()
         sys.exit(1)
 
-    options=ap.parse_args(args[1:])
+    options = ap.parse_args(args[1:])
     for hexagram_num in options.hexa:
         hexpath: str = get_hexagram_path(int(hexagram_num))
         view_file(hexpath)
 
+# Helper functions
+def to_padded_string(n: int) -> str:
+    """Convert a number to a zero-padded string"""
+    return f"{n:02}"
+
+def get_hexagram_path(n: int) -> str:
+    """Get the path to the hexagram image"""
+    hexname = to_padded_string(n)
+    return r"I:\My Drive\lib-home\religion\iching\iching-cards" + "\\" + hexname + ".jpg"
+
 if __name__ == "__main__":
     main()
-# EOF
