@@ -1,12 +1,12 @@
 """Test cases for lib/core.py"""
+import json
 import sys
 import os
-
+from lib.core_classes import IChingConfig
 # Add the lib directory to the path so we can import it
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-
-from lib.core import greet, add # pylint: disable=C0413
-
+from lib.core import greet, add, load_json # pylint: disable=C0413
+# region tests
 def test_greet():
     """Test the greet function."""
     assert greet("World") == "Hello, World"
@@ -18,3 +18,39 @@ def test_add_int():
 def test_add_str():
     """Test the add function with strings."""
     assert add("Hello", "World") == "HelloWorld"
+
+def test_load_json_ok():
+    """Test the load_json function with a sample JSON file."""
+
+    # Create a temporary JSON file for testing
+    test_json_path = 'test_config.json'
+    test_data = {
+        "version": 1,
+        "cards_dir": "I:/My Drive/lib-home/religion/iching/iching-cards"
+    }
+    with open(test_json_path, 'w', encoding='utf-8') as f:
+        json.dump(test_data, f)
+
+    # Test loading the JSON file
+    cresult = load_json(test_json_path)
+    if cresult.is_ok:
+        config: IChingConfig = cresult.ok
+        assert config['version'] == 1
+        assert config['cards_dir'] == "I:/My Drive/lib-home/religion/iching/iching-cards"
+    else:
+        assert False, f"load_json failed with error: {cresult.error}"
+    # Clean up the temporary file
+    os.remove(test_json_path)
+def test_load_json_missingfile():
+    """Test the load_json function with a sample JSON file."""
+
+    # Test loading the JSON file
+    file_path = "nonexistent.json"
+    cresult = load_json(file_path)
+    if cresult.is_ok():
+        config: IChingConfig = cresult.ok
+        assert config['version'] == 1
+        assert config['cards_dir'] == "I:/My Drive/lib-home/religion/iching/iching-cards"
+    else:
+        assert cresult.error == "File {file_path} not found"
+#endregion tests

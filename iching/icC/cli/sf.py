@@ -39,6 +39,9 @@ def setup_command_parser() -> ArgumentParser:
     optional = ap.add_argument_group('optional arguments')
     optional.add_argument('-h', '--help', action='help', default=SUPPRESS,
                         help='show this help message and exit')
+    optional.add_argument('-c', '--config_file', type=str,
+                        help='path to json configuration file, defaulting to config.json',
+                        default='config.json')
     return ap
 
 def setup_path() -> str:
