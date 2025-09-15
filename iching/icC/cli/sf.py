@@ -1,9 +1,11 @@
 """ View hexagrams on Windows """
-import sys
 import os
+import sys
 import logging
+from os import getenv
 from argparse import ArgumentParser, SUPPRESS, RawDescriptionHelpFormatter
 from typing import List
+from lib.core_classes import IChingConfig
 
 # Constants
 PROGRAM = 'icC/cli/sf.py'
@@ -15,7 +17,7 @@ Sample Usage: TBD
 # internal functions
 def setup_logging() -> logging.Logger:
     """Set up logging configuration and return logger instance."""
-    log_level_name = os.getenv('LOG_LEVEL', 'WARNING').upper()
+    log_level_name = getenv('LOG_LEVEL', 'WARNING').upper()
     try:
         log_level = getattr(logging, log_level_name)
     except AttributeError:
@@ -39,7 +41,7 @@ def setup_command_parser() -> ArgumentParser:
     optional = ap.add_argument_group('optional arguments')
     optional.add_argument('-h', '--help', action='help', default=SUPPRESS,
                         help='show this help message and exit')
-    optional.add_argument('-c', '--config_file', type=str,
+    optional.add_argument('-c', '--configfile', type=str,
                         help='path to json configuration file, defaulting to config.json',
                         default='config.json')
     return ap
@@ -60,16 +62,25 @@ def main() -> None:
     logger.debug("lib_path: %s", lib_path)
 
     # Import after setting up path
-    from lib.core import view_file  # pylint: disable=C0415
+    from lib.core import view_file, load_json  # pylint: disable=C0415
 
     args: List[str] = sys.argv
     if len(args) < 2:
         ap.print_help()
-        sys.exit(1)
+        exit(1)
 
     options = ap.parse_args(args[1:])
+
+    cresult = load_json(options.configfile)
+    if cresult.is_error():
+        logger.error("load_json failed with error: %s", cresult.error)
+        exit(1)
+    logger.info("Loaded config from %s", options.configfile)
+    config: IChingConfig = cresult.ok
+    cards_lib_root = config['cards_dir']
+
     for hexagram_num in options.hexa:
-        hexpath: str = get_hexagram_path(int(hexagram_num))
+        hexpath: str = get_hexagram_path(cards_lib_root, int(hexagram_num))
         view_file(hexpath)
 
 # Helper functions
@@ -77,10 +88,12 @@ def to_padded_string(n: int) -> str:
     """Convert a number to a zero-padded string"""
     return f"{n:02}"
 
-def get_hexagram_path(n: int) -> str:
+def get_hexagram_path(cards_dir: str, n: int) -> str:
     """Get the path to the hexagram image"""
     hexname = to_padded_string(n)
-    return r"I:\My Drive\lib-home\religion\iching\iching-cards" + "\\" + hexname + ".jpg"
+    jpgname = hexname + ".jpg"
+    fullpath = os.path.join(cards_dir, jpgname)
+    return fullpath
 
 if __name__ == "__main__":
     main()
