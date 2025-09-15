@@ -19,9 +19,8 @@ def test_add_str():
     """Test the add function with strings."""
     assert add("Hello", "World") == "HelloWorld"
 
-def test_load_json_ok():
+def test_load_json_ok_self_created_file():
     """Test the load_json function with a sample JSON file."""
-
     # Create a temporary JSON file for testing
     test_json_path = 'test_config.json'
     test_data = {
@@ -33,7 +32,7 @@ def test_load_json_ok():
 
     # Test loading the JSON file
     cresult = load_json(test_json_path)
-    if cresult.is_ok:
+    if cresult.is_ok():
         config: IChingConfig = cresult.ok
         assert config['version'] == 1
         assert config['cards_dir'] == "I:/My Drive/lib-home/religion/iching/iching-cards"
@@ -41,6 +40,19 @@ def test_load_json_ok():
         assert False, f"load_json failed with error: {cresult.error}"
     # Clean up the temporary file
     os.remove(test_json_path)
+def test_load_json_ok_external_file():
+    """Test the load_json function with a sample JSON file."""
+    # Sensitive: assumes pytest starts at root of project
+    test_json_path = 'pytest/test_core_config.json'
+
+    # Test loading the JSON file
+    cresult = load_json(test_json_path)
+    if cresult.is_ok():
+        config: IChingConfig = cresult.ok
+        assert config['version'] == 1
+        assert config['cards_dir'] == "I:/My Drive/lib-home/religion/iching/iching-cards"
+    else:
+        assert False, f"load_json failed with error: {cresult.error}"
 def test_load_json_missingfile():
     """Test the load_json function with a sample JSON file."""
 
