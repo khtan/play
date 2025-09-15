@@ -36,7 +36,7 @@ def setup_command_parser() -> ArgumentParser:
     )
     required = ap.add_argument_group('required arguments')
     required.add_argument('-x', '--hexa',
-        type=int, choices=range(1, 65), nargs='+', required=True,
+        type=int, choices=range(1, 65), nargs='+', required=True, metavar="1..64",
         help='Hexagram numbers 1-64')
     optional = ap.add_argument_group('optional arguments')
     optional.add_argument('-h', '--help', action='help', default=SUPPRESS,
