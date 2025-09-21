@@ -1,4 +1,4 @@
-""" test_sf2.py """
+""" test_icf2.py """
 import os
 import sys
 from unittest.mock import patch
@@ -15,7 +15,7 @@ from cli.icf import main # pylint: disable=C0413
 def test_no_arguments(capsys):
     """Test case 1: No arguments provided"""
     # Mock sys.argv to simulate no arguments
-    with patch.object(sys, 'argv', ['sf.py']):
+    with patch.object(sys, 'argv', ['icf.py']):
         with pytest.raises(SystemExit) as exc_info:
             main()
 
@@ -34,17 +34,18 @@ def test_correct_argument():
     # Mock the view_file function to track calls
     with patch('lib.core.view_file') as mock_view:
         # Mock sys.argv to simulate correct argument
-        with patch.object(sys, 'argv', ['sf.py', '-x', '1']):
+        with patch.object(sys, 'argv', ['icf.py', '-x', '1']):
             main()
 
             # Check that view_file was called with the correct path
-            expected_path = r"I:\My Drive\lib-home\religion\iching\iching-cards\01.jpg"
+            # TODO: make expected_path more robust or check differently
+            expected_path = r"I:/My Drive/lib-home/religion/iching/iching-cards\01.jpg"
             mock_view.assert_called_once_with(expected_path)
 
 def test_incorrect_argument(capsys):
     """Test case 3: One incorrect argument (hello)"""
     # Mock sys.argv to simulate incorrect argument
-    with patch.object(sys, 'argv', ['sf.py', 'hello']):
+    with patch.object(sys, 'argv', ['icf.py', 'hello']):
         with pytest.raises(SystemExit) as exc_info:
             main()
 

@@ -64,5 +64,5 @@ def test_load_json_missingfile():
         assert config['version'] == 1
         assert config['cards_dir'] == "I:/My Drive/lib-home/religion/iching/iching-cards"
     else:
-        assert cresult.error == "File {file_path} not found"
+        assert cresult.error == f"File {file_path} not found"
 #endregion tests
