@@ -10,7 +10,7 @@ import pytest
 lib_path = os.path.join(os.path.dirname(__file__), '..')
 sys.path.insert(0, lib_path)
 
-from cli.sf import main # pylint: disable=C0413
+from cli.icf import main # pylint: disable=C0413
 
 def test_no_arguments(capsys):
     """Test case 1: No arguments provided"""

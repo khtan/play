@@ -1,5 +1,6 @@
 """ test_sf.py 
- This implementation is probably not correct because it actually calls the main function which is not mocked.
+ This implementation is probably not correct because it actually calls 
+ the main function which is not mocked.
  The side effect of bringing up the .jpg file is observed. 
  This makes the test dependent on its evironment.
 """
@@ -12,7 +13,7 @@ import pytest
 lib_path = os.path.join(os.path.dirname(__file__), '..')
 sys.path.insert(0, lib_path)
 
-from cli.sf import main # pylint: disable=C0413
+from cli.icf import main # pylint: disable=C0413
 
 @pytest.mark.parametrize("mock_argv, expected_output", [
     (['sf.py', '-x 1'], "are required"), # one correct arg

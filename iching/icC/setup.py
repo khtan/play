@@ -8,7 +8,8 @@ setup(
     entry_points={
         'console_scripts': [
             'hello=cli.hello:main',
-            'sf=cli.sf:main',
+            'icf=cli.icf:main',
+            'icc=cli.icc:main',
         ],
     },
 )

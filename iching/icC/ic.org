@@ -6,7 +6,7 @@
 2. Create a new virtual environment called venv: python -m venv venv
 3. Activate the virtual environment (see tables below)
 4. Install packages: pip install -r requirements.txt
-5. Make cli project editable : pip install -e .
+5. Make cli project editable : pip install -e . --exclude-editable
 6. Make a copy of config_template.json and name it config.json
 7. Populate config.json with the appropriate values for each field
 *** activation
@@ -47,6 +47,11 @@ VS Code should ask you if you want to activate the new virtual environment. If i
 ** icC
 **** motivation
 Remove all the __pycache__ and other folders that do not need to be checked in
+**** sc name clash
+sc is system control manager monitoring tool in c:\system\windows32
+What to call this tool
+sc -- see character
+icc -- iching character?
 **** ds : This is a command line .py file that sets up the logging and argparse so as to call the view_file appropriately.
 Reimplement the global code into functions setup_logging and setup_argparse so that the functions can be reused.
 This means the global arguments should be set in the calling functions and passed into these 2 setup functions.
