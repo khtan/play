@@ -2,9 +2,11 @@
 import os
 import sys
 import logging
+import platform
 from os import getenv
 from argparse import ArgumentParser, SUPPRESS, RawDescriptionHelpFormatter
 from typing import List
+from expression import Error, Ok, Result
 # from lib.core_classes import IChingConfig
 
 # Constants
@@ -14,6 +16,35 @@ Notes: TBD
 Sample Usage: TBD
 """
 # internal functions
+def check_encoding_and_advice() -> Result[None, str]:
+    """
+    Check whether sys.stdout.encoding is UTF-8.
+    If not, print a warning with advice for Linux and Windows shells.
+    """
+    encoding = sys.stdout.encoding
+    if encoding and isinstance(encoding, str) and "utf" in str(encoding).lower():
+        return Ok(None) # ✅ Good encoding, nothing to do
+
+    # Build warning message
+    msg_lines = ["⚠️  Warning: Your terminal does not appear to use UTF-8 encoding."]
+    msg_lines.append(f"Detected encoding: {encoding!r}")
+
+    system = platform.system().lower()
+    if "linux" in system or "darwin" in system:
+        msg_lines.append("💡 On Linux/macOS, try:")
+        msg_lines.append("    export LANG=en_US.UTF-8")
+        msg_lines.append("    export LC_ALL=en_US.UTF-8")
+    elif "windows" in system:
+        msg_lines.append("💡 On Windows Command Prompt (cmd.exe), try:")
+        msg_lines.append("    chcp 65001")
+        msg_lines.append("    set PYTHONIOENCODING=utf-8")
+        msg_lines.append("💡 On PowerShell, you may need:")
+        msg_lines.append("    [Console]::OutputEncoding = [System.Text.Encoding]::UTF8")
+        msg_lines.append("    $env:PYTHONIOENCODING = 'utf-8'")
+    else:
+        msg_lines.append("💡 Make sure your shell supports UTF-8 output.")
+    return Error("\n".join(msg_lines))
+
 def setup_logging() -> logging.Logger:
     """Set up logging configuration and return logger instance."""
     log_level_name = getenv('LOG_LEVEL', 'WARNING').upper()
@@ -56,8 +87,10 @@ def setup_path() -> str:
 # Main function
 def main() -> None:
     """Main function for the CLI tool"""
-
     logger = setup_logging()
+    encoding_state = check_encoding_and_advice()
+    if encoding_state.is_error():
+        logger.info(encoding_state.error)
     ap = setup_command_parser()
     lib_path = setup_path()
     logger.debug("lib_path: %s", lib_path)
@@ -78,7 +111,7 @@ def main() -> None:
     logger.info("Loaded config from %s", options.configfile)
     # config: IChingConfig = cresult.ok
     # cards_lib_root = config['cards_dir']
-    outstr: str = "outstr:"
+    outstr: str = ""
     if options.hexa is not None:
         for hexagram_num in options.hexa:
             r = get_hexagram_unicode(hexagram_num)
@@ -96,7 +129,6 @@ def main() -> None:
     logger.debug("Output: %s", outstr)
     sys.stdout.buffer.write(outstr.encode('utf-8', errors='replace'))    
     sys.stdout.flush()
-    # print(outstr)
 
 if __name__ == "__main__":
     main()
