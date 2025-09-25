@@ -126,9 +126,9 @@ def main() -> None:
                 logger.error("get_trigram_unicode failed with error: %s", r.error)
             else:
                 outstr = outstr + str(r.ok)
-    logger.debug("Output: %s", outstr)
-    sys.stdout.buffer.write(outstr.encode('utf-8', errors='replace'))    
-    sys.stdout.flush()
+    print(outstr)
+    # sys.stdout.buffer.write(outstr.encode('utf-8', errors='replace'))
+    # sys.stdout.flush()
 
 if __name__ == "__main__":
     main()
