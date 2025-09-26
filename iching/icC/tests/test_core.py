@@ -43,7 +43,7 @@ def test_load_json_ok_self_created_file():
 def test_load_json_ok_external_file():
     """Test the load_json function with a sample JSON file."""
     # Sensitive: assumes pytest starts at root of project
-    test_json_path = 'pytest/test_core_config.json'
+    test_json_path = 'tests/test_core_config.json'
 
     # Test loading the JSON file
     cresult = load_json(test_json_path)
@@ -68,7 +68,7 @@ def test_load_json_missingfile():
 def test_generate_html():
     """Test the generate_html function."""
     hex_numbers = list(range(1,6))# [1, 2, 3, 4, 5]
-    output_file = "test_hexagrams.html"
+    output_file = "output_hexagrams.html"
     result = generate_html(hex_numbers, "x", show_num=True, output_file=output_file)
     if result.is_error():
         assert False, f"generate_html failed with error: {result.error}"
