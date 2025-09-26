@@ -1,11 +1,11 @@
 """Test cases for lib/core.py"""
 import json
-import sys
+# import sys
 import os
 from lib.core_classes import IChingConfig
 # Add the lib directory to the path so we can import it
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-from lib.core import greet, add, load_json # pylint: disable=C0413
+# sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+from lib.core import generate_html, greet, add, load_json # pylint: disable=C0413
 # region tests
 def test_greet():
     """Test the greet function."""
@@ -65,4 +65,13 @@ def test_load_json_missingfile():
         assert config['cards_dir'] == "I:/My Drive/lib-home/religion/iching/iching-cards"
     else:
         assert cresult.error == f"File {file_path} not found"
+def test_generate_html():
+    """Test the generate_html function."""
+    hex_numbers = [1, 2, 3, 4, 5]
+    output_file = "test_hexagrams.html"
+    result = generate_html(hex_numbers, "x", show_num=True, output_file=output_file)
+    if result.is_error():
+        assert False, f"generate_html failed with error: {result.error}"
+    assert os.path.exists(output_file)
+
 #endregion tests

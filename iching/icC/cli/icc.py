@@ -134,5 +134,6 @@ def main() -> None:
                 outstr = outstr + str(r.ok)
     print(outstr)
 
+
 if __name__ == "__main__":
     main()

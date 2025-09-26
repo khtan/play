@@ -1,4 +1,3 @@
-
 * root
 ** venv usage
 *** first time setup
@@ -45,17 +44,17 @@ VS Code should ask you if you want to activate the new virtual environment. If i
 |    |                      |
 
 ** icC
-**** motivation
+*** motivation
 Remove all the __pycache__ and other folders that do not need to be checked in
-**** sc name clash
+*** sc name clash
 sc is system control manager monitoring tool in c:\system\windows32
 What to call this tool
 sc -- see character
 icc -- iching character?
-**** ds : This is a command line .py file that sets up the logging and argparse so as to call the view_file appropriately.
+*** ds : This is a command line .py file that sets up the logging and argparse so as to call the view_file appropriately.
 Reimplement the global code into functions setup_logging and setup_argparse so that the functions can be reused.
 This means the global arguments should be set in the calling functions and passed into these 2 setup functions.
-***** new sf.py:
+**** new sf.py:
 """ View hexagrams on Windows """
 import sys
 import os
@@ -138,7 +137,7 @@ if __name__ == "__main__":
     main()
 # EOF
 
-**** ds : Below is a command line .py file
+*** ds : Below is a command line .py file
 There are 3 refactorings to modify the source.
 The refactorings are intended to create reusable functions for future command lines.
 1. Write a function setup_logging with appropriate parameters so that main can call it and pass in the global variables.
@@ -147,8 +146,19 @@ The refactorings are intended to create reusable functions for future command li
    be called in main
 sf.py:
 
-** I have a simple python project with folders for library (lib), unittest (unittest) and command line (cli)
+*** I have a simple python project with folders for library (lib), unittest (unittest) and command line (cli)
 I am using ./setup.py to development and I install with "pip install -e " so that the development env is live.
 How do I run the unittests?
+
+*** The utiliity function get_hexagram_unicode is already implemented.
+def get_hexagram_unicode(hexagram_number: int) -> Result[str, errstr]
+
+Use it to write a function generate_html that takes a list of hexagram numbers
+and generate a simple html file that displays the unicode characters in a circle.
+The circle should size itself or be related to some center, so that absolute coordinates
+do not need to be referenced.
+
+def generate_html(hex_numbers)
+
 
 

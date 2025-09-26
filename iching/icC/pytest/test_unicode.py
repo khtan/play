@@ -6,7 +6,7 @@ from pytest import fail
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
-def test_02() -> None: 
+def test_02() -> None:
     """ xxx """
     logger.info("Stdout encoding: %s", sys.stdout.encoding)
 
@@ -22,10 +22,10 @@ def test_00() -> None: # _unicode_char_print
         print(f"PHex: {hexagram}")
     except NameError as ne: # pylint: disable=W0718
         print(f"NameError: >{ne}<")
-        fail(f"NameError: >{ne}<")        
+        fail(f"NameError: >{ne}<")
     except UnicodeEncodeError as uee: # pylint: disable=W0718
         print(f"UnicodeEncodeError: >{uee}<")
-        fail(f"UnicodeEncodeError: >{uee}<")        
+        fail(f"UnicodeEncodeError: >{uee}<")
     except Exception as e: # pylint: disable=W0718
         print(f"EPHex: >{e}<")
         fail(f"EPHex: {e}")
