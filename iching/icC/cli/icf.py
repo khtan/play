@@ -5,7 +5,7 @@ import logging
 from os import getenv
 from argparse import ArgumentParser, SUPPRESS, RawDescriptionHelpFormatter
 from typing import List
-from lib.core_classes import IChingConfig
+from common.core_classes import IChingConfig
 
 # Constants
 PROGRAM = 'icC/cli/icf.py'
@@ -62,7 +62,7 @@ def main() -> None:
     logger.debug("lib_path: %s", lib_path)
 
     # Import after setting up path
-    from lib.core import view_file, load_json  # pylint: disable=C0415
+    from common.core import view_file, load_json  # pylint: disable=C0415
 
     args: List[str] = sys.argv
     if len(args) < 2:

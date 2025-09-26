@@ -99,7 +99,7 @@ def main() -> None:
     logger.debug("lib_path: %s", lib_path)
 
     # import libafter setting up path
-    from lib.core import get_hexagram_unicode, get_trigram_unicode, load_json  # pylint: disable=C0415
+    from common.core import get_hexagram_unicode, get_trigram_unicode, load_json  # pylint: disable=C0415
 
     # parse args and handle the -h case
     args: List[str] = sys.argv

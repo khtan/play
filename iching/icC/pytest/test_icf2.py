@@ -32,7 +32,7 @@ def test_correct_argument():
         Need improvement: expected_path can change
     """
     # Mock the view_file function to track calls
-    with patch('lib.core.view_file') as mock_view:
+    with patch('common.core.view_file') as mock_view:
         # Mock sys.argv to simulate correct argument
         with patch.object(sys, 'argv', ['icf.py', '-x', '1']):
             main()

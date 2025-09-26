@@ -5,7 +5,7 @@ import os
 # Add the lib directory to the path so we can import it
 lib_path = os.path.join(os.path.dirname(__file__), '..')
 sys.path.insert(0, lib_path)
-from lib.core import greet # pylint: disable=C0413
+from common.core import greet # pylint: disable=C0413
 
 def main():
     """ Main function for the CLI tool """
