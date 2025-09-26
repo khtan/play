@@ -87,22 +87,27 @@ def setup_path() -> str:
 # Main function
 def main() -> None:
     """Main function for the CLI tool"""
+    # set up logging, then check encoding
     logger = setup_logging()
     encoding_state = check_encoding_and_advice()
     if encoding_state.is_error():
-        logger.info(encoding_state.error)
+        logger.info(encoding_state.error) # waring and continue
+
+    # set up command line parse and add lib_path to import from lib
     ap = setup_command_parser()
     lib_path = setup_path()
     logger.debug("lib_path: %s", lib_path)
 
-    # Import after setting up path
+    # import libafter setting up path
     from lib.core import get_hexagram_unicode, get_trigram_unicode, load_json  # pylint: disable=C0415
 
+    # parse args and handle the -h case
     args: List[str] = sys.argv
     if len(args) < 2:
         ap.print_help()
         exit(1)
 
+    # parse args and load config file
     options = ap.parse_args(args[1:])
     cresult = load_json(options.configfile)
     if cresult.is_error():
@@ -111,6 +116,7 @@ def main() -> None:
     logger.info("Loaded config from %s", options.configfile)
     # config: IChingConfig = cresult.ok
     # cards_lib_root = config['cards_dir']
+    # loop over -x and -t args and build output string
     outstr: str = ""
     if options.hexa is not None:
         for hexagram_num in options.hexa:
@@ -127,8 +133,6 @@ def main() -> None:
             else:
                 outstr = outstr + str(r.ok)
     print(outstr)
-    # sys.stdout.buffer.write(outstr.encode('utf-8', errors='replace'))
-    # sys.stdout.flush()
 
 if __name__ == "__main__":
     main()
