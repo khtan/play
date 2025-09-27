@@ -5,7 +5,8 @@ import os
 from common.core_classes import IChingConfig
 # Add the lib directory to the path so we can import it
 # sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-from common.core import generate_html, greet, add, load_json # pylint: disable=C0413
+from common.core import greet, add, load_json # pylint: disable=C0413
+from common.hexagram import generate_html # pylint: disable=C0413
 # region tests
 def test_greet():
     """Test the greet function."""
@@ -67,7 +68,7 @@ def test_load_json_missingfile():
         assert cresult.error == f"File {file_path} not found"
 def test_generate_html():
     """Test the generate_html function."""
-    hex_numbers = list(range(1,6))# [1, 2, 3, 4, 5]
+    hex_numbers = list(range(1,65)) # [1, 63, 64, 2] # list(range(1,21))# [1, 2, 3, 4, 5]
     output_file = "output_hexagrams.html"
     result = generate_html(hex_numbers, "x", show_num=True, output_file=output_file)
     if result.is_error():
