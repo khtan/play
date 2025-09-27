@@ -66,9 +66,17 @@ def test_load_json_missingfile():
         assert config['cards_dir'] == "I:/My Drive/lib-home/religion/iching/iching-cards"
     else:
         assert cresult.error == f"File {file_path} not found"
-def test_generate_html():
+def test_generate_small_html():
     """Test the generate_html function."""
-    hex_numbers = list(range(1,65)) # [1, 63, 64, 2] # list(range(1,21))# [1, 2, 3, 4, 5]
+    hex_numbers = [1, 63, 64, 2] 
+    output_file = "output_hexagrams.html"
+    result = generate_html(hex_numbers, "x", show_num=True, output_file=output_file)
+    if result.is_error():
+        assert False, f"generate_html failed with error: {result.error}"
+    assert os.path.exists(output_file)
+def test_generate_large_html():
+    """Test the generate_html function."""
+    hex_numbers = list(range(1,65))
     output_file = "output_hexagrams.html"
     result = generate_html(hex_numbers, "x", show_num=True, output_file=output_file)
     if result.is_error():

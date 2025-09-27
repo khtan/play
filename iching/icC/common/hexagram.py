@@ -1,6 +1,6 @@
 """ functions pertaining to hexagrams and trigrams """
 from pathlib import Path
-from typing import Sequence, List, Tuple
+from typing import Sequence
 from expression import Error, Ok, Result
 
 # reminder for error string type
@@ -12,18 +12,6 @@ def get_hexagram_unicode(hexagram_number: int) -> Result[str, errstr]:
         return Ok(chr(0x4DC0 + hexagram_number - 1))
     else:
         return Error("Hexagram number must be between 1 and 64")
-
-def get_hexagram_chars(hex_numbers: Sequence[int]) -> Result[List[Tuple[int, str]], str]:
-    """Get list of (hex_number, unicode_char) tuples for valid hexagram numbers."""
-    chars: List[Tuple[int, str]] = []
-    for n in hex_numbers:
-        result = get_hexagram_unicode(n)
-        if result.is_error():
-            return Error(f"Skipping hexagram {n}: {result.error}")
-        chars.append((n, result.ok))
-    if not chars:
-        return Error("No valid hexagrams to display.")
-    return Ok(chars)
 
 def compute_radius(n: int) -> str:
     """Compute the circle radius as vmin based on number of hexagrams."""
