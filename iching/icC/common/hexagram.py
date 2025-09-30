@@ -20,7 +20,7 @@ def compute_radius(n: int) -> str:
     radius = max(min_radius, 25 * (n / scale_by_number_of_hexagrams))  # trial and error for now
     return f"{radius:.1f}vmin"
 
-def build_hex_html(num: int, angle: float, radius_css: str, show_num: bool) -> Result[str, str]:
+def build_hexagram_html(num: int, angle: float, radius_css: str, show_num: bool) -> Result[str, str]:
     """Build the HTML div for a single hexagram number by calling get_hexagram_unicode."""
     result = get_hexagram_unicode(num)
     if result.is_error():
@@ -38,18 +38,8 @@ def build_hex_html(num: int, angle: float, radius_css: str, show_num: bool) -> R
     )
     return Ok(html_div)
 
-def build_html_page(
-    hex_numbers: Sequence[int],
-    radius_css: str,
-    center_string: str,
-    show_num: bool
-) -> Result[str, str]:
-    """Build the full HTML page as a string, calling get_hexagram_unicode for each number."""
-    n = len(hex_numbers)
-    if n == 0:
-        return Error("No hexagrams to display.")
-
-    angle_step = 360 / n
+def build_header() -> str:
+    """Build the HTML header with CSS styles."""
     css_style = """
 <style>
 body {
@@ -88,7 +78,7 @@ body {
 }
 </style>
 """
-    html_parts = [
+    header_parts = [
         "<!DOCTYPE html>",
         "<html lang='en'>",
         "<head>",
@@ -96,20 +86,57 @@ body {
         "<title>Hexagrams Circle</title>",
         f"{css_style}",
         "</head><body>",
+    ]
+    return "\n".join(header_parts)
+
+def build_circle_hexagrams(
+    hex_numbers: Sequence[int],
+    radius_css: str,
+    center_string: str,
+    show_num: bool
+) -> Result[str, str]:
+    """Build the circle div with hexagrams arranged around a center."""
+    n = len(hex_numbers)
+    if n == 0:
+        return Error("No hexagrams to display.")
+
+    angle_step = 360 / n
+    circle_parts = [
         "<div class='circle'>",
         f"<div class='center-char'>{center_string}</div>",
     ]
 
     for i, num in enumerate(hex_numbers):
         angle = i * angle_step
-        hex_div_res = build_hex_html(num, angle, radius_css, show_num)
+        hex_div_res = build_hexagram_html(num, angle, radius_css, show_num)
         if hex_div_res.is_error():
             return Error(hex_div_res.error)
-        html_parts.append(hex_div_res.ok)
+        circle_parts.append(hex_div_res.ok)
 
-    html_parts.append("</div></body></html>")
+    circle_parts.append("</div>")
+    return Ok("\n".join(circle_parts))
+
+def build_footer() -> str:
+    """Build the HTML footer."""
+    return "</body></html>"
+
+def build_html_page(
+    hex_numbers: Sequence[int],
+    radius_css: str,
+    center_string: str,
+    show_num: bool
+) -> Result[str, str]:
+    """Build the full HTML page as a string."""
+    header = build_header()
+
+    circle_res = build_circle_hexagrams(hex_numbers, radius_css, center_string, show_num)
+    if circle_res.is_error():
+        return Error(circle_res.error)
+
+    footer = build_footer()
+
+    html_parts = [header, circle_res.ok, footer]
     return Ok("\n".join(html_parts))
-
 
 def generate_html(
     hex_numbers: Sequence[int],

@@ -91,7 +91,7 @@ def main() -> None:
     logger = setup_logging()
     encoding_state = check_encoding_and_advice()
     if encoding_state.is_error():
-        logger.info(encoding_state.error) # waring and continue
+        logger.info(encoding_state.error) # warning and continue
 
     # set up command line parse and add lib_path to import from lib
     ap = setup_command_parser()
@@ -99,7 +99,8 @@ def main() -> None:
     logger.debug("lib_path: %s", lib_path)
 
     # import libafter setting up path
-    from common.core import get_hexagram_unicode, get_trigram_unicode, load_json  # pylint: disable=C0415
+    from common.core import get_trigram_unicode, load_json  # pylint: disable=C0415
+    from common.hexagram import get_hexagram_unicode   # pylint: disable=C0415
 
     # parse args and handle the -h case
     args: List[str] = sys.argv

@@ -158,7 +158,7 @@ and generate a simple html file that displays the unicode characters in a circle
 The circle should size itself or be related to some center, so that absolute coordinates
 do not need to be referenced.
 
-def generate_html(hex_numbers)
+def generate_html(hex_numbers) ...
 
 
 
