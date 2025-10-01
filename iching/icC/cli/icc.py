@@ -20,7 +20,7 @@ Sample Usage: TBD
 # not so much for reuse as for clarity in the main() function.
 def check_encoding_and_advice() -> Result[None, str]:
     """
-    Check whether sys.stdout.encoding is UTF-8.
+    Check whether sys.stdout.encoding is UTF-8. 
     If not, print a warning with advice for Linux and Windows shells.
     """
     encoding = sys.stdout.encoding
@@ -82,7 +82,7 @@ def setup_command_parser() -> ArgumentParser:
 
 def setup_path() -> str:
     """Add lib directory to Python path and return the path."""
-    lib_path = os.path.join(os.path.dirname(__file__), '..')
+    lib_path = os.path.join(os.path.dirname(__file__), '..') # pylint: disable=W0621
     sys.path.insert(0, lib_path)
     return lib_path
 

@@ -69,18 +69,34 @@ def test_load_json_missingfile():
 def test_generate_small_html():
     """Test the generate_html function."""
     hex_numbers = [1, 63, 64, 2]
-    output_file = "output_hexagrams.html"
-    result = generate_html(hex_numbers, "x", show_num=True, output_file=output_file)
+    of = "output_hexagrams.html"
+    result = generate_html(hex_numbers, "x", show_num=True, output_file=of, display_type="circle")
     if result.is_error():
         assert False, f"generate_html failed with error: {result.error}"
-    assert os.path.exists(output_file)
+    assert os.path.exists(of)
 def test_generate_large_html():
     """Test the generate_html function."""
     hex_numbers = list(range(1,65))
-    output_file = "output_hexagrams.html"
-    result = generate_html(hex_numbers, "x", show_num=True, output_file=output_file)
+    of = "output_hexagrams.html"
+    result = generate_html(hex_numbers, "x", show_num=True, output_file=of, display_type="circle")
     if result.is_error():
         assert False, f"generate_html failed with error: {result.error}"
-    assert os.path.exists(output_file)
+    assert os.path.exists(of)
+def test_generate_small_all_html():
+    """Test the generate_html function."""
+    hex_numbers = [1, 63, 64, 2]
+    of = "output_hexagrams_all.html"
+    result = generate_html(hex_numbers, "x", show_num=True, output_file=of, display_type="all")
+    if result.is_error():
+        assert False, f"generate_html failed with error: {result.error}"
+    assert os.path.exists(of)
+def test_generate_large_all_html():
+    """Test the generate_html function."""
+    hex_numbers = list(range(1,65))
+    of = "output_hexagrams_all.html"
+    result = generate_html(hex_numbers, "x", show_num=True, output_file=of, display_type="all")
+    if result.is_error():
+        assert False, f"generate_html failed with error: {result.error}"
+    assert os.path.exists(of)
 
 #endregion tests
