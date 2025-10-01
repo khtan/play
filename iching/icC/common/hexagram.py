@@ -91,7 +91,6 @@ body {
 
 def build_circle_hexagrams(
     hex_numbers: Sequence[int],
-    radius_css: str,
     center_string: str,
     show_num: bool
 ) -> Result[str, str]:
@@ -99,7 +98,7 @@ def build_circle_hexagrams(
     n = len(hex_numbers)
     if n == 0:
         return Error("No hexagrams to display.")
-
+    radius_css = compute_radius(n)
     angle_step = 360 / n
     circle_parts = [
         "<div class='circle'>",
@@ -122,14 +121,13 @@ def build_footer() -> str:
 
 def build_html_page(
     hex_numbers: Sequence[int],
-    radius_css: str,
     center_string: str,
     show_num: bool
 ) -> Result[str, str]:
     """Build the full HTML page as a string."""
     header = build_header()
 
-    circle_res = build_circle_hexagrams(hex_numbers, radius_css, center_string, show_num)
+    circle_res = build_circle_hexagrams(hex_numbers, center_string, show_num)
     if circle_res.is_error():
         return Error(circle_res.error)
 
@@ -148,8 +146,7 @@ def generate_html(
     if not hex_numbers:
         return Error("No hexagram numbers provided.")
 
-    radius_css = compute_radius(len(hex_numbers))
-    html_res = build_html_page(hex_numbers, radius_css, center_string, show_num)
+    html_res = build_html_page(hex_numbers, center_string, show_num)
     if html_res.is_error():
         return Error(html_res.error)
 
