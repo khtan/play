@@ -84,24 +84,32 @@ def setup_path() -> str:
     sys.path.insert(0, lib_path)
     return lib_path
 
+def output_hexagram_html(hex_numbers, output_file) -> None:
+    """ write out the hexagrams in specified html file """
+    r = generate_html(hex_numbers, "x", show_num=True, output_file=output_file)
+    if r.is_error():
+        logger.error("generate_html failed with error: %s", r.error)
+    else:
+        logger.info("Wrote hexagram HTML to %s", output_file)
+
 # Main function
+## globals
+### set up logging, then check encoding
+logger = setup_logging()
+encoding_state = check_encoding_and_advice()
+if encoding_state.is_error():
+    logger.info(encoding_state.error) # warning and continue
+### add lib_path to mport from lib
+lib_path = setup_path()
+logger.debug("lib_path: %s", lib_path)
+from common.core import get_trigram_unicode, load_json  # pylint: disable=C0413
+from common.hexagram import get_hexagram_unicode, generate_html   # pylint: disable=C0413
+
+## main
 def main() -> None:
     """Main function for the CLI tool"""
-    # set up logging, then check encoding
-    logger = setup_logging()
-    encoding_state = check_encoding_and_advice()
-    if encoding_state.is_error():
-        logger.info(encoding_state.error) # warning and continue
-
-    # set up command line parse and add lib_path to import from lib
+    # set up command line parse
     ap = setup_command_parser()
-    lib_path = setup_path()
-    logger.debug("lib_path: %s", lib_path)
-
-    # import libafter setting up path
-    from common.core import get_trigram_unicode, load_json  # pylint: disable=C0415
-    from common.hexagram import get_hexagram_unicode, generate_html   # pylint: disable=C0415
-
     # parse args and handle the -h case
     args: List[str] = sys.argv
     if len(args) < 2:
@@ -135,13 +143,8 @@ def main() -> None:
                 outstr = outstr + str(r.ok)
     print(outstr)
     if options.hexa is not None:
-        hex_numbers = options.hexa
         output_file = "output_hexagrams.html"
-        r = generate_html(hex_numbers, "x", show_num=True, output_file=output_file)
-        if r.is_error():
-            logger.error("generate_html failed with error: %s", r.error)
-        else:
-            logger.info("Wrote hexagram HTML to %s", output_file)
+        output_hexagram_html(options.hexa, output_file)
 
 if __name__ == "__main__":
     main()
