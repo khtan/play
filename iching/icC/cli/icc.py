@@ -16,6 +16,8 @@ Notes: TBD
 Sample Usage: TBD
 """
 # internal functions
+# These internal functions rely on globals like lib_path and logger, and are intended
+# not so much for reuse as for clarity in the main() function.
 def check_encoding_and_advice() -> Result[None, str]:
     """
     Check whether sys.stdout.encoding is UTF-8.
@@ -92,6 +94,24 @@ def output_hexagram_html(hex_numbers, output_file) -> None:
     else:
         logger.info("Wrote hexagram HTML to %s", output_file)
 
+def output_hexagram_string(hexagrams, trigrams) -> str:
+    """ unicode string for hexagrams """
+    outstr: str = ""
+    if hexagrams is not None:
+        for hexagram_num in hexagrams:
+            r = get_hexagram_unicode(hexagram_num)
+            if r.is_error():
+                logger.error("get_hexagram_unicode failed with error: %s", r.error)
+            else:
+                outstr = outstr + str(r.ok)
+    if trigrams is not None :
+        for trigram_num in trigrams:
+            r = get_trigram_unicode(trigram_num)
+            if r.is_error():
+                logger.error("get_trigram_unicode failed with error: %s", r.error)
+            else:
+                outstr = outstr + str(r.ok)
+    return outstr
 # Main function
 ## globals
 ### set up logging, then check encoding
@@ -123,25 +143,10 @@ def main() -> None:
         logger.error("load_json failed with error: %s", cresult.error)
         exit(1)
     logger.info("Loaded config from %s", options.configfile)
-    # config: IChingConfig = cresult.ok
-    # cards_lib_root = config['cards_dir']
-    # loop over -x and -t args and build output string
-    outstr: str = ""
-    if options.hexa is not None:
-        for hexagram_num in options.hexa:
-            r = get_hexagram_unicode(hexagram_num)
-            if r.is_error():
-                logger.error("get_hexagram_unicode failed with error: %s", r.error)
-            else:
-                outstr = outstr + str(r.ok)
-    if options.tri is not None :
-        for trigram_num in options.tri:
-            r = get_trigram_unicode(trigram_num)
-            if r.is_error():
-                logger.error("get_trigram_unicode failed with error: %s", r.error)
-            else:
-                outstr = outstr + str(r.ok)
+    # output string
+    outstr = output_hexagram_string(options.hexa, options.tri)
     print(outstr)
+    # output html
     if options.hexa is not None:
         output_file = "output_hexagrams.html"
         output_hexagram_html(options.hexa, output_file)
