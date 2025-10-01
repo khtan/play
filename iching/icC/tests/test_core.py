@@ -68,7 +68,7 @@ def test_load_json_missingfile():
         assert cresult.error == f"File {file_path} not found"
 def test_generate_small_html():
     """Test the generate_html function."""
-    hex_numbers = [1, 63, 64, 2] 
+    hex_numbers = [1, 63, 64, 2]
     output_file = "output_hexagrams.html"
     result = generate_html(hex_numbers, "x", show_num=True, output_file=output_file)
     if result.is_error():

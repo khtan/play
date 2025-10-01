@@ -100,7 +100,7 @@ def main() -> None:
 
     # import libafter setting up path
     from common.core import get_trigram_unicode, load_json  # pylint: disable=C0415
-    from common.hexagram import get_hexagram_unicode   # pylint: disable=C0415
+    from common.hexagram import get_hexagram_unicode, generate_html   # pylint: disable=C0415
 
     # parse args and handle the -h case
     args: List[str] = sys.argv
@@ -134,7 +134,14 @@ def main() -> None:
             else:
                 outstr = outstr + str(r.ok)
     print(outstr)
-
+    if options.hexa is not None:
+        hex_numbers = options.hexa
+        output_file = "output_hexagrams.html"
+        r = generate_html(hex_numbers, "x", show_num=True, output_file=output_file)
+        if r.is_error():
+            logger.error("generate_html failed with error: %s", r.error)
+        else:
+            logger.info("Wrote hexagram HTML to %s", output_file)
 
 if __name__ == "__main__":
     main()
