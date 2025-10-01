@@ -286,11 +286,13 @@ def build_footer() -> str:
 
 def build_html_page(
     hex_numbers: Sequence[int],
-    center_string: str,
     show_num: bool,
     display_type: str = "circle"
 ) -> Result[str, str]:
     """Build the full HTML page as a string."""
+    # for debugging
+    center_square = "+"
+    center_circle = "o"
     header = build_header(display_type)
 
     layout_parts = []
@@ -300,13 +302,13 @@ def build_html_page(
         layout_parts.append("<div class='combined-container'>")
 
     if display_type in ("square", "all"):
-        square_res = build_square_hexagrams(hex_numbers, center_string, show_num)
+        square_res = build_square_hexagrams(hex_numbers, center_square, show_num)
         if square_res.is_error():
             return Error(square_res.error)
         layout_parts.append(square_res.ok)
 
     if display_type in ("circle", "all"):
-        circle_res = build_circle_hexagrams(hex_numbers, center_string, show_num)
+        circle_res = build_circle_hexagrams(hex_numbers, center_circle, show_num)
         if circle_res.is_error():
             return Error(circle_res.error)
         layout_parts.append(circle_res.ok)
@@ -321,7 +323,6 @@ def build_html_page(
 
 def generate_html(
     hex_numbers: Sequence[int],
-    center_string: str = "+",
     show_num: bool = False,
     output_file: str = "hexagrams.html",
     display_type: str = "circle"
@@ -342,7 +343,7 @@ def generate_html(
         estr = f"Invalid display_type '{display_type}'. Must be 'circle', 'square', or 'all'."
         return Error(estr)
 
-    html_res = build_html_page(hex_numbers, center_string, show_num, display_type)
+    html_res = build_html_page(hex_numbers, show_num, display_type)
     if html_res.is_error():
         return Error(html_res.error)
 
