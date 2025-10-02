@@ -66,18 +66,34 @@ def test_load_json_missingfile():
         assert config['cards_dir'] == "I:/My Drive/lib-home/religion/iching/iching-cards"
     else:
         assert cresult.error == f"File {file_path} not found"
-def test_generate_small_html():
+def test_generate_smallsquare_html():
     """Test the generate_html function."""
     hex_numbers = [1, 63, 64, 2]
-    of = "output_hexagrams.html"
+    of = "output_hexagrams_square.html"
+    result = generate_html(hex_numbers, show_num=True, output_file=of, display_type="square")
+    if result.is_error():
+        assert False, f"generate_html failed with error: {result.error}"
+    assert os.path.exists(of)
+def test_generate_largesquare_html():
+    """Test the generate_html function."""
+    hex_numbers = list(range(1,65))
+    of = "output_hexagrams_square.html"
+    result = generate_html(hex_numbers, show_num=True, output_file=of, display_type="square")
+    if result.is_error():
+        assert False, f"generate_html failed with error: {result.error}"
+    assert os.path.exists(of)
+def test_generate_smallcircle_html():
+    """Test the generate_html function."""
+    hex_numbers = [1, 63, 64, 2]
+    of = "output_hexagrams_circle.html"
     result = generate_html(hex_numbers, show_num=True, output_file=of, display_type="circle")
     if result.is_error():
         assert False, f"generate_html failed with error: {result.error}"
     assert os.path.exists(of)
-def test_generate_large_html():
+def test_generate_largecircle_html():
     """Test the generate_html function."""
     hex_numbers = list(range(1,65))
-    of = "output_hexagrams.html"
+    of = "output_hexagrams_circle.html"
     result = generate_html(hex_numbers, show_num=True, output_file=of, display_type="circle")
     if result.is_error():
         assert False, f"generate_html failed with error: {result.error}"
