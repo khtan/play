@@ -21,7 +21,7 @@ def compute_radius(n: int) -> str:
     radius = max(min_radius, 25 * (n / scale_by_number_of_hexagrams))  # trial and error for now
     return f"{radius:.1f}vmin"
 
-def build_hexagram_html(
+def build_hexagram_circle_html(
         num: int, angle: float, radius_css: str, show_num: bool) -> Result[str, str]:
     """Build the HTML div for a single hexagram number by calling get_hexagram_unicode."""
     result = get_hexagram_unicode(num)
@@ -68,38 +68,9 @@ body {
   font-size: 0.8rem;
 }"""
 
-def build_css_circle(is_combined: bool = False) -> str:
+def build_css_circle() -> str:
     """Build CSS styles for circle layout."""
-    if is_combined:
-        return """
-.circle {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  margin: auto;
-}
-.hex {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform-origin: 0 0;
-  font-size: 2rem;
-  text-align: center;
-}
-.center-char {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 2.5rem;
-  font-weight: bold;
-}"""
-    else:
-        return """
-body {
-  height: 100vh;
-}
+    return """
 .circle {
   position: relative;
   width: 80vmin;
@@ -115,7 +86,7 @@ body {
   font-size: 2rem;
   text-align: center;
 }
-.center-char {
+.circle .center-char {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -124,49 +95,9 @@ body {
   font-weight: bold;
 }"""
 
-def build_css_square(is_combined: bool = False) -> str:
+def build_css_square() -> str:
     """Build CSS styles for square layout."""
-    if is_combined:
-        return """
-.square-container {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  align-items: center;
-  z-index: 10;
-}
-.square-row {
-  display: flex;
-  gap: 5px;
-  justify-content: center;
-}
-.hex-square {
-  font-size: 1.5rem;
-  text-align: center;
-  padding: 5px;
-  background-color: rgba(255, 255, 255, 0.9);
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  min-width: 45px;
-}
-.center-char {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 5px 10px;
-  border-radius: 5px;
-}"""
-    else:
-        return """
-body {
-  min-height: 100vh;
-  padding: 20px;
-}
+    return """
 .square-container {
   display: flex;
   flex-direction: column;
@@ -186,7 +117,7 @@ body {
   border-radius: 5px;
   min-width: 60px;
 }
-.center-char {
+.square-container .center-char {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 20px;
@@ -197,15 +128,48 @@ def build_header(display_type: str = "circle") -> str:
     css_parts = [build_css_common()]
 
     if display_type == "square":
-        css_parts.append(build_css_square(is_combined=False))
+        css_parts.append("body { min-height: 100vh; padding: 20px; }")
+        css_parts.append(build_css_square())
     elif display_type == "circle":
-        css_parts.append(build_css_circle(is_combined=False))
+        css_parts.append("body { height: 100vh; }")
+        css_parts.append(build_css_circle())
     elif display_type == "all":
         css_parts.append("body { height: 100vh; }")
-        container_str = ".combined-container { position: relative; width: 90vmin; height: 90vmin; }"
-        css_parts.append(container_str)
-        css_parts.append(build_css_circle(is_combined=True))
-        css_parts.append(build_css_square(is_combined=True))
+        css_parts.append("""
+.combined-container {
+  position: relative;
+  width: 90vmin;
+  height: 90vmin;
+}
+.combined-container .circle {
+  width: 100%;
+  height: 100%;
+}
+.combined-container .square-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  gap: 5px;
+  z-index: 10;
+}
+.combined-container .square-row {
+  gap: 5px;
+}
+.combined-container .hex-square {
+  font-size: 1.5rem;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.9);
+  min-width: 45px;
+}
+.combined-container .center-char {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 5px 10px;
+}""")
+        css_parts.append(build_css_circle())
+        css_parts.append(build_css_square())
 
     css_style = "<style>" + "\n".join(css_parts) + "\n</style>"
 
@@ -222,7 +186,7 @@ def build_header(display_type: str = "circle") -> str:
 
 def build_circle_hexagrams(
     hex_numbers: Sequence[int],
-    center_string: str,
+    origin_string: str,
     show_num: bool
 ) -> Result[str, str]:
     """Build the circle div with hexagrams arranged around a center."""
@@ -233,12 +197,12 @@ def build_circle_hexagrams(
     angle_step = 360 / n
     circle_parts = [
         "<div class='circle'>",
-        f"<div class='center-char'>{center_string}</div>",
+        f"<div class='center-char'>{origin_string}</div>",
     ]
 
     for i, num in enumerate(hex_numbers):
         angle = i * angle_step
-        hex_div_res = build_hexagram_html(num, angle, radius_css, show_num)
+        hex_div_res = build_hexagram_circle_html(num, angle, radius_css, show_num)
         if hex_div_res.is_error():
             return Error(hex_div_res.error)
         circle_parts.append(hex_div_res.ok)
@@ -248,7 +212,7 @@ def build_circle_hexagrams(
 
 def build_square_hexagrams(
     hex_numbers: Sequence[int],
-    center_string: str,
+    origin_string: str,
     show_num: bool
 ) -> Result[str, str]:
     """Build a square grid with hexagrams arranged in rows."""
@@ -261,7 +225,7 @@ def build_square_hexagrams(
 
     square_parts = [
         "<div class='square-container'>",
-        f"<div class='center-char'>{center_string}</div>",
+        f"<div class='center-char'>{origin_string}</div>",
     ]
 
     # Process hexagrams in rows
@@ -331,7 +295,6 @@ def generate_html(
 
     Args:
         hex_numbers: Sequence of hexagram numbers (1-64)
-        center_string: Character to display in center
         show_num: Whether to show hexagram numbers
         output_file: Output HTML filename
         display_type: "circle", "square", or "all" (both circle and square combined)

@@ -159,6 +159,8 @@ The circle should size itself or be related to some center, so that absolute coo
 do not need to be referenced.
 
 def generate_html(hex_numbers) ...
-
+*** build_css_square and build_css_circle takes a is_combined parameter in order to generate
+html output for display_type == square, circle and all. Is it possible to combine them so
+as to no longer need is_combined?
 
 
