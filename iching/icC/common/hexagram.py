@@ -23,7 +23,7 @@ def compute_radius(n: int) -> str:
 
 def build_hexagram_circle_html(
         num: int, angle: float, radius_css: str, show_num: bool) -> Result[str, str]:
-    """Build the HTML div for a single hexagram number by calling get_hexagram_unicode."""
+    """Build the HTML div for a single hexagram in circular layout."""
     result = get_hexagram_unicode(num)
     if result.is_error():
         return Error(f"Skipping hexagram {num}: {result.error}")
