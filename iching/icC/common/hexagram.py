@@ -69,8 +69,12 @@ body {
 }
 .center-char {
 font-size: 2.5rem;
-font-weight: bold;}
-"""
+font-weight: bold;
+}
+.hex-circle, .hex-square {
+    font-size: 2rem;
+    text-align: center;
+}"""
 
 def build_css_circle() -> str:
     """Build CSS styles for circle layout."""
@@ -87,8 +91,6 @@ def build_css_circle() -> str:
   left: 50%;
   top: 50%;
   transform-origin: 0 0;
-  font-size: 2rem;
-  text-align: center;
 }
 .circle .center-char {
   position: absolute;
@@ -112,8 +114,6 @@ def build_css_square() -> str:
   justify-content: center;
 }
 .hex-square {
-  font-size: 2rem;
-  text-align: center;
   padding: 10px;
   border-radius: 5px;
   min-width: 60px;
