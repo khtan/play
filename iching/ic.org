@@ -162,5 +162,20 @@ def generate_html(hex_numbers) ...
 *** build_css_square and build_css_circle takes a is_combined parameter in order to generate
 html output for display_type == square, circle and all. Is it possible to combine them so
 as to no longer need is_combined?
+*** Consider the two css definitions below.
+Go over each corresponding line and compare why one item requires it and why the other does not.
+Are there any lines are not superflous and can be removed?
 
-
+.circle .center-char {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.square-container .center-char {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}

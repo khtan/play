@@ -66,7 +66,11 @@ body {
 .num-label {
   display: block;
   font-size: 0.8rem;
-}"""
+}
+.center-char {
+font-size: 2.5rem;
+font-weight: bold;}
+"""
 
 def build_css_circle() -> str:
     """Build CSS styles for circle layout."""
@@ -91,8 +95,6 @@ def build_css_circle() -> str:
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  font-size: 2.5rem;
-  font-weight: bold;
 }"""
 
 def build_css_square() -> str:
@@ -118,8 +120,6 @@ def build_css_square() -> str:
   min-width: 60px;
 }
 .square-container .center-char {
-  font-size: 2.5rem;
-  font-weight: bold;
   margin-bottom: 20px;
 }"""
 
