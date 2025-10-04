@@ -34,7 +34,7 @@ def build_hexagram_circle_html(
         inner_html += f"<span class='num-label'>{num}</span>"
 
     html_div = (
-        "<div class='hex' style="
+        "<div class='hex-circle' style="
         f"'transform: rotate({angle}deg) translate({radius_css}) rotate(-{angle}deg);'>"
         f"{inner_html}</div>"
     )
@@ -82,7 +82,7 @@ def build_css_circle() -> str:
   border-radius: 50%;
   margin: auto;
 }
-.hex {
+.hex-circle {
   position: absolute;
   left: 50%;
   top: 50%;

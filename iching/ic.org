@@ -179,3 +179,24 @@ Are there any lines are not superflous and can be removed?
   font-weight: bold;
   margin-bottom: 20px;
 }
+*** Consider the two css definitions below.
+Go over each corresponding line and compare why one item requires it and why the other does not.
+Are there any lines are not superflous and can be removed?
+
+.hex-square {
+  font-size: 2rem;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  min-width: 60px;
+}
+
+.hex { /* circle */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: 0 0;
+  font-size: 2rem;
+  text-align: center;
+}
