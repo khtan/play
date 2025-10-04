@@ -115,7 +115,6 @@ def build_css_square() -> str:
   font-size: 2rem;
   text-align: center;
   padding: 10px;
-  border: 1px solid #ccc;
   border-radius: 5px;
   min-width: 60px;
 }
