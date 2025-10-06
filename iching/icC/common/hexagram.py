@@ -72,7 +72,7 @@ font-size: 2.5rem;
 font-weight: bold;
 }
 .hex-circle, .hex-square {
-    font-size: 2rem;
+    font-size: 1.75rem;
     text-align: center;
 }"""
 
@@ -116,7 +116,6 @@ def build_css_square() -> str:
 .hex-square {
   padding: 1px;
   border-radius: 5px;
-  min-width: 20px;
 }
 .square-container .center-char {
   margin-bottom: 5px;
@@ -155,9 +154,8 @@ def build_header(display_type: str = "circle") -> str:
 }
 .combined-container .hex-square {
   font-size: 1.5rem;
-  padding: 1px;
+  padding: 0px;
   background-color: rgba(255, 255, 255, 0.9);
-  min-width: 30px;
 }
 .combined-container .center-char {
   font-size: 2rem;
