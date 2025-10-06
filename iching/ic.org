@@ -200,3 +200,16 @@ Are there any lines are not superflous and can be removed?
   font-size: 2rem;
   text-align: center;
 }
+
+*** Explain which width/height will be in effect. Which should I delete?
+.combined-container .circle {
+  width: 80vmin;
+  height: 80vmin;
+}
+.circle {
+  position: relative;
+  width: 50vmin;
+  height: 50vmin;
+  border-radius: 50%;
+  margin: auto;
+}

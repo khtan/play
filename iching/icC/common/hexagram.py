@@ -137,10 +137,6 @@ def build_header(display_type: str = "circle") -> str:
 .combined-container {
   position: relative;
 }
-.combined-container .circle {
-  width: 80vmin;
-  height: 80vmin;
-}
 .combined-container .square-container {
   position: absolute;
   left: 50%;
