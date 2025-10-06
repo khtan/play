@@ -81,8 +81,8 @@ def build_css_circle() -> str:
     return """
 .circle {
   position: relative;
-  width: 80vmin;
-  height: 80vmin;
+  width: 50vmin;
+  height: 50vmin;
   border-radius: 50%;
   margin: auto;
 }
@@ -137,12 +137,10 @@ def build_header(display_type: str = "circle") -> str:
         css_parts.append("""
 .combined-container {
   position: relative;
-  width: 90vmin;
-  height: 90vmin;
 }
 .combined-container .circle {
-  width: 100%;
-  height: 100%;
+  width: 80vmin;
+  height: 80vmin;
 }
 .combined-container .square-container {
   position: absolute;
