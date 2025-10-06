@@ -105,21 +105,21 @@ def build_css_square() -> str:
 .square-container {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1px;
   align-items: center;
 }
 .square-row {
   display: flex;
-  gap: 10px;
+  gap: 1px;
   justify-content: center;
 }
 .hex-square {
-  padding: 10px;
+  padding: 1px;
   border-radius: 5px;
-  min-width: 60px;
+  min-width: 20px;
 }
 .square-container .center-char {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }"""
 
 def build_header(display_type: str = "circle") -> str:
@@ -147,17 +147,17 @@ def build_header(display_type: str = "circle") -> str:
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  gap: 5px;
+  gap: 0px;
   z-index: 10;
 }
 .combined-container .square-row {
-  gap: 5px;
+  gap: 0px;
 }
 .combined-container .hex-square {
   font-size: 1.5rem;
-  padding: 5px;
+  padding: 1px;
   background-color: rgba(255, 255, 255, 0.9);
-  min-width: 45px;
+  min-width: 30px;
 }
 .combined-container .center-char {
   font-size: 2rem;
