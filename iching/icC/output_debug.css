@@ -1,0 +1,46 @@
+ /* Visual debugging - add these rules */
+ /* Container hierarchy */
+ body {
+     border: 3px solid purple;  /* Outermost container */
+ }
+
+ .combined-container {
+     border: 3px solid red;  /* Main combined container */
+     background-color: rgba(255, 0, 0, 0.05);  /* Very light red tint */
+ }
+
+ /* Circle elements */
+ .circle {
+     border: 3px solid blue;  /* Circle container */
+     background-color: rgba(0, 0, 255, 0.05);  /* Very light blue tint */
+ }
+
+ .hex-circle {
+     border: 1px solid cyan;  /* Individual circle hexagrams */
+     background-color: rgba(0, 255, 255, 0.2);  /* Light cyan background */
+ }
+
+ .circle .center-char {
+     border: 2px solid darkblue;  /* Circle center character */
+     background-color: rgba(0, 0, 139, 0.2);  /* Dark blue background */
+ }
+
+ /* Square elements */
+ .square-container {
+     border: 3px solid green;  /* Square container */
+     background-color: rgba(0, 255, 0, 0.1);  /* Light green tint */
+ }
+
+ .square-row {
+     border: 2px solid lime;  /* Each row */
+     background-color: rgba(0, 255, 0, 0.05);  /* Very light lime tint */
+ }
+
+ .hex-square {
+     border: 1px solid orange !important;  /* Individual square hexagrams */
+     background-color: rgba(255, 165, 0, 0.3) !important;  /* Orange background - override existing */
+ }
+
+ .square-container .center-char {
+     border: 2px solid darkgreen;  /* Square center character */
+     background-color: rgba(0, 100, 0, 0.3);  /* Dark green background */
