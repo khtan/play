@@ -18,12 +18,15 @@ logger.setLevel(logging.DEBUG)
 from cli.icf import main # pylint: disable=C0413
 
 @pytest.mark.parametrize("mock_argv, expected_output", [
-    (['sf.py', '-x 1'], "are required"), # one correct arg
-    # (['sf.py', 'TestName'], "following arguments are required"), # one incorrect arg
-    # (['sf.py'], "required arguments"), # zero arg
+    # first element is the script name, and not used, hence 
+    (['icf.py', '-x 1'], ""), # one correct arg
+    # (['icf.py', 'TestName'], "following arguments are required"), # one incorrect arg
+    # (['icf.py'], "required arguments"), # zero arg
 ])
 def test_main(mocker, mock_argv, expected_output):
-    """Test the main function with and without a name argument."""
+    """Test the main function with and without a name argument.
+       icc is expected to have no output if everything works.
+    """
     # Mock sys.stdout
     mock_stdout = mocker.patch('sys.stdout', new_callable=StringIO)
     mock_stderr = mocker.patch('sys.stderr', new_callable=StringIO)
@@ -36,8 +39,10 @@ def test_main(mocker, mock_argv, expected_output):
     logger.debug("STDOUT: %s", output)
     errout = mock_stderr.getvalue().strip()
     logger.debug("STDERR: %s", errout)
-    # assert expected_output in output, (
-    # f"Expected substring '{expected_output}' not found in '{output}'")
+    if output and "not found" in output:
+        pytest.xfail("Env: check cards_dir setting in config file exists")
+    assert output == expected_output, (
+        f"Expected output '{expected_output}' but got '{output}'")
 
 def test_out():
     """Test the main function output."""
