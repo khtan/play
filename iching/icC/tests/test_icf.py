@@ -6,13 +6,15 @@
 """
 import os
 import sys
+import logging
 from io import StringIO
 import pytest
 
 # Import the main function from cli.sf
 lib_path = os.path.join(os.path.dirname(__file__), '..')
 sys.path.insert(0, lib_path)
-
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
 from cli.icf import main # pylint: disable=C0413
 
 @pytest.mark.parametrize("mock_argv, expected_output", [
@@ -31,9 +33,9 @@ def test_main(mocker, mock_argv, expected_output):
     main()
     # assert mock_stdout.getvalue().strip() == expected_output
     output = mock_stdout.getvalue().strip()
-    print ("STDOUT:", output)
+    logger.debug(f"STDOUT: {output}")
     errout = mock_stderr.getvalue().strip()
-    print ("STDERR:", errout)
+    logger.debug(f"STDERR: {errout}")
     # assert expected_output in output, (
     # f"Expected substring '{expected_output}' not found in '{output}'")
 
