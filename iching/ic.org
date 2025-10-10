@@ -46,6 +46,14 @@ VS Code should ask you if you want to activate the new virtual environment. If i
 ** icC
 *** motivation
 Remove all the __pycache__ and other folders that do not need to be checked in
+*** todo
+1. refactor the .css hierarchy and simplify
+2. introduce enum class for DisplayType safety
+3. more enums : generate output file
+   -o <file name>|sequential|
+   sequential will use <file name>.<n>.html
+   Display the output? by default or by switch?
+
 *** sc name clash
 sc is system control manager monitoring tool in c:\system\windows32
 What to call this tool

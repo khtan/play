@@ -33,9 +33,9 @@ def test_main(mocker, mock_argv, expected_output):
     main()
     # assert mock_stdout.getvalue().strip() == expected_output
     output = mock_stdout.getvalue().strip()
-    logger.debug(f"STDOUT: {output}")
+    logger.debug("STDOUT: %s", output)
     errout = mock_stderr.getvalue().strip()
-    logger.debug(f"STDERR: {errout}")
+    logger.debug("STDERR: %s", errout)
     # assert expected_output in output, (
     # f"Expected substring '{expected_output}' not found in '{output}'")
 
