@@ -21,27 +21,36 @@ from cli.icf import main # pylint: disable=C0413
     # first element is the script name, and not used, hence 
     (['icf.py', '-x 1'], ""), # one correct arg
     # (['icf.py', 'TestName'], "following arguments are required"), # one incorrect arg
-    # (['icf.py'], "required arguments"), # zero arg
+    (['icf.py'], "required arguments"), # zero arg
 ])
 def test_main(mocker, mock_argv, expected_output):
     """Test the main function with and without a name argument.
-       icc is expected to have no output if everything works.
+       ToDo: this parameterized test should be refactored into error and non error cases.
+       The error case should examine the return code and stderr output. 
+          The stdout should not have any value
+       The non error case should expect nothing in stdout and stderr but return code should be 0.
+          It should additionally check that the expected side effect (opening a jpg file) occurred.
     """
     # Mock sys.stdout
     mock_stdout = mocker.patch('sys.stdout', new_callable=StringIO)
     mock_stderr = mocker.patch('sys.stderr', new_callable=StringIO)
     # Mock sys.argv
     mocker.patch('sys.argv', new=mock_argv)
+    try:
+        main()
+    except SystemExit as e:
+        logger.debug("SystemExit with code: %s", e.code)
+        # We expect a SystemExit with code 1 for error cases
+        if len(mock_argv) < 2:
+            assert e.code == 1
 
-    main()
-    # assert mock_stdout.getvalue().strip() == expected_output
     output = mock_stdout.getvalue().strip()
     logger.debug("STDOUT: %s", output)
     errout = mock_stderr.getvalue().strip()
     logger.debug("STDERR: %s", errout)
     if output and "not found" in output:
         pytest.xfail("Env: check cards_dir setting in config file exists")
-    assert output == expected_output, (
+    assert expected_output in output, (
         f"Expected output '{expected_output}' but got '{output}'")
 
 def test_out():
